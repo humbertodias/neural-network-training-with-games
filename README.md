@@ -22,7 +22,7 @@ Flappy-Bird
 ```
 make run-flappy
 ```
-[](doc/flappy.png)
+![](doc/flappy.png)
 
 
 Deep-Cars
@@ -30,7 +30,8 @@ Deep-Cars
 ```
 make run-cars
 ```
-[](doc/cars.png)
+
+![](doc/cars.png)
 
 
 Dinossauro
@@ -39,7 +40,7 @@ Dinossauro
 make run-dino
 ```
 
-[](doc/dino.png)
+![](doc/dino.png)
 
 # Source 
 
