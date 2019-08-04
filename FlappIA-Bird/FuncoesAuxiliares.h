@@ -60,7 +60,7 @@ void SalvarRedeArquivo()
     }
 
     char String[1000];
-    sprintf(String, "redes\\%.2f - [%d,%d,%d,%d]",
+    sprintf(String, "redes/%.2f - [%d,%d,%d,%d]",
             DistanciaRecorde,
             BIRD_BRAIN_QTD_LAYERS,
             BIRD_BRAIN_QTD_INPUT,

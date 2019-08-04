@@ -8,4 +8,6 @@ run-cars:
 	cd DeepCars && make && ./main
 
 clean:
-	rm -f Dinossauro-Google/main FlappIA-Bird/main DeepCars/main 
+	cd Dinossauro-Google && $(MAKE) clean
+	cd FlappIA-Bird && $(MAKE) clean
+	cd DeepCars && $(MAKE) clean 

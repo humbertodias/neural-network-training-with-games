@@ -8,7 +8,7 @@ Adapted for linux
 * sdl2-ttf
 * sdl2-image
 * make
-* gcc
+* g++/clang++
 
 ```sh
 sudo apt install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev
@@ -23,6 +23,11 @@ Flappy-Bird
 make run-flappy
 ```
 ![](doc/flappy.png)
+
+Key | Action
+esc | Pause
+space | info 
+
 
 
 Deep-Cars
