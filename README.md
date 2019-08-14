@@ -2,6 +2,8 @@
 
 Adapted for linux
 
+Credits [JVictorDias](https://github.com/JVictorDias)
+
 # Deps
 
 * sdl2
@@ -49,7 +51,7 @@ make run-dino
 
 ![](doc/dino.png)
 
-# Source - Credits [JVictorDias](https://github.com/JVictorDias)
+# Source
 
 * [Dinossauro-Google](https://github.com/JVictorDias/Dinossauro-Google)
 
