@@ -39,15 +39,17 @@ make run-cars
 ![](doc/cars.png)
 
 
-Dinossauro
+Dinossauro - TODO
 
 ```
 make run-dino
 ```
 
+* missig specific PIG version
+
 ![](doc/dino.png)
 
-# Source 
+# Source - Credits [JVictorDias](https://github.com/JVictorDias)
 
 * [Dinossauro-Google](https://github.com/JVictorDias/Dinossauro-Google)
 
