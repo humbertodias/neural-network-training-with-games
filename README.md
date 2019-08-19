@@ -9,11 +9,12 @@ Credits [JVictorDias](https://github.com/JVictorDias)
 * sdl2
 * sdl2-ttf
 * sdl2-image
+* libwebp
 * make
 * g++/clang++
 
 ```sh
-sudo apt install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev
+sudo apt install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libwebp-dev
 ```
 
 # How to test
@@ -29,7 +30,6 @@ make run-flappy
 Key | Action
 esc | Pause
 space | info 
-
 
 
 Deep-Cars
