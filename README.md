@@ -14,7 +14,7 @@ Credits [JVictorDias](https://github.com/JVictorDias)
 * g++/clang++
 
 ```sh
-sudo apt install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libwebp-dev
+sudo apt install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libwebp-dev libgsl-dev
 ```
 
 # How to test
