@@ -49,8 +49,8 @@ public:
         for (int i=0;i<MAX_FONTES;i++)
             fontes[i] = NULL;
 
-        //criação da fonte padrão da PIG (fonte com identificador 0)
-        fontes[0] = new CMapaCaracteres("..//fontes//arial.ttf",renderer,36,ESTILO_NORMAL,BRANCO,0,BRANCO);
+        //criaÃ§Ã£o da fonte padrÃ£o da PIG (fonte com identificador 0)
+        fontes[0] = new CMapaCaracteres("../fontes/arial.ttf",renderer,36,ESTILO_NORMAL,BRANCO,0,BRANCO);
         fontesUsadas = 1;
 
         corFundo = PRETO;

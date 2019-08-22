@@ -1,4 +1,4 @@
-#define CINZA_CLARO CINZA
+
 
 PIG_Cor calcularCor(double Intensidade, PIG_Cor CorBase)
 {
@@ -42,7 +42,7 @@ void DesenharRedeNeural(int X, int Y, int Largura, int Altura)
 
     if(PIG_meuTeclado[TECLA_BARRAESPACO])
     {
-        sprintf(String,"[Obstáculo] Distancia Horizontal: %.2f", Entrada[0]);
+        sprintf(String,"[Obst�culo] Distancia Horizontal: %.2f", Entrada[0]);
         EscreverEsquerda(String, X + 15, YOrigem - 0*EscalaAltura -5, Fonte);
 
         sprintf(String,"[Obstáculo] Distancia Vertical: %.2f", Entrada[1]);
@@ -327,11 +327,11 @@ void DesenharGrafico(int X, int Y, double Largura, int Altura)
             YBest = Y+1+(int)(BestFitnessPopulacao[i]/scala);
         }
 
-        DesenharPonto(PontoX, YMedia, VERMELHO);
+        DesenharPonto(PontoX, YMedia, VERMELHO, 3);
         PontosMedia[i].x = PontoX;
         PontosMedia[i].y = ALT_TELA - YMedia;
 
-        DesenharPonto(PontoX, YBest,  AZUL);
+        DesenharPonto(PontoX, YBest,  AZUL, 3);
         PontosBest[i].x = PontoX;
         PontosBest[i].y = ALT_TELA - YBest;
     }
@@ -496,7 +496,7 @@ void Desenhar()
 
         char String[1000];
 
-        sprintf(String,"Geracao: %d", Geracao);
+        sprintf(String,"Gera��o: %d", Geracao);
         EscreverEsquerda(String, X, BASE, FontePretaGrande);
 
         sprintf(String,"Clock: %f segundo", Periodo);

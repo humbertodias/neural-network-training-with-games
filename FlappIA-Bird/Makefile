@@ -2,7 +2,7 @@
 CC=g++
 
 all:
-	$(CC) main.cpp -I../pig -I/usr/include/SDL2 -I. \
+	$(CC) main.cpp -I../pig-flappy -I/usr/include/SDL2 -I. \
 	-lSDL2 -lSDL2_ttf -lSDL2_image -lpthread -lwebp  \
 	-std=c++11 \
 	-o main

@@ -24,7 +24,7 @@ typedef struct sprite
 
 void InicializarSpriteCano()
 {
-    SpriteCano.Objeto = CriarSprite("imagens/cano.bmp",1);
+    SpriteCano.Objeto = CriarSprite("imagens/cano.bmp");
     SpriteCano.Largura = 86;
     SpriteCano.Altura = 836;
 }
@@ -42,7 +42,7 @@ void InicializarSpritesBird()
         {
             sprintf(String,"imagens/flap%d%d.png", j+1, i);
 
-            SpriteBirds[i][j].Objeto = CriarSprite(String,1);
+            SpriteBirds[i][j].Objeto = CriarSprite(String);
             SpriteBirds[i][j].Largura = Largura[j];
             SpriteBirds[i][j].Altura = Altura[j];
         }
@@ -51,49 +51,49 @@ void InicializarSpritesBird()
 
 void InicializarSpritesNeuronios()
 {
-    SpriteNeuronDesativado = CriarSprite("imagens/neuronio7.png",0);
+    SpriteNeuronDesativado = CriarSprite("imagens/neuronio7.png");
     DefinirColoracao(SpriteNeuronDesativado, PRETO);
 
-    SpriteNeuronAtivado = CriarSprite("imagens/neuronio7.png",0);
+    SpriteNeuronAtivado = CriarSprite("imagens/neuronio7.png");
     DefinirColoracao(SpriteNeuronAtivado, BRANCO);
 
-    SpriteLuz = CriarSprite("imagens/luz.png",0);
+    SpriteLuz = CriarSprite("imagens/luz.png");
 
-    SpriteSeta = CriarSprite("imagens/seta2.png",0);
+    SpriteSeta = CriarSprite("imagens/seta2.png");
     DefinirColoracao(SpriteSeta, PRETO);
 }
 
 void InicializarSpriteChao()
 {
-    SpriteChao.Objeto = CriarSprite("imagens/chao.png",0);
+    SpriteChao.Objeto = CriarSprite("imagens/chao.png");
     SpriteChao.Largura = 209;
     SpriteChao.Altura = 75;
 }
 
 void InicializarSpriteNuvem()
 {
-    SpriteNuvem.Objeto = CriarSprite("imagens/nuvens.png",0);
+    SpriteNuvem.Objeto = CriarSprite("imagens/nuvens.png");
     SpriteNuvem.Largura = 959;
     SpriteNuvem.Altura = 114;
 }
 
 void InicializarSpritePredio()
 {
-    SpritePredio.Objeto = CriarSprite("imagens/predios.png",0);
+    SpritePredio.Objeto = CriarSprite("imagens/predios.png");
     SpritePredio.Largura = 959;
     SpritePredio.Altura = 54;
 }
 
 void InicializarSpriteArvore()
 {
-    SpriteArvore.Objeto = CriarSprite("imagens/arvores.png",0);
+    SpriteArvore.Objeto = CriarSprite("imagens/arvores.png");
     SpriteArvore.Largura = 959;
     SpriteArvore.Altura = 52;
 }
 
 void InicializarSpriteParaquedas()
 {
-    SpriteParaquedas.Objeto = CriarSprite("imagens/paraquedas.png",0);
+    SpriteParaquedas.Objeto = CriarSprite("imagens/paraquedas.png");
     SpriteParaquedas.Largura = 50;
     SpriteParaquedas.Altura = 50;
 }

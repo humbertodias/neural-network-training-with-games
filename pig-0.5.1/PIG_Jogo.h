@@ -1,8 +1,8 @@
 /********************************
-A funÁ„o DefineFundo() permite escolher um arquivo de imagem como fundo (background) do jogo que ser· automaticamente desenhado a cada nova etapa de desenho na tela.
-Par‚metros:
-nome_ArquivoImagem (entrada, passagem por referÍncia*): indica o caminho relativo ou absoluto do arquivo de imagem que ser· utilizado como fundo do jogo.
-… utilizado o operador * apenas por se tratar de um par‚metro string. O valor do par‚metro n„o È alterado dentro da funÁ„o.
+A fun√ß√£o DefineFundo() permite escolher um arquivo de imagem como fundo (background) do jogo que ser√° automaticamente desenhado a cada nova etapa de desenho na tela.
+Par√¢metros:
+nome_ArquivoImagem (entrada, passagem por refer√™ncia*): indica o caminho relativo ou absoluto do arquivo de imagem que ser√° utilizado como fundo do jogo.
+√â utilizado o operador * apenas por se tratar de um par√¢metro string. O valor do par√¢metro n√£o √© alterado dentro da fun√ß√£o.
 ********************************/
 void DefinirFundo(char *nome_ArquivoImagem)
 {
@@ -10,12 +10,12 @@ void DefinirFundo(char *nome_ArquivoImagem)
 }
 
 /********************************
-A funÁ„o GetTeclado() faz um mapeamento entre o teclado fÌsico a uma vari·vel do tipo PIG_Teclado que funciona como um vetor de vari·veis lÛgicas,
-sendo cada posiÁ„o do vetor relativo a uma tecla fÌsica.
-Uma lista das possÌveis teclas e seus cÛdigo pode ser vista no arquivo Tipos_PIG.h.
+A fun√ß√£o GetTeclado() faz um mapeamento entre o teclado f√≠sico a uma vari√°vel do tipo PIG_Teclado que funciona como um vetor de vari√°veis l√≥gicas,
+sendo cada posi√ß√£o do vetor relativo a uma tecla f√≠sica.
+Uma lista das poss√≠veis teclas e seus c√≥digo pode ser vista no arquivo Tipos_PIG.h.
 Retorno:
-O valor de retorno da funÁ„o È um vetor de n˙meros inteiros que indicam se uma determinada tecla (Ìndice do vetor) foi
-pressionada (valor diferente de 0,zero) ou n„o (valor igual a zero).
+O valor de retorno da fun√ß√£o √© um vetor de n√∫meros inteiros que indicam se uma determinada tecla (√≠ndice do vetor) foi
+pressionada (valor diferente de 0,zero) ou n√£o (valor igual a zero).
 ********************************/
 PIG_Teclado PegarTeclado()
 {
@@ -23,13 +23,13 @@ PIG_Teclado PegarTeclado()
 }
 
 /********************************
-A funÁ„o CriaJogo() È respons·vel pela criaÁ„o da janela do jogo e pelos componentes audio-visuais.
-Ela deve ser chamada antes de qualquer outra funÁ„o da biblioetac PIG.h. N„o È possÌvel criar dois
-jogos no mesmo progama. Logo, somente a primeira chamada ter· efeito.
-Par‚metros:
-nome_Janela (entrada, passagem por referÍncia*): indica o nome que a janela do jogo mostrar· no seu tÌtulo.
-… utilizado o operador * apenas por se tratar de um par‚metro string. O valor do par‚metro n„o È alterado dentro da funÁ„o.
-cursor_Proprio (entrada, passagem por valor): indica se o jogo utilizar· cursores (ponteiros) prÛprios para o mouse ou utilizar· o cursor padr„o.
+A fun√ß√£o CriaJogo() √© respons√°vel pela cria√ß√£o da janela do jogo e pelos componentes audio-visuais.
+Ela deve ser chamada antes de qualquer outra fun√ß√£o da biblioetac PIG.h. N√£o √© poss√≠vel criar dois
+jogos no mesmo progama. Logo, somente a primeira chamada ter√° efeito.
+Par√¢metros:
+nome_Janela (entrada, passagem por refer√™ncia*): indica o nome que a janela do jogo mostrar√° no seu t√≠tulo.
+√â utilizado o operador * apenas por se tratar de um par√¢metro string. O valor do par√¢metro n√£o √© alterado dentro da fun√ß√£o.
+cursor_Proprio (entrada, passagem por valor): indica se o jogo utilizar√° cursores (ponteiros) pr√≥prios para o mouse ou utilizar√° o cursor padr√£o.
 ********************************/
 void CriarJanela(char *nome_Janela,int cursor_Proprio=0)
 {
@@ -49,11 +49,11 @@ void CriarJanela(char *nome_Janela,int cursor_Proprio=0)
 }
 
 /********************************
-A funÁ„o GetEvento() indica se houve algum tipo de evento desde a ˙ltima vez que a funÁ„o foi chamada.
-Um evento pode ser uma tecla pressionada, um clique do mouse ou outra coisa relacionada ‡ tela do jogo.
-Maiores informaÁıe podem ser vistas no arquivo Tipo_PIG.h
+A fun√ß√£o GetEvento() indica se houve algum tipo de evento desde a √∫ltima vez que a fun√ß√£o foi chamada.
+Um evento pode ser uma tecla pressionada, um clique do mouse ou outra coisa relacionada √† tela do jogo.
+Maiores informa√ß√µe podem ser vistas no arquivo Tipo_PIG.h
 Retorno:
-O valor de retorno È um struct contendo o tipo de evento ocorrido e v·rios outros structs com informaÁıes especÌficas.
+O valor de retorno √© um struct contendo o tipo de evento ocorrido e v√°rios outros structs com informa√ß√µes espec√≠ficas.
 ********************************/
 PIG_Evento PegarEvento()
 {
@@ -61,8 +61,8 @@ PIG_Evento PegarEvento()
 }
 
 /********************************
-A funÁ„o IniciaDesenho() È respons·vel por preparar a janela do jogo para que os objetos gr·ficos
-possam ser mostrados, alÈm de desenhar a imagem de fundo do jogo, caso tenha sido definida.
+A fun√ß√£o IniciaDesenho() √© respons√°vel por preparar a janela do jogo para que os objetos gr√°ficos
+possam ser mostrados, al√©m de desenhar a imagem de fundo do jogo, caso tenha sido definida.
 Deve ser chamada repetidamente a cada novo quadro (frame) a ser desenhado.
 ********************************/
 void IniciarDesenho()
@@ -71,7 +71,7 @@ void IniciarDesenho()
 }
 
 /********************************
-A funÁ„o EncerraDesenho() È respons·vel por encerrar o desenho que foi criado, mostrando na tela do jogo.
+A fun√ß√£o EncerraDesenho() √© respons√°vel por encerrar o desenho que foi criado, mostrando na tela do jogo.
 Deve ser chamado sempre ao final do loop principal do jogo.
 ********************************/
 void EncerrarDesenho()
@@ -82,7 +82,7 @@ void EncerrarDesenho()
 }
 
 /********************************
-A funÁ„o PegarTecla reconhece a tecla apertada ou soltada(cima,baixo,esquerda,direita,enter,esc,z,x) e retorna um codigo.
+A fun√ß√£o PegarTecla reconhece a tecla apertada ou soltada(cima,baixo,esquerda,direita,enter,esc,z,x) e retorna um codigo.
 
 Apertar = Positivo
 Soltar = Negativo
@@ -169,10 +169,10 @@ int PegarBotao()
 }
 
 /********************************
-A funÁ„o AtualizarEstadoJogo() È repons·vel por retornar se o jogo ainda est· ativo ou n„o.
-O jogo ser· encerrado se a janela do jogo for fechada, por exemplo.
+A fun√ß√£o AtualizarJanelarEstadoJogo() √© repons√°vel por retornar se o jogo ainda est√° ativo ou n√£o.
+O jogo ser√° encerrado se a janela do jogo for fechada, por exemplo.
 Retorno:
-inteiro que indica se o jogo ainda est· sendo executado (valor diferente de zero) ou n„o (valor igual a 0, zero).
+inteiro que indica se o jogo ainda est√° sendo executado (valor diferente de zero) ou n√£o (valor igual a 0, zero).
 ********************************/
 
 int AtualizarJanela()
@@ -187,9 +187,9 @@ int AtualizarJanela()
 }
 
 /********************************
-A funÁ„o Espera() "congela" a tela do jogo por alguns milisegundos, impedindo que qualquer outro comando seja executado enquanto isso.
-Par‚metros:
-tempo (entrada, passagem por valor): indica a quantidade de milisegundos durante a qual o jogo ser· pausado.
+A fun√ß√£o Espera() "congela" a tela do jogo por alguns milisegundos, impedindo que qualquer outro comando seja executado enquanto isso.
+Par√¢metros:
+tempo (entrada, passagem por valor): indica a quantidade de milisegundos durante a qual o jogo ser√° pausado.
 ********************************/
 void Esperar(int tempo)
 {
@@ -197,8 +197,8 @@ void Esperar(int tempo)
 }
 
 /********************************
-A funÁ„o FinalizaJogo() È respons·vel por encerrar com a PIG. ApÛs tudo o jogo ser executado
-a funÁ„o deve ser chamada e ela ir· realizar a liberaÁ„o de memÛria dos elementos criados pela PIG.
+A fun√ß√£o FinalizaJogo() √© respons√°vel por encerrar com a PIG. Ap√≥s tudo o jogo ser executado
+a fun√ß√£o deve ser chamada e ela ir√° realizar a libera√ß√£o de mem√≥ria dos elementos criados pela PIG.
 ********************************/
 void FinalizarJanela()
 {
@@ -213,10 +213,10 @@ void FinalizarJanela()
 }
 
 /********************************
-A funÁ„o GetFPS() È respons·vel por calcular o valor do Frames Per Seconds (FPS), que representa a quantidade de
+A fun√ß√£o GetFPS() √© respons√°vel por calcular o valor do Frames Per Seconds (FPS), que representa a quantidade de
 frames (quadros) desenhados por segundo pela PIG.
 Retorno:
-float que indica a mÈdia de quadros desenhados por segundo.
+float que indica a m√©dia de quadros desenhados por segundo.
 ********************************/
 float PegarFPS()
 {
@@ -224,13 +224,13 @@ float PegarFPS()
 }
 
 /********************************
-A funÁ„o CarregaCursor() È respons·vel por armazenar um novo cursor para o mouse, dado pelo arquivo de imagem indicado.
+A fun√ß√£o CarregaCursor() √© respons√°vel por armazenar um novo cursor para o mouse, dado pelo arquivo de imagem indicado.
 O arquivo deve ser uma imagem com 32 pixels de altura orbigatoriamente.
-Par‚metro:
-indice (entrada, passagem por valor): informa um Ìndice para este novo cursor. Se o Ìndice j· estiver sendo utilizado,
-o cursor antigo È removido. O valor deve estar entre 0..MAX_CURSORES-1.
-nomeArquivoCursor (entrada, passagem por referÍncia*): indica o nome do arquivo de imagem que ser· utilziado como cursor do mouse.
-… utilizado o operador * apenas por se tratar de um par‚metro string. O valor do par‚metro n„o È alterado dentro da funÁ„o.
+Par√¢metro:
+indice (entrada, passagem por valor): informa um √≠ndice para este novo cursor. Se o √≠ndice j√° estiver sendo utilizado,
+o cursor antigo √© removido. O valor deve estar entre 0..MAX_CURSORES-1.
+nomeArquivoCursor (entrada, passagem por refer√™ncia*): indica o nome do arquivo de imagem que ser√° utilziado como cursor do mouse.
+√â utilizado o operador * apenas por se tratar de um par√¢metro string. O valor do par√¢metro n√£o √© alterado dentro da fun√ß√£o.
 ********************************/
 void CarregarCursor(int indice,char *nomeArquivoCursor)
 {
@@ -238,9 +238,9 @@ void CarregarCursor(int indice,char *nomeArquivoCursor)
 }
 
 /********************************
-A funÁ„o MudaCursor() È respons·vel por alterar o cursor atual do mouse por outro j· carregado.
-Par‚metro:
-indice (entrada, passagem por valor): informa um Ìndice para este novo cursor que j· deve ter sido
+A fun√ß√£o MudaCursor() √© respons√°vel por alterar o cursor atual do mouse por outro j√° carregado.
+Par√¢metro:
+indice (entrada, passagem por valor): informa um √≠ndice para este novo cursor que j√° deve ter sido
 carregado anteriormente e deve estar no intervalo 0..MAX_CURSORES-1.
 ********************************/
 void MudarCursor(int indice)

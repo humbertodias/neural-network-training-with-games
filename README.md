@@ -41,11 +41,14 @@ make run-cars
 ![](doc/cars.png)
 
 
-Dinossauro - TODO
+Dinossauro
 
 ```
 make run-dino
 ```
+
+![](doc/dino.png)
+
 
 * missig specific PIG version
 

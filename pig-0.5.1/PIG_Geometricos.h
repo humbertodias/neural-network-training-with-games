@@ -1,12 +1,12 @@
 /********************************
-SeÁ„o de elementos geomÈtricos
+Se√ß√£o de elementos geom√©tricos
 ********************************/
 
 /********************************
-A funÁ„o Desenha_LinhasSimples() È respons·vel por desenhar uma ˙nica linha, cujo inÌcio È o ponto (x1,y1) e o fim È o ponto (x2,y2).
-Par‚metros:
-pontoX1 (entrada, passagem por valor): inteiro que indica o inÌcio da linha no eixo X.
-pontoY1 (entrada, passagem por valor): inteiro que indica o inÌcio da linha no eixo Y.
+A fun√ß√£o Desenha_LinhasSimples() √© respons√°vel por desenhar uma √∫nica linha, cujo in√≠cio √© o ponto (x1,y1) e o fim √© o ponto (x2,y2).
+Par√¢metros:
+pontoX1 (entrada, passagem por valor): inteiro que indica o in√≠cio da linha no eixo X.
+pontoY1 (entrada, passagem por valor): inteiro que indica o in√≠cio da linha no eixo Y.
 pontoX2 (entrada, passagem por valor): inteiro que indica o fim da linha no eixo X.
 pontoY2 (entrada, passagem por valor): inteiro que indica o fim da linha no eixo Y.
 cor (entrada, passagem por valor): indica a cor no sistema RGB para o desenho da linha;
@@ -32,14 +32,14 @@ void DesenharPontos(SDL_Point *points, int count, PIG_Cor cor)
 }
 
 /********************************
-A funÁ„o DesenhaRetangulo() È respons·vel por desenhar um ret‚ngulo com preenchimento sÛlido na tela em uma posiÁ„o desejada pelo usu·rio.
-O mesmo pode ser colocado em qualquer lugar do campo de vis„o da tela.
-Par‚metros:
-posicaoX (entrada, passagem por valor): Valor da coordenada X da tela onde o usu·rio deseja colocar o ret‚ngulo.
-posicaoY (entrada, passagem por valor): Valor da coordenada Y da tela onde o usu·rio deseja colocar o ret‚ngulo.
-altura (entrada, passagem por valor): Valor onde o usu·rio ir· fornecer o n˙mero correspondente em pixels ‡ altura desse ret‚ngulo.
-largura (entrada, passagem por valor): Valor onde o usu·rio ir· fornecer o n˙mero correspondente em pixels ‡ largura desse ret‚ngulo.
-cor (entrada, passagem por valor): indica a cor no sistema RGB para o desenho do ret‚ngulo;
+A fun√ß√£o DesenhaRetangulo() √© respons√°vel por desenhar um ret√¢ngulo com preenchimento s√≥lido na tela em uma posi√ß√£o desejada pelo usu√°rio.
+O mesmo pode ser colocado em qualquer lugar do campo de vis√£o da tela.
+Par√¢metros:
+posicaoX (entrada, passagem por valor): Valor da coordenada X da tela onde o usu√°rio deseja colocar o ret√¢ngulo.
+posicaoY (entrada, passagem por valor): Valor da coordenada Y da tela onde o usu√°rio deseja colocar o ret√¢ngulo.
+altura (entrada, passagem por valor): Valor onde o usu√°rio ir√° fornecer o n√∫mero correspondente em pixels √† altura desse ret√¢ngulo.
+largura (entrada, passagem por valor): Valor onde o usu√°rio ir√° fornecer o n√∫mero correspondente em pixels √† largura desse ret√¢ngulo.
+cor (entrada, passagem por valor): indica a cor no sistema RGB para o desenho do ret√¢ngulo;
 ********************************/
 void DesenharRetangulo(int posicaoX, int posicaoY, int altura, int largura, PIG_Cor cor)
 {

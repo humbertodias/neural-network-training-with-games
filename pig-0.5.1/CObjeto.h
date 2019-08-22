@@ -37,11 +37,11 @@ protected:
         float cosseno = cos(angRad);
         //printf("Pivo %d %d  %f\n",pivoObj.x,pivoObj.y,angRad);
 
-        //matriz de rotação
+        //matriz de rotaÃ§Ã£o
         // ( cos(ang) sin(ang))   (Vx)   (Rx)
         // (-sin(ang) cos(ang)) * (Vy) = (Ry)
 
-        //vetor (Rx,Ry) é a resposta do vetor (Vx,Vy) rotacionado em ang
+        //vetor (Rx,Ry) Ã© a resposta do vetor (Vx,Vy) rotacionado em ang
 
         bb[0].x = (x-pivoAbs.x)*cosseno+(y-pivoAbs.y)*seno+pivoAbs.x;
         bb[0].y = (y-pivoAbs.y)*cosseno-(x-pivoAbs.x)*seno+pivoAbs.y;

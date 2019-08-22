@@ -1,5 +1,5 @@
 /********************************
-Vers�o 0.5.1 da Biblioteca Pig.h
+Versï¿½o 0.5.1 da Biblioteca Pig.h
 ********************************/
 
 #include "Bibliotecas_Basicas.h"
@@ -7,13 +7,13 @@ Vers�o 0.5.1 da Biblioteca Pig.h
 #include "PIG_Pack.h"
 
 /********************************
-/ Vari�veis Globais
+/ Variï¿½veis Globais
 /********************************/
 
 #include "PIG_Variaveis.h"
 
 /********************************
-/ Fun��es
+/ Funï¿½ï¿½es
 /********************************/
 
 #include "Victor.h"

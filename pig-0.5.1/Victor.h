@@ -1,7 +1,7 @@
 
 /********************************
-A funÁ„o AnguloEquivalente recebe um angulo qualquer e te retorna o equivalente positivo (de 0 a 360)
-Exemplo: AnguloEquivalente(720) retorna 0 pois 720 graus È equivalente a 0 graus no circulo trigonometrico;
+A fun√ß√£o AnguloEquivalente recebe um angulo qualquer e te retorna o equivalente positivo (de 0 a 360)
+Exemplo: AnguloEquivalente(720) retorna 0 pois 720 graus √© equivalente a 0 graus no circulo trigonometrico;
 ********************************/
 
 double AnguloEquivalente(double angulo)
@@ -17,9 +17,9 @@ double AnguloEquivalente(double angulo)
 }
 
 /********************************
-A funÁ„o AnguloEntrePontos retorna o angulo entre dois pontos.
+A fun√ß√£o AnguloEntrePontos retorna o angulo entre dois pontos.
 Exemplo: Se o segmento de reta que une os 2 pontos for paralelo ao eixo X
-o valor retornado ser· 0 ou 180, dependendo da ordem dos pontos na passagem dos parametros.
+o valor retornado ser√° 0 ou 180, dependendo da ordem dos pontos na passagem dos parametros.
 ********************************/
 
 double AnguloEntrePontos(double X1, double Y1, double X2, double Y2)
@@ -40,7 +40,7 @@ double AnguloEntrePontos(double X1, double Y1, double X2, double Y2)
 }
 
 /********************************
-A funÁ„o DistanciaEntrePontos retorna a distancia entre 2 pontos
+A fun√ß√£o DistanciaEntrePontos retorna a distancia entre 2 pontos
 ********************************/
 
 double DistanciaEntrePontos(double X1, double Y1, double X2, double Y2)
@@ -49,8 +49,8 @@ double DistanciaEntrePontos(double X1, double Y1, double X2, double Y2)
 }
 
 /********************************
-A funÁ„o NumeroAleatorio retorna um numero aleatorio com os intervalos incluidos,
-ou seja, os valores "Minimo" e "Maximo" tambÈm s„o possÌveis de se obter.
+A fun√ß√£o NumeroAleatorio retorna um numero aleatorio com os intervalos incluidos,
+ou seja, os valores "Minimo" e "Maximo" tamb√©m s√£o poss√≠veis de se obter.
 ********************************/
 
 int NumeroAleatorio(int Minimo, int Maximo)

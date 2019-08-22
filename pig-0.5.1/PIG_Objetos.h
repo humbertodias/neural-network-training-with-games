@@ -1,13 +1,13 @@
 /********************************
-Se��o de objetos
+Seï¿½ï¿½o de objetos
 ********************************/
 /********************************
-A fun��o SetAnguloObjetoo() � respons�vel pela angula��o de determinado objeto. A angula��o � calculada em sentido
-hor�rio a partir do eixo X (0 graus). O objeto ser� desenhado com a angula��o informada no pr�ximo comando
-DesenhaObjeto(). A detec��o de colis�o n�o funciona com objetos fora da angula��o padr�o (0 graus).
-Par�metros:
+A funï¿½ï¿½o SetAnguloObjetoo() ï¿½ responsï¿½vel pela angulaï¿½ï¿½o de determinado objeto. A angulaï¿½ï¿½o ï¿½ calculada em sentido
+horï¿½rio a partir do eixo X (0 graus). O objeto serï¿½ desenhado com a angulaï¿½ï¿½o informada no prï¿½ximo comando
+DesenhaObjeto(). A detecï¿½ï¿½o de colisï¿½o nï¿½o funciona com objetos fora da angulaï¿½ï¿½o padrï¿½o (0 graus).
+Parï¿½metros:
 id_objeto (entrada, passagem por valor): identificador do objeto.
-angulo (entrada, passagem por valor): valor para indicar a angula��o do objeto em graus.
+angulo (entrada, passagem por valor): valor para indicar a angulaï¿½ï¿½o do objeto em graus.
 ********************************/
 void DefinirAngulo(int id_objeto, float angulo)
 {
@@ -18,13 +18,13 @@ void DefinirAngulo(int id_objeto, float angulo)
 }
 
 /********************************
-A fun��o PegarAngulo() � respons�vel por recuperar o �ngulo de rota��o de determinado objeto. A angula��o � calculada em sentido
-hor�rio a partir do eixo X (0 graus). O objeto ser� desenhado com a angula��o informada no pr�ximo comando
-DesenhaObjeto(). A detec��o de colis�o n�o funciona com objetos fora da angula��o padr�o (0 graus).
-Par�metros:
+A funï¿½ï¿½o PegarAngulo() ï¿½ responsï¿½vel por recuperar o ï¿½ngulo de rotaï¿½ï¿½o de determinado objeto. A angulaï¿½ï¿½o ï¿½ calculada em sentido
+horï¿½rio a partir do eixo X (0 graus). O objeto serï¿½ desenhado com a angulaï¿½ï¿½o informada no prï¿½ximo comando
+DesenhaObjeto(). A detecï¿½ï¿½o de colisï¿½o nï¿½o funciona com objetos fora da angulaï¿½ï¿½o padrï¿½o (0 graus).
+Parï¿½metros:
 id_objeto (entrada, passagem por valor): identificador do objeto.
 Retorno:
-Retorna o valor do �ngulo em graus.
+Retorna o valor do ï¿½ngulo em graus.
 ********************************/
 float PegarAngulo(int id_objeto)
 {
@@ -32,15 +32,16 @@ float PegarAngulo(int id_objeto)
     {
         return CGerenciadorObjetos::GetAngulo(id_objeto);
     }
+    return 0;
 }
 
 /********************************
-A fun��o SetPivoObjeto() define um ponto (X,Y) em rela��o ao ponto (0,0) do objeto, sobre o qual o objeto ser�
-rotacionado quando a fun��o SetAnguloObjeto() for executada.
-Par�metros:
+A funï¿½ï¿½o SetPivoObjeto() define um ponto (X,Y) em relaï¿½ï¿½o ao ponto (0,0) do objeto, sobre o qual o objeto serï¿½
+rotacionado quando a funï¿½ï¿½o SetAnguloObjeto() for executada.
+Parï¿½metros:
 id_objeto (entrada, passagem por valor): identificador do objeto.
-posicaoX (entrada, passagem por valor): Valor da coordenada X do piv� em rela��o ao ponto (0,0) do objeto.
-posicaoY (entrada, passagem por valor): Valor da coordenada Y do piv� em rela��o ao ponto (0,0) do objeto.
+posicaoX (entrada, passagem por valor): Valor da coordenada X do pivï¿½ em relaï¿½ï¿½o ao ponto (0,0) do objeto.
+posicaoY (entrada, passagem por valor): Valor da coordenada Y do pivï¿½ em relaï¿½ï¿½o ao ponto (0,0) do objeto.
 ********************************/
 void DefinirPivo(int id_objeto,int posicaoX,int posicaoY)
 {
@@ -51,12 +52,12 @@ void DefinirPivo(int id_objeto,int posicaoX,int posicaoY)
 }
 
 /********************************
-A fun��o GetPivoObjeto() define um ponto (X,Y) em rela��o ao ponto (0,0) do objeto, sobre o qual o objeto ser�
-rotacionado quando a fun��o SetAnguloObjeto() for executada.
-Par�metros:
+A funï¿½ï¿½o GetPivoObjeto() define um ponto (X,Y) em relaï¿½ï¿½o ao ponto (0,0) do objeto, sobre o qual o objeto serï¿½
+rotacionado quando a funï¿½ï¿½o SetAnguloObjeto() for executada.
+Parï¿½metros:
 id_objeto (entrada, passagem por valor): identificador do objeto.
-posicaoX (sa�da, passagem por refer�ncia): Valor da coordenada X do piv� em rela��o ao ponto (0,0) do objeto.
-posicaoY (sa�da, passagem por refer�ncia): Valor da coordenada Y do piv� em rela��o ao ponto (0,0) do objeto.
+posicaoX (saï¿½da, passagem por referï¿½ncia): Valor da coordenada X do pivï¿½ em relaï¿½ï¿½o ao ponto (0,0) do objeto.
+posicaoY (saï¿½da, passagem por referï¿½ncia): Valor da coordenada Y do pivï¿½ em relaï¿½ï¿½o ao ponto (0,0) do objeto.
 ********************************/
 void PegarPivo(int id_objeto,int *posicaoX,int *posicaoY)
 {
@@ -67,11 +68,11 @@ void PegarPivo(int id_objeto,int *posicaoX,int *posicaoY)
 }
 
 /********************************
-A fun��o SetFlipObjeto() � respons�vel por virar o objeto, invertendo-o em alguma dire��o. O objeto somente ser�
-desenhado na nova orienta��o no pr�ximo comando DesenhaObjeto().
-Par�metros:
+A funï¿½ï¿½o SetFlipObjeto() ï¿½ responsï¿½vel por virar o objeto, invertendo-o em alguma direï¿½ï¿½o. O objeto somente serï¿½
+desenhado na nova orientaï¿½ï¿½o no prï¿½ximo comando DesenhaObjeto().
+Parï¿½metros:
 id_objeto (entrada, passagem por valor): identificador do objeto a ser virado.
-valor (entrada, passagem por valor): valor do tipo de Flip. Pode ser FLIP_NENHUM (nenhum tipo de invers�o),
+valor (entrada, passagem por valor): valor do tipo de Flip. Pode ser FLIP_NENHUM (nenhum tipo de inversï¿½o),
 FLIP_HORIZONTAL (inverte da esquerda para a direita), FLIP_VERTICAL (inverte de cima para baixo),
 ou FLIP_HORIZ_VERT (inverte da esquerda para direita e de cima para baixo).
 ********************************/
@@ -84,11 +85,11 @@ void DefinirFlip(int id_objeto,PIG_Flip valor)
 }
 
 /********************************
-A fun��o GetFlipObjeto() � respons�vel por recuperar o valor da manipula��o causada pela fun��o SetFlipObjeto().
-Par�metros:
+A funï¿½ï¿½o GetFlipObjeto() ï¿½ responsï¿½vel por recuperar o valor da manipulaï¿½ï¿½o causada pela funï¿½ï¿½o SetFlipObjeto().
+Parï¿½metros:
 id_objeto (entrada, passagem por valor): identificador do objeto a ser virado.
 Retorno:
-inteiro que indica o tipo de Flip. Pode ser FLIP_NENHUM (nenhum tipo de invers�o),
+inteiro que indica o tipo de Flip. Pode ser FLIP_NENHUM (nenhum tipo de inversï¿½o),
 FLIP_HORIZONTAL (inverte da esquerda para a direita), FLIP_VERTICAL (inverte de cima para baixo),
 ou FLIP_HORIZ_VERT (inverte da esquerda para direita e de cima para baixo).
 ********************************/
@@ -101,9 +102,9 @@ PIG_Flip PegarFlip(int id_objeto)
 }
 
 /********************************
-A fun��o SetDimensoesObjeto() � respons�vel por delimitar a altura e a largura do objeto que ser� desenhado na tela,
+A funï¿½ï¿½o SetDimensoesObjeto() ï¿½ responsï¿½vel por delimitar a altura e a largura do objeto que serï¿½ desenhado na tela,
 independentemente do tamanho original do arquivo de imagem.
-Par�metros:
+Parï¿½metros:
 id_objeto (entrada, passagem por valor): identificador do objeto.
 altura (entrada, passagem por valor): altura em pixels.
 largura (entrada, passagem por valor): largura em pixels.
@@ -117,12 +118,12 @@ void DefinirDimensoes(int id_objeto, int altura, int largura)
 }
 
 /********************************
-A fun��o GetDimensoesObjeto() � respons�vel por recuperar a altura e a largura da �rea a ser usada
+A funï¿½ï¿½o GetDimensoesObjeto() ï¿½ responsï¿½vel por recuperar a altura e a largura da ï¿½rea a ser usada
 para desenhar o objeto na tela. Em outras palavras, representa o tamanho atual do objeto.
-Par�metros:
+Parï¿½metros:
 id_objeto (entrada, passagem por valor): identificador do objeto.
-altura (sa�da, passagem por refer�ncia): altura atual em pixels do objeto.
-largura (sa�da, passagem por refer�ncia): largura atual em pixels do objeto.
+altura (saï¿½da, passagem por referï¿½ncia): altura atual em pixels do objeto.
+largura (saï¿½da, passagem por referï¿½ncia): largura atual em pixels do objeto.
 ********************************/
 void PegarDimensoes(int id_objeto, int *altura, int *largura)
 {
@@ -149,13 +150,13 @@ int PegarAltura(int id_objeto)
 
 }
 /********************************
-A fun��o GetDimensoesOriginaisObjeto() � respons�vel por recuperar a altura e a largura originais da imagem
-que foi usada para criar o objeto. Qualquer utiliza��o da fun��o SetDimensoesObjeto � ignorada para
-o c�lculo desta fun��o.
-Par�metros:
+A funï¿½ï¿½o GetDimensoesOriginaisObjeto() ï¿½ responsï¿½vel por recuperar a altura e a largura originais da imagem
+que foi usada para criar o objeto. Qualquer utilizaï¿½ï¿½o da funï¿½ï¿½o SetDimensoesObjeto ï¿½ ignorada para
+o cï¿½lculo desta funï¿½ï¿½o.
+Parï¿½metros:
 id_objeto (entrada, passagem por valor): identificador do objeto.
-altura (sa�da, passagem por refer�ncia): altura original em pixels do objeto.
-largura (sa�da, passagem por refer�ncia): largura original em pixels do objeto.
+altura (saï¿½da, passagem por referï¿½ncia): altura original em pixels do objeto.
+largura (saï¿½da, passagem por referï¿½ncia): largura original em pixels do objeto.
 ********************************/
 void PegarDimensoesOriginais(int id_objeto, int *altura, int *largura)
 {
@@ -166,11 +167,11 @@ void PegarDimensoesOriginais(int id_objeto, int *altura, int *largura)
 }
 
 /********************************
-A fun��o GetXYObjeto() � respons�vel recuperar o valor da posi��o (X,Y) do objeto de acordo com o sistema de coordenadas do jogo.
-Par�metros:
+A funï¿½ï¿½o GetXYObjeto() ï¿½ responsï¿½vel recuperar o valor da posiï¿½ï¿½o (X,Y) do objeto de acordo com o sistema de coordenadas do jogo.
+Parï¿½metros:
 id_objeto (entrada, passagem por valor): identificador do objeto.
-posicaoX (sa�da, passagem por referencia): indica a posicao no eixo X do objeto.
-posicaoY (sa�da, passagem por referencia): indica a posicao no eixo Y do objeto.
+posicaoX (saï¿½da, passagem por referencia): indica a posicao no eixo X do objeto.
+posicaoY (saï¿½da, passagem por referencia): indica a posicao no eixo Y do objeto.
 ********************************/
 void PegarXY(int id_objeto,int *posicaoX,int *posicaoY)
 {
@@ -220,13 +221,13 @@ int PegarCentroY(int id_objeto)
 }
 
 /********************************
-A fun��o DefineFrameObjeto() � respons�vel por delimitar o posicionamento dos pixels do arquivo de imagem que ser�o
-utilizados para representar o objeto na tela. Desta forma, nem toda a imagem ser� automaticamente utilizada para
-representar o objeto. O sistema de coordenadas deve ser o padr�o dos arquivos de imagem, com o eixo Y aumentando para baixo.
-Par�metros:
+A funï¿½ï¿½o DefineFrameObjeto() ï¿½ responsï¿½vel por delimitar o posicionamento dos pixels do arquivo de imagem que serï¿½o
+utilizados para representar o objeto na tela. Desta forma, nem toda a imagem serï¿½ automaticamente utilizada para
+representar o objeto. O sistema de coordenadas deve ser o padrï¿½o dos arquivos de imagem, com o eixo Y aumentando para baixo.
+Parï¿½metros:
 id_objeto (entrada, passagem por valor): identificador do objeto a ser desenhado.
-xBitmap (entrada, passagem por valor): indica a posi��o de eixo X onde come�a o frame.
-yBitmap (entrada, passagem por valor): indica a posi��o de eixo Y onde come�a o frame. Neste caso, o eixo Y aumenta para baixo.
+xBitmap (entrada, passagem por valor): indica a posiï¿½ï¿½o de eixo X onde comeï¿½a o frame.
+yBitmap (entrada, passagem por valor): indica a posiï¿½ï¿½o de eixo Y onde comeï¿½a o frame. Neste caso, o eixo Y aumenta para baixo.
 altura (entrada, passagem por valor): altura em pixels do frame.
 largura (entrada, passagem por valor): largura em pixels do frame.
 ********************************/
@@ -247,10 +248,10 @@ void MudarFrameObjeto(int id_objeto, char* nomeArquivo)
 }
 
 /********************************
-A fun��o SetColoracaoObjeto() � respons�vel por mesclar uma determinada cor com os pixels do arquivo de imagem.
-Ap�s a modifica��o, todos os desenhos deste objeto ser�o mostrados j� com a mesclagem definida.
-Para voltar ao padr�o original de pixels, deve-se chamar a fun��o, passando a cor branca (255,255,255).
-Par�metros:
+A funï¿½ï¿½o SetColoracaoObjeto() ï¿½ responsï¿½vel por mesclar uma determinada cor com os pixels do arquivo de imagem.
+Apï¿½s a modificaï¿½ï¿½o, todos os desenhos deste objeto serï¿½o mostrados jï¿½ com a mesclagem definida.
+Para voltar ao padrï¿½o original de pixels, deve-se chamar a funï¿½ï¿½o, passando a cor branca (255,255,255).
+Parï¿½metros:
 id_objeto (entrada, passagem por valor): identificador do objeto a ser desenhado.
 cor (entrada,passagem por valor): cor do sistema RGB utilizada para mesclagem com o arquivo de imagem
 ********************************/
@@ -263,11 +264,11 @@ void DefinirColoracao(int id_objeto,PIG_Cor cor)
 }
 
 /********************************
-A fun��o SetOpacidadeObjeto() � respons�vel por modificar o n�vel de opacidade do objeto.
-O n�vel de opacidade varia de 0-255, sendo 0 totalmente transparente e 255 totalmente opaco.
-Par�metros:
+A funï¿½ï¿½o SetOpacidadeObjeto() ï¿½ responsï¿½vel por modificar o nï¿½vel de opacidade do objeto.
+O nï¿½vel de opacidade varia de 0-255, sendo 0 totalmente transparente e 255 totalmente opaco.
+Parï¿½metros:
 id_objeto (entrada, passagem por valor): identificador do objeto.
-valor (entrada,passagem por valor): n�vel de opacidade do objeto na faixa 0-255.
+valor (entrada,passagem por valor): nï¿½vel de opacidade do objeto na faixa 0-255.
 ********************************/
 void DefinirOpacidade(int id_objeto,int valor)
 {
@@ -278,9 +279,9 @@ void DefinirOpacidade(int id_objeto,int valor)
 }
 
 /********************************
-A fun��o DesenhaObjeto() � respons�vel por desenhar um objeto na tela ou no Renderizador Offscreen. O objeto ser� desenhado de acordo com todas as defini��es
-de posi��o e �ngulo informado at� o momento. Al�m disso, se o objeto estiver virado (flipping), isso tamb�m ser� levado em considera��o.
-Par�metros:
+A funï¿½ï¿½o DesenhaObjeto() ï¿½ responsï¿½vel por desenhar um objeto na tela ou no Renderizador Offscreen. O objeto serï¿½ desenhado de acordo com todas as definiï¿½ï¿½es
+de posiï¿½ï¿½o e ï¿½ngulo informado atï¿½ o momento. Alï¿½m disso, se o objeto estiver virado (flipping), isso tambï¿½m serï¿½ levado em consideraï¿½ï¿½o.
+Parï¿½metros:
 id_objeto (entrada, passagem por valor): identificador do objeto a ser desenhado.
 offScreen (entrada, passagem por valor): indica se o objeto deve ser desenhado no Renderizador Offscreen.
 ********************************/
@@ -310,13 +311,13 @@ void DesenharSprite(int id_sprite, int X, int Y, int Largura, int Altura, float 
 }
 
 /********************************
-A fun��o TestaColisaoObjetos() � respons�vel por testar se dois objetos se colidiram ou n�o, ao passar
-os identificadores dos objetos por par�metro.
-Par�metros:
+A funï¿½ï¿½o TestaColisaoObjetos() ï¿½ responsï¿½vel por testar se dois objetos se colidiram ou nï¿½o, ao passar
+os identificadores dos objetos por parï¿½metro.
+Parï¿½metros:
 id_objeto1 (entrada, passagem por valor): identificador do primeiro objeto.
 id_objeto2 (entrada, passagem por valor): identificador do segundo objeto.
 Retorno:
-Inteiro indicando se houve colis�o (valor diferente de zero) ou n�o (valor igual a 0, zero).
+Inteiro indicando se houve colisï¿½o (valor diferente de zero) ou nï¿½o (valor igual a 0, zero).
 ********************************/
 int TestarColisaoObjetos(int id_objeto1,int id_objeto2)
 {
@@ -453,11 +454,11 @@ int VerificarColisao(int IDUnit1, int IDUnit2)
 
 
 /********************************
-A fun��o MoveObjeto() � respons�vel por movimentar um determinado obeto para uma nova posi��o informada.
-Par�metros:
+A funï¿½ï¿½o MoveObjeto() ï¿½ responsï¿½vel por movimentar um determinado obeto para uma nova posiï¿½ï¿½o informada.
+Parï¿½metros:
 id_objeto (entrada, passagem por valor): identificador do objeto a ser movido.
-posicaoX (entrada, passagem por valor): Valor da coordenada X da tela onde o usu�rio deseja reposicionar o objeto.
-posicaoY (entrada, passagem por valor): Valor da coordenada Y da tela onde o usu�rio deseja reposicionar o objeto.
+posicaoX (entrada, passagem por valor): Valor da coordenada X da tela onde o usuï¿½rio deseja reposicionar o objeto.
+posicaoY (entrada, passagem por valor): Valor da coordenada Y da tela onde o usuï¿½rio deseja reposicionar o objeto.
 ********************************/
 
 void MoverObjeto(int id_objeto,int posicaoX,int posicaoY)
@@ -493,14 +494,14 @@ void MoverOffset(int id_objeto, float distancia, float angulo)
 }
 
 /********************************
-A fun��o CriaObjeto() � respons�vel por criar um objeto. Qualquer objeto que for necess�rio,
-pode ser criado atrav�s dessa fun��o. O objeto ainda n�o ser� desenhado, apenas criado dentro do jogo.
-Par�metros:
-nomeArquivo (entrada, passagem por refer�ncia): string que informa o nome do arquivo da imagem do objeto a ser criado.
-retiraFundo (entrada, passagem por valor): inteiro que indica se o fundo da imagem deve ser retirado ou n�o ao ler o arquivo em quest�o. O valor padr�o � 1, indicando que o fundo deve ser retirado.
-opacidade (entrada,passagem por valor): n�vel de opacidade do objeto na faixa 0-255. O valor padr�o � 255, indicando n�vel m�ximo de opacidade.
+A funï¿½ï¿½o CriaObjeto() ï¿½ responsï¿½vel por criar um objeto. Qualquer objeto que for necessï¿½rio,
+pode ser criado atravï¿½s dessa funï¿½ï¿½o. O objeto ainda nï¿½o serï¿½ desenhado, apenas criado dentro do jogo.
+Parï¿½metros:
+nomeArquivo (entrada, passagem por referï¿½ncia): string que informa o nome do arquivo da imagem do objeto a ser criado.
+retiraFundo (entrada, passagem por valor): inteiro que indica se o fundo da imagem deve ser retirado ou nï¿½o ao ler o arquivo em questï¿½o. O valor padrï¿½o ï¿½ 1, indicando que o fundo deve ser retirado.
+opacidade (entrada,passagem por valor): nï¿½vel de opacidade do objeto na faixa 0-255. O valor padrï¿½o ï¿½ 255, indicando nï¿½vel mï¿½ximo de opacidade.
 Retorno:
-inteiro que representa o identificador �nico do objeto. Todas as opera��es subsequentes com este objeto dever�o receber este identificador como par�metro.
+inteiro que representa o identificador ï¿½nico do objeto. Todas as operaï¿½ï¿½es subsequentes com este objeto deverï¿½o receber este identificador como parï¿½metro.
 ********************************/
 int CriarObjeto(char* nomeArquivo, int X, int Y, int Altura, int Largura)
 {
@@ -540,9 +541,9 @@ int PIG_CriarVetor(char* nomeArquivo, int X, int Y, int Tamanho)
 
 
 /********************************
-A fun��o DestroiObjeto() � respons�vel por eliminar o objeto em quest�o do jogo.
-Par�metros:
-id_objeto (entrada, passagem por valor): identificador do objeto a ser exclu�do.
+A funï¿½ï¿½o DestroiObjeto() ï¿½ responsï¿½vel por eliminar o objeto em questï¿½o do jogo.
+Parï¿½metros:
+id_objeto (entrada, passagem por valor): identificador do objeto a ser excluï¿½do.
 ********************************/
 void DestruirObjeto(int id_objeto)
 {

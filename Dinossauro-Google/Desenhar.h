@@ -52,7 +52,7 @@ void DesenharRedeNeural(int X, int Y, int Largura, int Altura)
     sprintf(String,"[Obstáculo] Comprimento: %.2f", Entrada[3]);
     EscreverEsquerda(String, X + 15, YOrigem - 3*EscalaAltura -5, Fonte);
 
-    sprintf(String,"[Cen�rio] Velocidade: %.2f", Entrada[4]);
+    sprintf(String,"[Cenário] Velocidade: %.2f", Entrada[4]);
     EscreverEsquerda(String, X + 15, YOrigem - 4*EscalaAltura -5, Fonte);
 
     sprintf(String,"[Dinossauro] Altura: %.2f", Entrada[5]);
@@ -68,7 +68,7 @@ void DesenharRedeNeural(int X, int Y, int Largura, int Altura)
 
     if(DINO_BRAIN_QTD_OUTPUT == 3)
     {
-        sprintf(String,"Avi�o");
+        sprintf(String,"Aviao");
         EscreverEsquerda(String, X + Largura - 100, temp - 2*EscalaAltura -5, Fonte);
     }
 
@@ -471,7 +471,7 @@ void Desenhar()
 
         char String[1000];
 
-        sprintf(String,"Geracao: %d", Geracao);
+        sprintf(String,"Geraçao: %d", Geracao);
         EscreverEsquerda(String, 20, BASE, Fonte);
 
         sprintf(String,"Clock: %f segundo", Periodo);
@@ -480,13 +480,13 @@ void Desenhar()
         sprintf(String,"Velocidade: %.2f (%.0f pixels por segundo)", fabs(VELOCIDADE), fabs(VELOCIDADE)/Periodo);
         EscreverEsquerda(String, 20, BASE-40, Fonte);
 
-        sprintf(String,"Distancia Recorde:");
+        sprintf(String,"Distância Recorde:");
         EscreverEsquerda(String, 20, BASE-60, Fonte);
 
         sprintf(String,"%.0f pixels", DistanciaRecorde);
         EscreverEsquerda(String, 150, BASE-60, FonteAzul);
 
-        sprintf(String,"Distancia Atual:");
+        sprintf(String,"Distância Atual:");
         EscreverEsquerda(String, 20, BASE-80, Fonte);
 
         sprintf(String,"%.0f pixels", DistanciaAtual);

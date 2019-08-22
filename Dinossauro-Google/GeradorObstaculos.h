@@ -63,7 +63,7 @@ void GerarListaObstaculosTreinoSemEspinho()
     obstaculosModelo[0].Y = 15;
     obstaculosModelo[0].Tipo = 0;
 
-    for(int i=1; i<10000; i++)
+    for(int i=1; i<POPULACAO_TAMANHO; i++)
     {
         if(i < 600)
         {
@@ -99,11 +99,11 @@ void GerarListaObstaculosTreinoSemEspinho()
     }
 
     FILE* f = fopen("obstaculos.dat","wb");
-    fwrite(obstaculosModelo, 10000, sizeof(Obstaculo), f);
+    fwrite(obstaculosModelo, POPULACAO_TAMANHO, sizeof(Obstaculo), f);
     fclose(f);
 
     f = fopen("obstaculos.txt","w");
-    for(int i=0; i<10000; i++)
+    for(int i=0; i<POPULACAO_TAMANHO; i++)
     {
         fprintf(f,"%d %f %f\n", obstaculosModelo[i].Tipo, obstaculosModelo[i].X, obstaculosModelo[i].Y);
     }
@@ -115,7 +115,7 @@ void GerarListaObstaculosTreinoSemEspinho()
 void CarregarListaObstaculos()
 {
     FILE* f = fopen("obstaculos.dat","rb");
-    fread(obstaculosModelo, 20000, sizeof(Obstaculo), f);
+    fread(obstaculosModelo, POPULACAO_TAMANHO, sizeof(Obstaculo), f);
     fclose(f);
 }
 

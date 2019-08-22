@@ -40,9 +40,12 @@ public:
 
     int RetiraLivre(){
         Elem *aux=livres;
+        if(livres){
         livres = livres->prox;
         usados[aux->valor] = 1;
         return aux->valor;
+        }
+        return 0;
     }
 
     void DevolveUsado(int valor){
