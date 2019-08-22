@@ -498,7 +498,7 @@ void Desenhar()
 
         char String[1000];
 
-        sprintf(String,"Gera��o: %d", Geracao);
+        sprintf(String,"Geracao: %d", Geracao);
         EscreverEsquerda(String, X, BASE, FontePretaGrande);
 
         sprintf(String,"Clock: %f segundo", Periodo);

@@ -1,5 +1,5 @@
-CC=clang++
-#CC=g++
+#CC=clang++
+CC=g++
 
 all:
 	$(CC) main.cpp -g -I../pig -I/usr/include/SDL2 -I. \

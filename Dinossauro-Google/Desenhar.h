@@ -471,7 +471,7 @@ void Desenhar()
 
         char String[1000];
 
-        sprintf(String,"Geraçao: %d", Geracao);
+        sprintf(String,"Geracao: %d", Geracao);
         EscreverEsquerda(String, 20, BASE, Fonte);
 
         sprintf(String,"Clock: %f segundo", Periodo);
@@ -480,13 +480,13 @@ void Desenhar()
         sprintf(String,"Velocidade: %.2f (%.0f pixels por segundo)", fabs(VELOCIDADE), fabs(VELOCIDADE)/Periodo);
         EscreverEsquerda(String, 20, BASE-40, Fonte);
 
-        sprintf(String,"Distância Recorde:");
+        sprintf(String,"Distancia Recorde:");
         EscreverEsquerda(String, 20, BASE-60, Fonte);
 
         sprintf(String,"%.0f pixels", DistanciaRecorde);
         EscreverEsquerda(String, 150, BASE-60, FonteAzul);
 
-        sprintf(String,"Distância Atual:");
+        sprintf(String,"Distancia Atual:");
         EscreverEsquerda(String, 20, BASE-80, Fonte);
 
         sprintf(String,"%.0f pixels", DistanciaAtual);
