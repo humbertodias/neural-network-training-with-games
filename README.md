@@ -49,11 +49,6 @@ make run-dino
 
 ![](doc/dino.png)
 
-
-* missig specific PIG version
-
-![](doc/dino.png)
-
 # Source
 
 * [Dinossauro-Google](https://github.com/JVictorDias/Dinossauro-Google)
