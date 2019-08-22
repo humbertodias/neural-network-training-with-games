@@ -257,7 +257,7 @@ void DesenharRedeNeural(int X, int Y, int Largura, int Altura)
     sprintf(String,"Acelerar");
     EscreverEsquerda(String, X + Largura - 130, temp - 0*EscalaAltura -5 - DESLOCAMENTO_NEURONIOS, Fonte);
 
-    sprintf(String,"Ré");
+    sprintf(String,"Re");
     EscreverEsquerda(String, X + Largura - 130, temp - 1*EscalaAltura -5 - DESLOCAMENTO_NEURONIOS, Fonte);
 
     sprintf(String,"Virar Esquerda");

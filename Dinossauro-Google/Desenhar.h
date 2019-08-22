@@ -40,19 +40,19 @@ void DesenharRedeNeural(int X, int Y, int Largura, int Altura)
     double EscalaAltura = ((double)AlturaPintura)/(double)(qtdNeuroEscondidas-1);
     double EscalaLargura = ((double)LarguraPintura-475)/(double)(qtdEscondidas+1);
 
-    sprintf(String,"[Obstáculo] Distancia: %.2f", Entrada[0]);
+    sprintf(String,"[Obstaculo] Distancia: %.2f", Entrada[0]);
     EscreverEsquerda(String, X + 15, YOrigem - 0*EscalaAltura -5, Fonte);
 
-    sprintf(String,"[Obstáculo] Largura: %.2f", Entrada[1]);
+    sprintf(String,"[Obstaculo] Largura: %.2f", Entrada[1]);
     EscreverEsquerda(String, X + 15, YOrigem - 1*EscalaAltura -5, Fonte);
 
-    sprintf(String,"[Obstáculo] Altura: %.2f", Entrada[2]);
+    sprintf(String,"[Obstaculo] Altura: %.2f", Entrada[2]);
     EscreverEsquerda(String, X + 15, YOrigem - 2*EscalaAltura -5, Fonte);
 
-    sprintf(String,"[Obstáculo] Comprimento: %.2f", Entrada[3]);
+    sprintf(String,"[Obstaculo] Comprimento: %.2f", Entrada[3]);
     EscreverEsquerda(String, X + 15, YOrigem - 3*EscalaAltura -5, Fonte);
 
-    sprintf(String,"[Cenário] Velocidade: %.2f", Entrada[4]);
+    sprintf(String,"[Cenario] Velocidade: %.2f", Entrada[4]);
     EscreverEsquerda(String, X + 15, YOrigem - 4*EscalaAltura -5, Fonte);
 
     sprintf(String,"[Dinossauro] Altura: %.2f", Entrada[5]);

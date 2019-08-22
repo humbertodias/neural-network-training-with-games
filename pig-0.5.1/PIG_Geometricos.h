@@ -21,10 +21,17 @@ void DesenharLinhas(SDL_Point* points, int n, PIG_Cor cor)
     jogo->DesenhaLinhas(points,n,cor);
 }
 
+void DesenharPonto(float x, float y, PIG_Cor cor, int Tamanho)
+{
+    jogo->DesenharPonto(x,y,cor,Tamanho);
+}
+
+// FIX
 void DesenharPonto(float x, float y, PIG_Cor cor)
 {
-    jogo->DesenharPonto(x,y,cor);
+    jogo->DesenharPonto(x,y,cor,0);
 }
+
 
 void DesenharPontos(SDL_Point *points, int count, PIG_Cor cor)
 {

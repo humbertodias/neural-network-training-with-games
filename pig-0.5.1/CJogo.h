@@ -238,6 +238,18 @@ public:
                 //SDL_RenderDrawPoint(renderer,x+i,ALT_TELA-y+j);
     }
 
+    void DesenharPonto(int x, int y, PIG_Cor cor, int tam)
+    {
+        int i, j;
+
+        SDL_SetRenderDrawColor(renderer,cor.r,cor.g,cor.b,255);
+        SDL_RenderDrawPoint(renderer,x,ALT_TELA-y);
+        for(i=0;i<tam;i++)
+            for(j=0;j<tam;j++)
+                SDL_RenderDrawPoint(renderer,x+i,ALT_TELA-y+j);
+    }
+
+
     void DesenharPontos(const SDL_Point *points, int count, PIG_Cor cor)
     {
         SDL_SetRenderDrawColor(renderer,cor.r,cor.g,cor.b,255);

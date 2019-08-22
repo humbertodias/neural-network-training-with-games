@@ -48,6 +48,8 @@ O tipo PIG_Cor é um struct formado por 4 campos: r,g,b,a correspondendo aos val
 #define LARANJA         ((PIG_Cor){255,128,0,255})
 #define CIANO           ((PIG_Cor){0,255,255,255})
 #define CINZA           ((PIG_Cor){128,128,128,255})
+#define CINZA_CLARO     ((PIG_Cor){224,224,224,255})
+
 #define CORESIGUAIS(x,y)(((PIG_Cor)x).r==((PIG_Cor)y).r && ((PIG_Cor)x).g==((PIG_Cor)y).g && ((PIG_Cor)x).b==((PIG_Cor)y).b)
 
 

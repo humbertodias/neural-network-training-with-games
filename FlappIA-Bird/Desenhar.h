@@ -42,16 +42,16 @@ void DesenharRedeNeural(int X, int Y, int Largura, int Altura)
 
     if(PIG_meuTeclado[TECLA_BARRAESPACO])
     {
-        sprintf(String,"[Obst�culo] Distancia Horizontal: %.2f", Entrada[0]);
+        sprintf(String,"[Obstaculo] Distancia Horizontal: %.2f", Entrada[0]);
         EscreverEsquerda(String, X + 15, YOrigem - 0*EscalaAltura -5, Fonte);
 
-        sprintf(String,"[Obstáculo] Distancia Vertical: %.2f", Entrada[1]);
+        sprintf(String,"[Obstaculo] Distancia Vertical: %.2f", Entrada[1]);
         EscreverEsquerda(String, X + 15, YOrigem - 1*EscalaAltura -5, Fonte);
 
-        sprintf(String,"[Obstáculo] Velocidade: %.2f", Entrada[2]);
+        sprintf(String,"[Obstaculo] Velocidade: %.2f", Entrada[2]);
         EscreverEsquerda(String, X + 15, YOrigem - 2*EscalaAltura -5, Fonte);
 
-        sprintf(String,"[Obstáculo] Abertura: %.2f", Entrada[3]);
+        sprintf(String,"[Obstaculo] Abertura: %.2f", Entrada[3]);
         EscreverEsquerda(String, X + 15, YOrigem - 3*EscalaAltura -5, Fonte);
     }
 
@@ -341,7 +341,9 @@ void DesenharGrafico(int X, int Y, double Largura, int Altura)
 }
 
 void DesenharObstaculos()
-{
+{   
+    // FIX
+    int fixH = 450;
     for(int i=0; i<QTD_OBSTACULOS; i++)
     {
         if(canoSuperior[i].Y - (canoInferior[i].Y + SpriteCano.Altura) <= 75)
@@ -351,14 +353,14 @@ void DesenharObstaculos()
 
         DesenharSprite(canoSuperior[i].sprite->Objeto,
                        canoSuperior[i].X,
-                       canoSuperior[i].Y,
+                       canoSuperior[i].Y+fixH,
                        canoSuperior[i].sprite->Largura,
                        canoSuperior[i].sprite->Altura,
                        0, 1);
 
         DesenharSprite(canoInferior[i].sprite->Objeto,
                        canoInferior[i].X,
-                       canoInferior[i].Y,
+                       canoInferior[i].Y+fixH,
                        canoInferior[i].sprite->Largura,
                        canoInferior[i].sprite->Altura,
                        180, 1);
