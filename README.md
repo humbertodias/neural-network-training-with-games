@@ -20,7 +20,7 @@ sudo apt install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libwebp-dev li
 # How to test
 
 
-* Flappy-Bird
+## Flappy-Bird
 
 ```
 make run-flappy
@@ -33,7 +33,7 @@ make run-flappy
 |space | info |
 
 
-* Deep-Cars
+## Deep-Cars
 
 ```
 make run-cars
@@ -42,7 +42,7 @@ make run-cars
 ![](doc/cars.png)
 
 
-* Dinossauro
+## Dinossauro
 
 ```
 make run-dino
@@ -51,7 +51,7 @@ make run-dino
 ![](doc/dino.png)
 
 
-* Tecelao
+## Tecelao
 
 ```
 make run-tecelao
