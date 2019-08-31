@@ -49,6 +49,37 @@ make run-dino
 
 ![](doc/dino.png)
 
+
+Tecelao
+
+```
+make run-tecelao
+```
+
+Parameters
+
+```
+Digite o nome da sua imagem (exemplo: teste.bmp): iron.bmp
+Digite a quantidade de pregos (maximo 1000): 1000
+Digite a quantidade de linhas: 18000
+Digite a taxa de reducao do pixel (255 retira o pixel todo, 0 nao retira nada): 255
+```
+Left mouse click + ENTER to start
+
+
+Commands
+
+
+|key|Action|
+|---|------|
+|a  |Left  |
+|d  |Right |
+|w  |Up    |
+|s  |Down  |
+
+
+![](doc/tecelao.png)
+
 # Source
 
 * [Dinossauro-Google](https://github.com/JVictorDias/Dinossauro-Google)
@@ -56,3 +87,5 @@ make run-dino
 * [FlappIA-Bird](https://github.com/JVictorDias/FlappIA-Bird)
 
 * [Depp-Cars](https://github.com/JVictorDias/DeepCars)
+
+* [Algoritmo-Tecelao](https://github.com/JVictorDias/AlgoritmoTecelao)

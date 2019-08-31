@@ -516,6 +516,46 @@ int CriarObjeto(char* nomeArquivo, int X, int Y, int Altura, int Largura)
     return Objt;
 }
 
+/********************************
+A função CriaObjeto() é responsável por criar um objeto. Qualquer objeto que for necessário,
+pode ser criado através dessa função. O objeto ainda não será desenhado, apenas criado dentro do jogo.
+Parâmetros:
+nomeArquivo (entrada, passagem por referência): string que informa o nome do arquivo da imagem do objeto a ser criado.
+retiraFundo (entrada, passagem por valor): inteiro que indica se o fundo da imagem deve ser retirado ou não ao ler o arquivo em questão. O valor padrão é 1, indicando que o fundo deve ser retirado.
+opacidade (entrada,passagem por valor): nível de opacidade do objeto na faixa 0-255. O valor padrão é 255, indicando nível máximo de opacidade.
+Retorno:
+inteiro que representa o identificador único do objeto. Todas as operações subsequentes com este objeto deverão receber este identificador como parâmetro.
+********************************/
+int criarObjeto(char* nomeArquivo, int X, int Y, int Altura, int Largura, int retiraFundo)
+{
+    int Objt;
+
+    Objt = CGerenciadorObjetos::CriaObjeto(0,0,nomeArquivo,retiraFundo,255);
+    PIG_ExistenciaObjeto[Objt] = 1;
+    DefinirDimensoes(Objt, Altura, Largura);
+    DefinirPivo(Objt,Largura/2,Altura/2);
+    DefinirAngulo(Objt,0);
+    MoverCentro(Objt,X,Y);
+    return Objt;
+}
+
+
+int criarObjetoTamanhoOriginal(char* nomeArquivo, int X, int Y, int retiraFundo)
+{
+    int Objt;
+
+    Objt = CGerenciadorObjetos::CriaObjeto(0,0,nomeArquivo,retiraFundo,255);
+    PIG_ExistenciaObjeto[Objt] = 1;
+
+    int Altura = PegarAltura(Objt);
+    int Largura = PegarLargura(Objt);
+    DefinirPivo(Objt,Largura/2,Altura/2);
+    DefinirAngulo(Objt,0);
+    MoverCentro(Objt,X,Y);
+    return Objt;
+}
+
+
 int CriarSprite(char* nomeArquivo, int retiraFundo)
 {
     int Objt;
