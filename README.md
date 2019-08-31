@@ -20,19 +20,20 @@ sudo apt install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libwebp-dev li
 # How to test
 
 
-Flappy-Bird
+* Flappy-Bird
 
 ```
 make run-flappy
 ```
 ![](doc/flappy.png)
 
-Key | Action
-esc | Pause
-space | info 
+|key|Action|
+|---|------|
+|esc | Pause |
+|space | info |
 
 
-Deep-Cars
+* Deep-Cars
 
 ```
 make run-cars
@@ -41,7 +42,7 @@ make run-cars
 ![](doc/cars.png)
 
 
-Dinossauro
+* Dinossauro
 
 ```
 make run-dino
@@ -50,18 +51,18 @@ make run-dino
 ![](doc/dino.png)
 
 
-Tecelao
+* Tecelao
 
 ```
 make run-tecelao
 ```
 
-Parameters
+Parameters (input.txt)
 
 ```
 Digite o nome da sua imagem (exemplo: teste.bmp): iron.bmp
 Digite a quantidade de pregos (maximo 1000): 1000
-Digite a quantidade de linhas: 18000
+Digite a quantidade de linhas: 1800
 Digite a taxa de reducao do pixel (255 retira o pixel todo, 0 nao retira nada): 255
 ```
 Left mouse click + ENTER to start
@@ -69,13 +70,16 @@ Left mouse click + ENTER to start
 
 Commands
 
-
 |key|Action|
 |---|------|
 |a  |Left  |
 |d  |Right |
 |w  |Up    |
 |s  |Down  |
+|q  |Zoom In|
+|e  |Zoom Out|
+|z  |ReDraw|
+|ENTER|Start|
 
 
 ![](doc/tecelao.png)

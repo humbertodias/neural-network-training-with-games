@@ -8,7 +8,7 @@ run-cars:
 	cd DeepCars && make && ./main
 
 run-tecelao:
-	cd AlgoritmoTecelao && make && ./main
+	cd AlgoritmoTecelao && make && ./main < input.txt
 
 clean:
 	cd Dinossauro-Google && $(MAKE) clean
