@@ -1,3 +1,9 @@
+all:
+	cd Dinossauro-Google && $(MAKE)
+	cd FlappIA-Bird && $(MAKE)
+	cd DeepCars && $(MAKE)
+	cd AlgoritmoTecelao && $(MAKE)
+
 run-dino:
 	cd Dinossauro-Google && make && ./main
 
