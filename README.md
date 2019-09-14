@@ -13,8 +13,14 @@ Credits [JVictorDias](https://github.com/JVictorDias)
 * make
 * g++/clang++
 
+Linux
 ```sh
 sudo apt install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libwebp-dev libgsl-dev
+```
+
+Mac
+```sh
+sudo brew install sdl2 sdl2-ttf sdl2-image gsl
 ```
 
 # How to test
