@@ -1,15 +1,20 @@
-#CC=clang++
-CC=g++
+UNAME := $(shell uname)
+
+ifeq ($(UNAME),Darvin)
+	CC=clang++
+else
+	CC=g++
+endif
+
+CXXFLAGS := -I../pig
+CXXFLAGS += `sdl2-config --cflags --libs`
+CXXFLAGS += -lSDL2 -lSDL2_ttf -lSDL2_image -lpthread -lwebp
 
 all:
-	$(CC) main.cpp -g -I../pig -I/usr/include/SDL2 -I. \
-	-lSDL2 -lSDL2_ttf -lSDL2_image -lpthread -lwebp  \
-	-o main
+	$(CC) main.cpp -g $(CXXFLAGS) -o main
 
 gerador:
-	$(CC) gerador.cpp -g -I../pig -I/usr/include/SDL2 -I. \
-	-lSDL2 -lSDL2_ttf -lSDL2_image -lpthread -lwebp  \
-	-o gerador
+	$(CC) main.cpp -g $(CXXFLAGS) -o gerador
 
 png-fix:
 	find imagens -type f -iname '*.png' -exec pngcrush -ow -rem allb -reduce {} \; 
@@ -21,4 +26,4 @@ valgrind:
 	valgrind --track-origins=yes --leak-check=yes -v --leak-check=full --show-reachable=yes ./main
 
 clean:
-	rm -f main gerador
+	rm -rf main gerador *.dSYM 

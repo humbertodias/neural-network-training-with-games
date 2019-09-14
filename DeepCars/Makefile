@@ -1,11 +1,18 @@
-#CC=clang++
-CC=g++
+UNAME := $(shell uname)
+
+ifeq ($(UNAME),Darvin)
+	CC=clang++
+else
+	CC=g++
+endif
+
+CXXFLAGS := -I../pig
+CXXFLAGS += `sdl2-config --cflags --libs`
+CXXFLAGS += -lSDL2 -lSDL2_ttf -lSDL2_image -lpthread -lwebp
+CXXFLAGS += `gsl-config --cflags --libs`
 
 all:
-	$(CC) main.cpp -I../pig -I/usr/include/SDL2 -I. \
-	-lSDL2 -lSDL2_ttf -lSDL2_image -lpthread -lwebp  \
-	-I/usr/include/gsl -lgsl -lgslcblas -lm \
-	-o main
+	$(CC) main.cpp -g $(CXXFLAGS) -o main
 
 png-fix:
 	find imagens -type f -iname '*.png' -exec pngcrush -ow -rem allb -reduce {} \; 
@@ -17,4 +24,4 @@ dep:
 	sudo apt install libgsl-dev
 
 clean:
-	rm -f main
+	rm -rf main main.dSYM
