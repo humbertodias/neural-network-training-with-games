@@ -48,6 +48,11 @@ double DistanciaEntrePontos(double X1, double Y1, double X2, double Y2)
     return sqrt((X1-X2)*(X1-X2) + (Y1-Y2)*(Y1-Y2));
 }
 
+float DistanciaEntrePontos3D(float X1, float Y1, float Z1, float X2, float Y2, float Z2)
+{
+    return sqrt((X1-X2)*(X1-X2) + (Y1-Y2)*(Y1-Y2) + (Z1-Z2)*(Z1-Z2));
+}
+
 /********************************
 A função NumeroAleatorio retorna um numero aleatorio com os intervalos incluidos,
 ou seja, os valores "Minimo" e "Maximo" também são possíveis de se obter.

@@ -1,8 +1,12 @@
 all:
+	cd ParticulasGravitacionais3D && $(MAKE)
 	cd Dinossauro-Google && $(MAKE)
 	cd FlappIA-Bird && $(MAKE)
 	cd DeepCars && $(MAKE)
 	cd AlgoritmoTecelao && $(MAKE)
+
+run-particulas:
+	cd ParticulasGravitacionais3D && make && ./main
 
 run-dino:
 	cd Dinossauro-Google && make && ./main
@@ -17,6 +21,7 @@ run-tecelao:
 	cd AlgoritmoTecelao && make && ./main < input.txt
 
 clean:
+	cd ParticulasGravitacionais3D && $(MAKE) clean
 	cd Dinossauro-Google && $(MAKE) clean
 	cd FlappIA-Bird && $(MAKE) clean
 	cd DeepCars && $(MAKE) clean 

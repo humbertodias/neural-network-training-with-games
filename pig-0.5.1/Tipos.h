@@ -1,4 +1,3 @@
-
 typedef struct charger
 {
     int Obj;
@@ -28,19 +27,19 @@ typedef struct charger
 
 }   Charger;
 
-typedef struct animation
-{
-    int X;
-    int Y;
-    int Largura;
-    int Altura;
-    float Angulo;
+// typedef struct animation
+// {
+//     int X;
+//     int Y;
+//     int Largura;
+//     int Altura;
+//     float Angulo;
 
-    int Ativada;
-    int FrameAtual;
-    int QuantidadeFrames;
+//     int Ativada;
+//     int FrameAtual;
+//     int QuantidadeFrames;
 
-}   Animation;
+// }   Animation;
 
 typedef struct ponto
 {

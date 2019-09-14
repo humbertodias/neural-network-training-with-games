@@ -1,6 +1,6 @@
 # Neural Network Training with Games
 
-Adapted for linux
+Adapted for Linux/Mac
 
 Credits [JVictorDias](https://github.com/JVictorDias)
 
@@ -39,6 +39,8 @@ make run-flappy
 |space | info |
 
 
+[Youtube](https://www.youtube.com/watch?v=vavXvu_SMeM)
+
 ## Deep-Cars
 
 ```
@@ -46,6 +48,8 @@ make run-cars
 ```
 
 ![](doc/cars.png)
+
+[Youtube](https://www.youtube.com/watch?v=gnfkfUQvKDw)
 
 
 ## Dinossauro
@@ -55,6 +59,9 @@ make run-dino
 ```
 
 ![](doc/dino.png)
+
+
+[Youtube](https://www.youtube.com/watch?v=NZlIYr1slAk)
 
 
 ## Tecelao
@@ -90,7 +97,38 @@ Commands
 
 ![](doc/tecelao.png)
 
+[Youtube](https://www.youtube.com/watch?v=YZtx4jNNbx8)
+
+## ParticulasGravitacionais3D
+
+```
+make run-particulas
+```
+
+|key|Action|
+|---|------|
+|a  |Left  |
+|d  |Right |
+|w  |Up    |
+|s  |Down  |
+|q  |Zoom In|
+|e  |Zoom Out|
+|h  |Rotate Up X|
+|y  |Rotate Down X|
+|g  |Rotate Left Y|
+|j  |Rotate Right Y|
+|ENTER|Join particles|
+|Mouse Left|Expand particles|
+
+![](doc/particulas.png)
+
+
+[Youtube](https://www.youtube.com/watch?v=rTZJtiCAmTI)
+
+
 # Source
+
+* [ParticulasGravitacionais3D](https://github.com/JVictorDias/ParticulasGravitacionais3D)
 
 * [Dinossauro-Google](https://github.com/JVictorDias/Dinossauro-Google)
 

@@ -1,4 +1,3 @@
-
 Charger* InserirParticula(Charger* Lista, int TipoCarga, float Carga, float Px, float Py, float Vx, float Vy)
 {
     //Inserindo em ordem crescente de massa(o menor vem primeiro)
@@ -10,12 +9,12 @@ Charger* InserirParticula(Charger* Lista, int TipoCarga, float Carga, float Px, 
 
         if(TipoCarga == 1)
         {
-            Temp->Obj = CriarObjeto("imagens\\Positiva.bmp",Px,Py,TAMANHO_PARTICULA,TAMANHO_PARTICULA);
+            Temp->Obj = CriarObjeto("imagens/Positiva.bmp",Px,Py,TAMANHO_PARTICULA,TAMANHO_PARTICULA);
             Temp->TrajetoriaCor = ((PIG_Cor){0,0,255,255});
         }
         if(TipoCarga == -1)
         {
-            Temp->Obj = CriarObjeto("imagens\\Negativa.bmp",Px,Py,TAMANHO_PARTICULA,TAMANHO_PARTICULA);
+            Temp->Obj = CriarObjeto("imagens/Negativa.bmp",Px,Py,TAMANHO_PARTICULA,TAMANHO_PARTICULA);
             Temp->TrajetoriaCor = ((PIG_Cor){255,0,0,255});
         }
         Temp->TipoCarga = TipoCarga;

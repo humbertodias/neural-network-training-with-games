@@ -7,21 +7,21 @@
 
     int SpritesExplosao[15];
 
-    char* SpriteExplosaoPath[15] = {    "imagens\\Explosao\\1.png",
-                                        "imagens\\Explosao\\2.png",
-                                        "imagens\\Explosao\\3.png",
-                                        "imagens\\Explosao\\4.png",
-                                        "imagens\\Explosao\\5.png",
-                                        "imagens\\Explosao\\6.png",
-                                        "imagens\\Explosao\\7.png",
-                                        "imagens\\Explosao\\8.png",
-                                        "imagens\\Explosao\\9.png",
-                                        "imagens\\Explosao\\10.png",
-                                        "imagens\\Explosao\\10.png",
-                                        "imagens\\Explosao\\11.png",
-                                        "imagens\\Explosao\\11.png",
-                                        "imagens\\Explosao\\12.png",
-                                        "imagens\\Explosao\\12.png"  };
+    char* SpriteExplosaoPath[15] = {    "imagens/Explosao/1.png",
+                                        "imagens/Explosao/2.png",
+                                        "imagens/Explosao/3.png",
+                                        "imagens/Explosao/4.png",
+                                        "imagens/Explosao/5.png",
+                                        "imagens/Explosao/6.png",
+                                        "imagens/Explosao/7.png",
+                                        "imagens/Explosao/8.png",
+                                        "imagens/Explosao/9.png",
+                                        "imagens/Explosao/10.png",
+                                        "imagens/Explosao/10.png",
+                                        "imagens/Explosao/11.png",
+                                        "imagens/Explosao/11.png",
+                                        "imagens/Explosao/12.png",
+                                        "imagens/Explosao/12.png"  };
 
 
 

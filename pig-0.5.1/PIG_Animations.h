@@ -1,3 +1,5 @@
+#ifndef PIG_ANIMATION_INCLUDED
+#define PIG_ANIMATION_INCLUDED
 
 typedef struct animation
 {
@@ -97,7 +99,9 @@ void CriarAnimations()
 
     for(i=0; i<50; i++)
     {
-        sprintf(String,"imagens\\Sangue\\sangue (%d).png", i+1);
+        sprintf(String,"imagens/Sangue/sangue (%d).png", i+1);
         //EXEMPLOSprites[i] = CriarSprite(String);
     }
 }
+
+#endif
