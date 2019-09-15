@@ -126,7 +126,25 @@ make run-particulas
 [Youtube](https://www.youtube.com/watch?v=rTZJtiCAmTI)
 
 
+## Spirograph
+
+```
+make run-spirograph
+```
+
+|key|Action|
+|---|------|
+|ENTER  |Next  |
+
+![](doc/spirograph.png)
+
+
+[Youtube](https://www.youtube.com/watch?v=o7MOaXh4zFU)
+
+
 # Source
+
+* [Spirograph](https://github.com/JVictorDias/Spirograph)
 
 * [ParticulasGravitacionais3D](https://github.com/JVictorDias/ParticulasGravitacionais3D)
 

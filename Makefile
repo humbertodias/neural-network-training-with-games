@@ -1,9 +1,13 @@
 all:
+	cd Spirograph && $(MAKE)
 	cd ParticulasGravitacionais3D && $(MAKE)
 	cd Dinossauro-Google && $(MAKE)
 	cd FlappIA-Bird && $(MAKE)
 	cd DeepCars && $(MAKE)
 	cd AlgoritmoTecelao && $(MAKE)
+
+run-spirograph:
+	cd Spirograph && make && ./main
 
 run-particulas:
 	cd ParticulasGravitacionais3D && make && ./main
@@ -21,6 +25,7 @@ run-tecelao:
 	cd AlgoritmoTecelao && make && ./main < input.txt
 
 clean:
+	cd Spirograph && $(MAKE) clean
 	cd ParticulasGravitacionais3D && $(MAKE) clean
 	cd Dinossauro-Google && $(MAKE) clean
 	cd FlappIA-Bird && $(MAKE) clean
