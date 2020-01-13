@@ -142,7 +142,7 @@ make run-spirograph
 [Youtube](https://www.youtube.com/watch?v=o7MOaXh4zFU)
 
 
-## Spirograph
+## HardestGame
 
 ```
 make run-hardestgame
@@ -155,11 +155,33 @@ make run-hardestgame
 
 ![](doc/hardestgame.png)
 
-
 [Youtube](https://www.youtube.com/watch?v=QD-gHp81G4M)
+
+## HardestGameEditor
+
+```
+make run-hardestgame-editor
+```
+
+|key|Action|
+|---|------|
+|d/f  |Angulo de troca |
+|cima/baixo  |Tamanho grade  |
+|j/k  |Tempo parado |
+|g/h  |Angulo parada |
+|i  |Salvar posicao mouse |
+|u  |Carregar posicao salva  |
+|F1 |Salvar mapa  |
+|F2  |Carregar mapa  |
+
+![](doc/hardestgame-editor.png)
 
 
 # Source
+
+* [HardestGame](https://github.com/JVictorDias/HardestGame)
+
+* [HardestGameEditor](https://github.com/JVictorDias/HardestGameEditor)
 
 * [Spirograph](https://github.com/JVictorDias/Spirograph)
 

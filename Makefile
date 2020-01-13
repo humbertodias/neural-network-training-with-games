@@ -6,6 +6,9 @@ all:
 	cd DeepCars && $(MAKE)
 	cd AlgoritmoTecelao && $(MAKE)
 
+run-hardestgameeditor:
+	cd HardestGameEditor && make && ./main < input.txt
+
 run-hardestgame:
 	cd HardestGame && make && ./main
 
@@ -28,6 +31,7 @@ run-tecelao:
 	cd AlgoritmoTecelao && make && ./main < input.txt
 
 clean:
+	cd HardestGameEditor && $(MAKE) clean
 	cd HardestGame && $(MAKE) clean
 	cd Spirograph && $(MAKE) clean
 	cd ParticulasGravitacionais3D && $(MAKE) clean
