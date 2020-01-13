@@ -44,6 +44,7 @@ O tipo PIG_Cor é um struct formado por 4 campos: r,g,b,a correspondendo aos val
 #define VERMELHO        ((PIG_Cor){255,0,0,255})
 #define VERDE           ((PIG_Cor){0,255,0,255})
 #define AMARELO         ((PIG_Cor){255,255,0,255})
+#define ROSA            ((PIG_Cor){255,0,255,255})
 #define ROXO            ((PIG_Cor){255,0,255,255})
 #define LARANJA         ((PIG_Cor){255,128,0,255})
 #define CIANO           ((PIG_Cor){0,255,255,255})
