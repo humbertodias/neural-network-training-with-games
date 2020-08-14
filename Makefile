@@ -38,4 +38,10 @@ clean:
 	cd Dinossauro-Google && $(MAKE) clean
 	cd FlappIA-Bird && $(MAKE) clean
 	cd DeepCars && $(MAKE) clean 
-	cd AlgoritmoTecelao && $(MAKE) clean 
+	cd AlgoritmoTecelao && $(MAKE) clean
+
+docker-image:
+	docker build . -t pig-compiler
+
+docker-compile-all:	docker-image
+	docker run -v $(PWD):/home/docker -ti pig-compiler make all

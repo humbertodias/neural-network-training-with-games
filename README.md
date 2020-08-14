@@ -12,11 +12,19 @@ Credits [JVictorDias](https://github.com/JVictorDias)
 * libwebp
 * make
 * g++/clang++
+* docker (optional)
 
 Linux
 ```sh
 sudo apt install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libwebp-dev libgsl-dev
 ```
+
+or
+```sh
+make docker-compile-all
+```
+
+
 
 Mac
 ```sh
