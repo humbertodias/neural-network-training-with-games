@@ -45,3 +45,11 @@ docker-image:
 
 docker-compile-all:	docker-image
 	docker run -v $(PWD):/home/docker -ti pig-compiler make all
+
+args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
+docker-run:
+	docker run --net host -e "DISPLAY" \
+	-v "$(HOME)/.Xauthority:/home/docker/.Xauthority:rw" \
+	-v "$(PWD):/home/docker" \
+	pig-compiler \
+	make $(args)

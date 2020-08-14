@@ -25,7 +25,6 @@ make docker-compile-all
 ```
 
 
-
 Mac
 ```sh
 sudo brew install sdl2 sdl2-ttf sdl2-image gsl
@@ -39,6 +38,13 @@ sudo brew install sdl2 sdl2-ttf sdl2-image gsl
 ```
 make run-flappy
 ```
+
+or
+
+```
+make docker-run run-flappy
+```
+
 ![](doc/flappy.png)
 
 |key|Action|
