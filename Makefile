@@ -48,8 +48,14 @@ docker-compile-all:	docker-image
 
 args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
 docker-run:
-	docker run --net host -e "DISPLAY" \
-	-v "$(HOME)/.Xauthority:/home/docker/.Xauthority:rw" \
+	docker run --net host \
+	-e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
 	-v "$(PWD):/home/docker" \
 	pig-compiler \
-	make $(args)
+	$(args)
+
+docker-mac-run:
+	docker run --net host -e DISPLAY=docker.for.mac.host.internal:0 \
+	-v "$(PWD):/home/docker" \
+	pig-compiler \
+	$(args)

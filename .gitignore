@@ -37,3 +37,6 @@
 .bash*
 .config
 .Xauthority
+
+.sudo*
+.dbus
