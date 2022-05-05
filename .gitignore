@@ -40,3 +40,6 @@
 
 .sudo*
 .dbus
+
+# cache
+.cache/
