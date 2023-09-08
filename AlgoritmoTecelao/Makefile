@@ -26,6 +26,6 @@ clean:
 	rm -rf main main.dSYM
 
 ln:
-	ln -sF ../fontes fontes
-	ln -sF ../pig-0.5.1 pig
+	ln -sF ../common/fontes fontes
+	ln -sF ../common/pig-0.5.1 pig
 
