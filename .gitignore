@@ -40,3 +40,10 @@
 
 .sudo*
 .dbus
+
+# cache
+.cache/
+
+.DS_store
+
+main.dSYM

@@ -176,6 +176,17 @@ make run-hardestgame
 
 [Youtube](https://www.youtube.com/watch?v=QD-gHp81G4M)
 
+## Canhao de Newton
+
+```
+make run-canhao
+```
+
+![](doc/canhao.png)
+
+
+[Youtube](https://www.youtube.com/watch?v=evcnQajrR6E)
+
 ## HardestGameEditor
 
 ```
