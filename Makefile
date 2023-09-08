@@ -48,15 +48,15 @@ run-canhao:
 	cd CanhaoDeNewton && make && ./main
 
 clean:
-	cd HardestGameEditor && $(MAKE) clean
-	cd HardestGame && $(MAKE) clean
-	cd Spirograph && $(MAKE) clean
-	cd ParticulasGravitacionais3D && $(MAKE) clean
-	cd Dinossauro-Google && $(MAKE) clean
-	cd FlappIA-Bird && $(MAKE) clean
-	cd DeepCars && $(MAKE) clean 
 	cd AlgoritmoTecelao && $(MAKE) clean
 	cd CanhaoDeNewton && $(MAKE) clean
+	cd DeepCars && $(MAKE) clean 
+	cd Dinossauro-Google && $(MAKE) clean
+	cd FlappIA-Bird && $(MAKE) clean
+	cd HardestGame && $(MAKE) clean
+	cd HardestGameEditor && $(MAKE) clean
+	cd ParticulasGravitacionais3D && $(MAKE) clean
+	cd Spirograph && $(MAKE) clean
 
 # DOCKER_DEFAULT_PLATFORM=linux/amd64
 docker-image:
