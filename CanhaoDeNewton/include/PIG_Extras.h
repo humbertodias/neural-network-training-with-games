@@ -1,3 +1,6 @@
+#ifndef PIG_EXTRAS_H
+#define PIG_EXTRAS_H
+
 /********************************
 A fun??o AnguloEquivalente recebe um angulo qualquer e te retorna o equivalente positivo (de 0 a 360)
 Exemplo: AnguloEquivalente(720) retorna 0 pois 720 graus ? equivalente a 0 graus no circulo trigonometrico;
@@ -188,6 +191,4 @@ double tamanhoRealParaVirtual(double tamanho)
     return tamanho/(cameraZoom);
 }
 
-
-
-
+#endif
