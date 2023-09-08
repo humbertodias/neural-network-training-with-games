@@ -27,7 +27,7 @@ make docker-compile-all
 
 Mac
 ```sh
-sudo brew install sdl2 sdl2-ttf sdl2-image gsl
+sudo brew install sdl2 sdl2_ttf sdl2_image gsl
 ```
 
 # How to test
