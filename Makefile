@@ -49,18 +49,18 @@ docker-image:
 	docker build . -t pig-compiler
 
 docker-compile-all:	docker-image
-	docker run -v $(PWD):/home/docker -ti pig-compiler make all
+	docker run -v $(shell pwd):/home/docker -ti pig-compiler make all
 
 args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
 docker-run:
 	docker run --net host \
 	-e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
-	-v "$(PWD):/home/docker" \
+	-v "$(shell pwd):/home/docker" \
 	pig-compiler \
 	$(args)
 
 docker-mac-run:
 	docker run --net host -e DISPLAY=docker.for.mac.host.internal:0 \
-	-v "$(PWD):/home/docker" \
+	-v "$(shell pwd):/home/docker" \
 	pig-compiler \
 	$(args)
