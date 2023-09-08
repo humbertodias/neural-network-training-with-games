@@ -45,6 +45,7 @@ clean:
 	cd AlgoritmoTecelao && $(MAKE) clean
 	cd CanhaoDeNewton && $(MAKE) clean
 
+# DOCKER_DEFAULT_PLATFORM=linux/amd64
 docker-image:
 	docker build . -t pig-compiler
 
@@ -64,3 +65,7 @@ docker-mac-run:
 	-v "$(shell pwd):/home/docker" \
 	pig-compiler \
 	$(args)
+
+docker-clean:
+	docker ps -f name=pig-compiler -qa | xargs docker rm -f
+	docker image ls --filter 'reference=pig-compiler' -qa | xargs docker rmi -f
