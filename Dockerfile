@@ -3,7 +3,7 @@ FROM ubuntu:20.04
 
 ENV TZ=America/Sao_Paulo
 RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y make xterm sudo build-essential \
-libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libwebp-dev libgsl-dev
+libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libwebp-dev libgsl-dev valgrind
 
 
 ARG USER=docker

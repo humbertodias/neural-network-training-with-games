@@ -15,7 +15,10 @@ all:
 	$(CC) src/main.cpp -g $(CXXFLAGS) -o main
 
 png-fix:
-	find imagens -type f -iname '*.png' -exec pngcrush -ow -rem allb -reduce {} \; 
+	find imagens -type f -iname '*.png' -exec pngcrush -ow -rem allb -reduce {} \;
+
+valgrind:
+	valgrind --track-origins=yes --leak-check=yes -v --leak-check=full --show-reachable=yes ./main
 
 run:
 	./main
