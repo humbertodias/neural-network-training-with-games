@@ -5,7 +5,7 @@ all:
 	cd FlappIA-Bird && $(MAKE)
 	cd DeepCars && $(MAKE)
 	cd AlgoritmoTecelao && $(MAKE)
-#	cd CanhaoDeNewton && $(MAKE)
+	cd CanhaoDeNewton && $(MAKE)
 
 run-hardestgameeditor:
 	cd HardestGameEditor && make && ./main < input.txt

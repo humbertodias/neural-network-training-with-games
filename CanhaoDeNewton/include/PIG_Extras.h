@@ -1,7 +1,6 @@
-
 /********************************
-A função AnguloEquivalente recebe um angulo qualquer e te retorna o equivalente positivo (de 0 a 360)
-Exemplo: AnguloEquivalente(720) retorna 0 pois 720 graus é equivalente a 0 graus no circulo trigonometrico;
+A fun??o AnguloEquivalente recebe um angulo qualquer e te retorna o equivalente positivo (de 0 a 360)
+Exemplo: AnguloEquivalente(720) retorna 0 pois 720 graus ? equivalente a 0 graus no circulo trigonometrico;
 ********************************/
 
 double anguloEquivalente(double angulo)
@@ -17,9 +16,9 @@ double anguloEquivalente(double angulo)
 }
 
 /********************************
-A função AnguloEntrePontos retorna o angulo entre dois pontos.
+A fun??o AnguloEntrePontos retorna o angulo entre dois pontos.
 Exemplo: Se o segmento de reta que une os 2 pontos for paralelo ao eixo X
-o valor retornado será 0 ou 180, dependendo da ordem dos pontos na passagem dos parametros.
+o valor retornado ser? 0 ou 180, dependendo da ordem dos pontos na passagem dos parametros.
 ********************************/
 
 double anguloEntrePontos(double X1, double Y1, double X2, double Y2)
@@ -40,7 +39,7 @@ double anguloEntrePontos(double X1, double Y1, double X2, double Y2)
 }
 
 /********************************
-A função DistanciaEntrePontos retorna a distancia 2D entre 2 pontos
+A fun??o DistanciaEntrePontos retorna a distancia 2D entre 2 pontos
 ********************************/
 
 double distanciaEntrePontos(double x1, double y1, double x2, double y2)
@@ -49,8 +48,8 @@ double distanciaEntrePontos(double x1, double y1, double x2, double y2)
 }
 
 /********************************
-A função NumeroAleatorio retorna um numero aleatorio com os intervalos incluidos,
-ou seja, os valores "Minimo" e "Maximo" também são possíveis de se obter.
+A fun??o NumeroAleatorio retorna um numero aleatorio com os intervalos incluidos,
+ou seja, os valores "Minimo" e "Maximo" tamb?m s?o poss?veis de se obter.
 ********************************/
 
 int numeroAleatorio(int minimo, int maximo)
@@ -59,7 +58,7 @@ int numeroAleatorio(int minimo, int maximo)
     return (rand() % (maximo-minimo)) + minimo;
 }
 
-/// Detectando colisões
+/// Detectando colis?es
 
 int retangulosColidiram(double xCentro1, double yCentro1, double largura1, double altura1,
                         double xCentro2, double yCentro2, double largura2, double altura2)
@@ -129,33 +128,33 @@ void atualizarCamera()
     double velocidadeTranslado = 10;
     double velocidadeZoom = 0.01;
 
-    if(PIG_teclado[TECLA_w])     /// Cima
+    if(PIG_meuTeclado[TECLA_w])     /// Cima
     {
         movimentarCamera(0, velocidadeTranslado, 0);
     }
-    if(PIG_teclado[TECLA_s])     /// Baixo
+    if(PIG_meuTeclado[TECLA_s])     /// Baixo
     {
         movimentarCamera(0, -velocidadeTranslado, 0);
     }
-    if(PIG_teclado[TECLA_a])     /// Esquerda
+    if(PIG_meuTeclado[TECLA_a])     /// Esquerda
     {
         movimentarCamera(-velocidadeTranslado, 0, 0);
     }
-    if(PIG_teclado[TECLA_d])     /// Direita
+    if(PIG_meuTeclado[TECLA_d])     /// Direita
     {
         movimentarCamera(velocidadeTranslado, 0, 0);
     }
-    if(PIG_teclado[TECLA_q])     /// Aumentar zoom
+    if(PIG_meuTeclado[TECLA_q])     /// Aumentar zoom
     {
         movimentarCamera(0, 0, velocidadeZoom);
     }
-    if(PIG_teclado[TECLA_e])     /// Diminuir zoom
+    if(PIG_meuTeclado[TECLA_e])     /// Diminuir zoom
     {
         movimentarCamera(0, 0, -velocidadeZoom);
     }
 }
 
-/// Funções que convertem coordenadas e comprimentos do terreno VIRTUAL para a tela REAL
+/// Fun??es que convertem coordenadas e comprimentos do terreno VIRTUAL para a tela REAL
 
 double XVirtualParaReal(double x)
 {
@@ -172,7 +171,7 @@ double tamanhoVirtualParaReal(double tamanho)
     return tamanho*(cameraZoom);
 }
 
-/// Funções que convertem coordenadas e comprimentos da tela REAL para o terreno virtual.
+/// Fun??es que convertem coordenadas e comprimentos da tela REAL para o terreno virtual.
 
 double XRealParaVirtual(double x)
 {

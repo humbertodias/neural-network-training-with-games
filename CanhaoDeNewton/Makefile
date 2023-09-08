@@ -11,7 +11,7 @@ CXXFLAGS += `sdl2-config --cflags --libs`
 CXXFLAGS += -lSDL2 -lSDL2_ttf -lSDL2_image -lpthread -lwebp
 
 all:
-	$(CC) include/PIG_Extras.c src/main.cpp -g $(CXXFLAGS) -o main
+	$(CC) src/main.cpp -g $(CXXFLAGS) -o main
 
 png-fix:
 	find imagens -type f -iname '*.png' -exec pngcrush -ow -rem allb -reduce {} \; 

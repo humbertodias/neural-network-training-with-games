@@ -1,9 +1,9 @@
 
 #include "PIG.h"
+#include "PIG_Extras.h"
 
 #define     QTD_MAX_PROJETEIS   100000
 #define     QTD_MAX_RASTRO      100000
-
 
 typedef struct vetor
 {
@@ -31,6 +31,7 @@ typedef struct corpo
     Vetor rastro[QTD_MAX_RASTRO];
     int qtdRastro;
 
+
 void adicionarProjetil(Vetor posicao, Vetor velocidade, Vetor aceleracao, double massa, double raio)
 {
     int i = qtdProjeteisAtuais;
@@ -47,16 +48,17 @@ void adicionarProjetil(Vetor posicao, Vetor velocidade, Vetor aceleracao, double
 
 void configuracoesIniciais()
 {
-    PIG_criarJanela("Canh�o de Newton", 2560, 1080);
+    // CriarJanela("Canhão de Newton", 2560, 1080);
+    CriarJanela("Canhão de Newton", 0);
 
     qtdProjeteisAtuais = 0;
     qtdRastro = 0;
 
-    spritePlaneta   = PIG_criarSprite("imagens\\terraDia.png", 0);
-    spriteProjetil  = PIG_criarSprite("imagens\\projetil.png", 0);
-    spriteCanhao    = PIG_criarSprite("imagens\\canhao.png", 0);
-    spriteTorre     = PIG_criarSprite("imagens\\torre.png", 0);
-    spriteCeu       = PIG_criarSprite("imagens\\ceu.png", 0);
+    spritePlaneta   = CriarSprite("imagens/terraDia.png", 0);
+    spriteProjetil  = CriarSprite("imagens/projetil.png", 0);
+    spriteCanhao    = CriarSprite("imagens/canhao.png", 0);
+    spriteTorre     = CriarSprite("imagens/torre.png", 0);
+    spriteCeu       = CriarSprite("imagens/ceu.png", 0);
 
     planeta.massa = 1000000.0;
     planeta.raio = 350.0;
@@ -67,19 +69,26 @@ void configuracoesIniciais()
     planeta.posicao.x = LARG_TELA/2.0;
     planeta.posicao.y = ALT_TELA/2.0;
 
-    timerGeral = PIG_criarTimer();
+    timerGeral = CriarTimer();
 }
 
 void desenharProjeteis()
 {
     for(int i=0; i<qtdProjeteisAtuais; i++)
     {
-        PIG_desenharSprite(spriteProjetil,
-                           XVirtualParaReal(projeteis[i].posicao.x),
-                           YVirtualParaReal(projeteis[i].posicao.y),
+        // DesenharSprite(spriteProjetil,
+        //                    XVirtualParaReal(projeteis[i].posicao.x, projeteis[i].posicao.y),
+        //                    YVirtualParaReal(projeteis[i].posicao.x, projeteis[i].posicao.y),
+        //                    tamanhoVirtualParaReal(2.0*projeteis[i].raio),
+        //                    tamanhoVirtualParaReal(2.0*projeteis[i].raio),
+        //                    0, 1, BRANCO);
+        DesenharSprite(spriteProjetil,
+                           XVirtualParaReal(projeteis[i].posicao.x, projeteis[i].posicao.y),
+                           YVirtualParaReal(projeteis[i].posicao.x, projeteis[i].posicao.y),
                            tamanhoVirtualParaReal(2.0*projeteis[i].raio),
                            tamanhoVirtualParaReal(2.0*projeteis[i].raio),
-                           0, 1, BRANCO);
+                           0);
+
     }
 }
 
@@ -93,54 +102,81 @@ void desenharRastro()
         double xProximo = rastro[i+1].x;
         double yProximo = rastro[i+1].y;
 
-        PIG_desenharLinha(XVirtualParaReal(xAtual),
+        DesenharLinhaSimples(XVirtualParaReal(xAtual),
                           YVirtualParaReal(yAtual),
                           XVirtualParaReal(xProximo),
-                          YVirtualParaReal(yProximo),VERMELHO,2);
+                          YVirtualParaReal(yProximo),VERMELHO);
     }
 }
 
 void desenhar()
 {
-    PIG_iniciarDesenho();
+    IniciarDesenho();
+    // void DesenharSprite(int id_sprite, int X, int Y, int Largura, int Altura, float Angulo, int referencialVirtual = 1)
 
-    PIG_desenharSprite(spriteCeu,0,0,LARG_TELA,ALT_TELA,0,0,BRANCO);
+    // DesenharSprite(spriteCeu,0,0,LARG_TELA,ALT_TELA,0,0,BRANCO);
+    DesenharSprite(spriteCeu,0,0,LARG_TELA,ALT_TELA,0,0);
 
-    PIG_desenharSprite(spritePlaneta,
+    // DesenharSprite(spritePlaneta,
+    //                    XVirtualParaReal(planeta.posicao.x),
+    //                    YVirtualParaReal(planeta.posicao.y),
+    //                    tamanhoVirtualParaReal(2.0*planeta.raio),
+    //                    tamanhoVirtualParaReal(2.0*planeta.raio),
+    //                    0, 1, BRANCO);
+    DesenharSprite(spritePlaneta,
                        XVirtualParaReal(planeta.posicao.x),
                        YVirtualParaReal(planeta.posicao.y),
                        tamanhoVirtualParaReal(2.0*planeta.raio),
                        tamanhoVirtualParaReal(2.0*planeta.raio),
-                       0, 1, BRANCO);
+                       0, 1);
 
-    PIG_desenharSprite(spriteCanhao,
+    // DesenharSprite(spriteCanhao,
+    //                    XVirtualParaReal(planeta.posicao.x - 10),
+    //                    YVirtualParaReal(planeta.posicao.y + planeta.raio + 15),
+    //                    tamanhoVirtualParaReal(25),
+    //                    tamanhoVirtualParaReal(25), 0, 1, BRANCO);
+    DesenharSprite(spriteCanhao,
                        XVirtualParaReal(planeta.posicao.x - 10),
                        YVirtualParaReal(planeta.posicao.y + planeta.raio + 15),
                        tamanhoVirtualParaReal(25),
-                       tamanhoVirtualParaReal(25), 0, 1, BRANCO);
+                       tamanhoVirtualParaReal(25), 0, 1);
 
 
-    PIG_desenharSprite(spriteTorre,
+    // DesenharSprite(spriteTorre,
+    //                    XVirtualParaReal(planeta.posicao.x),
+    //                    YVirtualParaReal(planeta.posicao.y + planeta.raio),
+    //                    tamanhoVirtualParaReal(1920/10),
+    //                    tamanhoVirtualParaReal(1080/10), 0, 1, BRANCO);
+    DesenharSprite(spriteTorre,
                        XVirtualParaReal(planeta.posicao.x),
                        YVirtualParaReal(planeta.posicao.y + planeta.raio),
                        tamanhoVirtualParaReal(1920/10),
-                       tamanhoVirtualParaReal(1080/10), 0, 1, BRANCO);
+                       tamanhoVirtualParaReal(1080/10), 0, 1);
 
     desenharRastro();
     desenharProjeteis();
 
-    PIG_encerrarDesenho();
+    EncerrarDesenho();
 }
 
 void verificarTeclado()
 {
-    if(PIG_tecla == TECLA_ENTER)
+    if(PIG_Tecla == TECLA_ENTER)
     {
         double x = planeta.posicao.x;
         double y = planeta.posicao.y + planeta.raio + 20;
-        adicionarProjetil({x, y},
-                          {4, 0},  /// 4 entra em orbita
-                          {0, 0.01},
+        Vetor posicao;
+        posicao.x = x;
+        posicao.y = y;
+        Vetor velocidade;
+        velocidade.x = 4;
+        velocidade.y = 0;
+        Vetor aceleracao;
+        aceleracao.x = 0;
+        aceleracao.y = 0.01;
+        adicionarProjetil(posicao,
+                          velocidade,  /// 4 entra em orbita
+                          aceleracao,
                           1.0, 2.0);
     }
 }
@@ -217,7 +253,7 @@ void atualizarProjeteis()
         double massaPlaneta = planeta.massa;
         double raioPlaneta = planeta.raio;
 
-        double distancia = distanciaEntrePontos(xProjetil, yProjetil, xPlaneta, yPlaneta);
+        double distancia = DistanciaEntrePontos(xProjetil, yProjetil, xPlaneta, yPlaneta);
         if(distancia < 1)
         {
             distancia = 1;
@@ -243,7 +279,7 @@ void atualizarProjeteis()
         projeteis[i].posicao.x = projeteis[i].posicao.x + projeteis[i].velocidade.x;
         projeteis[i].posicao.y = projeteis[i].posicao.y + projeteis[i].velocidade.y;
 
-        if(distanciaEntrePontos(projeteis[i].posicao.x,
+        if(DistanciaEntrePontos(projeteis[i].posicao.x,
                                 projeteis[i].posicao.y,
                                 xPlaneta, yPlaneta) < raioProjetil + raioPlaneta*0.982)
         {
@@ -275,13 +311,13 @@ int main(int argc, char* args[])
 {
     configuracoesIniciais();
 
-    while(PIG_jogoRodando() == 1)
+    while(PIG_JogoRodando == 1)
     {
-        if(PIG_tempoDecorrido(timerGeral) >= 0.01)
+        if(TempoDecorrido(timerGeral) >= 0.01)
         {
-            PIG_reiniciarTimer(timerGeral);
+            ReiniciarTimer(timerGeral);
 
-            PIG_atualizarJanela();
+            AtualizarJanela();
             verificarTeclado();
             atualizarProjeteis();
             atualizarRastro();
@@ -291,7 +327,7 @@ int main(int argc, char* args[])
         }
     }
 
-    PIG_finalizarJanela();
+    FinalizarJanela();
 
     return 0;
 }
