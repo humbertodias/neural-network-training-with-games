@@ -1,4 +1,5 @@
 all:
+	cd AlgoritmoTecelao && $(MAKE)
 	cd Spirograph && $(MAKE)
 	cd ParticulasGravitacionais3D && $(MAKE)
 	cd Dinossauro-Google && $(MAKE)
@@ -6,6 +7,19 @@ all:
 	cd DeepCars && $(MAKE)
 	cd AlgoritmoTecelao && $(MAKE)
 	cd CanhaoDeNewton && $(MAKE)
+	cd HardestGame && $(MAKE)
+	cd HardestGameEditor && $(MAKE)
+
+ln:
+	cd Spirograph && $(MAKE) ln
+	cd ParticulasGravitacionais3D && $(MAKE) ln
+	cd Dinossauro-Google && $(MAKE) ln
+	cd FlappIA-Bird && $(MAKE) ln
+	cd DeepCars && $(MAKE) ln
+	cd AlgoritmoTecelao && $(MAKE) ln
+	cd CanhaoDeNewton && $(MAKE) ln
+	cd HardestGame && $(MAKE) ln
+	cd HardestGameEditor && $(MAKE) ln
 
 run-hardestgameeditor:
 	cd HardestGameEditor && make && ./main < input.txt

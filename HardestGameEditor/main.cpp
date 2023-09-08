@@ -1576,10 +1576,10 @@ void configuracoesIniciais()
     spriteLuz = CriarSprite("imagens/luzBranca.png",0);
     DefinirColoracao(spriteLuz, VERMELHO);
 
-    FontePreta = CriarFonteNormal("../fontes/arial.ttf", 16, PRETO, 0, PRETO);
-    FonteBranca = CriarFonteNormal("../fontes/arial.ttf", 16, BRANCO, 0, BRANCO);
-    FonteVermelha = CriarFonteNormal("../fontes/arial.ttf", 16, VERMELHO, 0, VERMELHO);
-    FontePretaGrande = CriarFonteNormal("../fontes/padrao.ttf", 25, PRETO, 0, PRETO);
+    FontePreta = CriarFonteNormal("fontes/arial.ttf", 16, PRETO, 0, PRETO);
+    FonteBranca = CriarFonteNormal("fontes/arial.ttf", 16, BRANCO, 0, BRANCO);
+    FonteVermelha = CriarFonteNormal("fontes/arial.ttf", 16, VERMELHO, 0, VERMELHO);
+    FontePretaGrande = CriarFonteNormal("fontes/padrao.ttf", 25, PRETO, 0, PRETO);
 
     TimerGeral = CriarTimer();
     TimerAviso = CriarTimer();

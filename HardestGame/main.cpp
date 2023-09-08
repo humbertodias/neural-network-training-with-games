@@ -919,7 +919,7 @@ void configuracoesIniciais()
 
     TimerGeral = CriarTimer();
 
-    FontePreta = CriarFonteNormal("../fontes/arial.ttf", 20, PRETO, 0, PRETO);
+    FontePreta = CriarFonteNormal("fontes/arial.ttf", 20, PRETO, 0, PRETO);
 
     inicializarMapaAtual();
 }

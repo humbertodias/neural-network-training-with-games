@@ -421,9 +421,9 @@ int main(int argc, char *args[])
 
     int Timer = CriarTimer();
 
-    FontePreta = CriarFonteNormal("../fontes/arial.ttf", 15, PRETO, 0, PRETO);
-    FonteBranca = CriarFonteNormal("../fontes/arial.ttf", 15, BRANCO, 0, BRANCO);
-    FonteVermelha = CriarFonteNormal("../fontes/arial.ttf", 35, VERMELHO, 0, BRANCO);
+    FontePreta = CriarFonteNormal("fontes/arial.ttf", 15, PRETO, 0, PRETO);
+    FonteBranca = CriarFonteNormal("fontes/arial.ttf", 15, BRANCO, 0, BRANCO);
+    FonteVermelha = CriarFonteNormal("fontes/arial.ttf", 35, VERMELHO, 0, BRANCO);
     SpritePrego = CriarSprite("imagens/prego.png");
 
     Modelo = criarObjetoTamanhoOriginal(IMAGEM, 0, 0, 0);

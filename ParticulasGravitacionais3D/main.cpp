@@ -15,9 +15,7 @@
 
 #define TrajetoriaMax 10
 
-#include "Tipos0.h"
 #include "Tipos.h"
-#include "Variaveis0.h"
 #include "Variaveis.h"
 #include "Desenhar.h"
 #include "AjustesEAtualizacoes.h"
@@ -161,8 +159,8 @@ void MoverAtomos()
 
 void ConfiguracoesIniciais()
 {
-    // CriarJanela("Particulas Gravitaçao 3D",0);
-    CriarJogo("Particulas Gravitaçao 3D",0);
+    CriarJanela("Particulas Gravitaçao 3D",0);
+    //CriarJogo("Particulas Gravitaçao 3D",0);
     MouseX = 600;
     MouseY = 300;
 
@@ -336,7 +334,8 @@ int main(int argc, char* args[])
 
     while(PIG_JogoRodando == 1)
     {
-        AtualizarEstadoJogo();
+        //AtualizarEstadoJogo();
+        AtualizarJanela();
 
         X = MouseX;
         Y = MouseY;
@@ -366,8 +365,8 @@ int main(int argc, char* args[])
         EncerrarDesenho();
     }
 
-    // FinalizarJanela();
-    FinalizarJogo();
+    FinalizarJanela();
+    //FinalizarJogo();
 
     return 0;
 }

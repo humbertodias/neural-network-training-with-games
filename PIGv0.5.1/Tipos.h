@@ -1,4 +1,7 @@
 
+#ifndef TIPOS_H
+#define TIPOS_H
+
 typedef struct atomo
 {
     int ControleDeColisao;
@@ -41,3 +44,5 @@ typedef struct vetor
     float Carga;
 
 }   Vetor;
+
+#endif

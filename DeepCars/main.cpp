@@ -1417,7 +1417,7 @@ void configuracoesIniciais()
 
     alocarCarros();
 
-    Fonte = CriarFonteNormal("../fontes/arial.ttf", 15, VERDE, 0, PRETO);
+    Fonte = CriarFonteNormal("fontes/arial.ttf", 15, VERDE, 0, PRETO);
 
     DistanciaRecorde    = 0;
     Geracao             = 0;

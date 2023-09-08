@@ -1,3 +1,5 @@
+#ifndef VARIAVEIS_H
+#define VARIAVEIS_H
 
     Atomo               Atomos[100000];
     SDL_Point           AtomosSDL[100000];
@@ -18,3 +20,5 @@
     float               MouseZ = 0, MouseY = 0, MouseX = 0;
 
     int                 Giro = -1;
+
+#endif

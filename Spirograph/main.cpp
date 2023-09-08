@@ -261,12 +261,13 @@ void Mover()
 
 void ConfiguracoesIniciais()
 {
-    CriarJogo("Spirograph",0);
+//    CriarJogo("Spirograph",0);
+    CriarJanela("Spirograph",0);
 
     TimerGeral = CriarTimer();
     SetaTextura = CriarSprite("imagens/Vetor.bmp");
-    Fonte = CriarFonteNormal("../fontes/arial.ttf",20,BRANCO,0,BRANCO,0);
-    Fonte = CriarFonteNormal("../fontes/arial.ttf",20,VERDE,0,BRANCO,0);
+    Fonte = CriarFonteNormal("fontes/arial.ttf",20,BRANCO,0,BRANCO,0);
+    Fonte = CriarFonteNormal("fontes/arial.ttf",20,VERDE,0,BRANCO,0);
 
     CriarPonto(700,300,0,0,0,0);
     CriarPontos((rand() % MAX_PONTOS)+1);
@@ -293,7 +294,8 @@ int main(int argc, char* args[])
 
     while(PIG_JogoRodando == 1)
     {
-        AtualizarEstadoJogo();
+        //AtualizarEstadoJogo();
+        AtualizarJanela();
         if(TempoDecorrido(TimerGeral) >= Periodo)
         {
             Mover();
@@ -306,6 +308,7 @@ int main(int argc, char* args[])
         VerificarTeclaApertada();
         Desenhar();
     }
-    FinalizarJogo();
+//    FinalizarJogo();
+    FinalizarJanela();
     return 0;
 }
