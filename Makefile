@@ -5,6 +5,7 @@ all:
 	cd FlappIA-Bird && $(MAKE)
 	cd DeepCars && $(MAKE)
 	cd AlgoritmoTecelao && $(MAKE)
+	cd CanhaoDeNewton && $(MAKE)
 
 run-hardestgameeditor:
 	cd HardestGameEditor && make && ./main < input.txt
@@ -30,6 +31,9 @@ run-cars:
 run-tecelao:
 	cd AlgoritmoTecelao && make && ./main < input.txt
 
+run-canhao:
+	cd CanhaoDeNewton && make && ./main
+
 clean:
 	cd HardestGameEditor && $(MAKE) clean
 	cd HardestGame && $(MAKE) clean
@@ -39,6 +43,7 @@ clean:
 	cd FlappIA-Bird && $(MAKE) clean
 	cd DeepCars && $(MAKE) clean 
 	cd AlgoritmoTecelao && $(MAKE) clean
+	cd CanhaoDeNewton && $(MAKE) clean
 
 docker-image:
 	docker build . -t pig-compiler

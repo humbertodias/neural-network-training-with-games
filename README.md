@@ -27,7 +27,7 @@ make docker-compile-all
 
 Mac
 ```sh
-sudo brew install sdl2 sdl2-ttf sdl2-image gsl
+sudo brew install sdl2 sdl2_ttf sdl2_image gsl
 ```
 
 # How to test
@@ -175,6 +175,17 @@ make run-hardestgame
 ![](doc/hardestgame.png)
 
 [Youtube](https://www.youtube.com/watch?v=QD-gHp81G4M)
+
+## Canhao de Newton
+
+```
+make run-canhao
+```
+
+![](doc/canhao.png)
+
+
+[Youtube](https://www.youtube.com/watch?v=evcnQajrR6E)
 
 ## HardestGameEditor
 
