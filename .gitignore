@@ -47,3 +47,5 @@
 .DS_store
 
 main.dSYM
+
+.idea
