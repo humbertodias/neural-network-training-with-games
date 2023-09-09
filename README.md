@@ -184,6 +184,11 @@ make run-canhao
 
 ![](doc/canhao.png)
 
+|key|Action|
+|---|------|
+|ENTER  |Atirar |
+|a/s/d/w  |esq/dir/cima/baixo |
+
 
 [Youtube](https://www.youtube.com/watch?v=evcnQajrR6E)
 
@@ -207,54 +212,22 @@ make run-hardestgame-editor
 ![](doc/hardestgame-editor.png)
 
 
-## Docker with X11 on MAC
-
-Make sure to install XQuartz
-
-    brew install socat
-    brew cask reinstall xquartz
-
-Don't forget to close logout and log back in.
-1. Close any 6000
-
-On a new terminal, verify if there's anything running on port 6000
-
-    lsof -i TCP:6000
-
-If there is anything, just kill the process
-
-2. Close any 6000
-Open a socket on that port and keep the terminal open
-
-    socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\"$DISPLAY\"
-
-3. Verify 6000 is open
-In a new terminal, verify if it is opened
-
-    lsof -i TCP:6000
-    COMMAND   PID     USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
-    socat   29298 mdesales    5u  IPv4 0xe21e43ca9d99bf1d      0t0  TCP *:6000 (LISTEN)
-
-
-Copy and paste this into a Terminal window of your Mac
-    
-    sudo defaults write org.macosforge.xquartz.X11 enable_iglx -bool true
-
-
 # Source
 
-* [HardestGame](https://github.com/JVictorDias/HardestGame)
+* [Algoritmo-Tecelao](https://github.com/JVictorDias/AlgoritmoTecelao)
 
-* [HardestGameEditor](https://github.com/JVictorDias/HardestGameEditor)
+* [CanhaoDeNewton](https://github.com/JVictorDias/CanhaoDeNewton)
 
-* [Spirograph](https://github.com/JVictorDias/Spirograph)
-
-* [ParticulasGravitacionais3D](https://github.com/JVictorDias/ParticulasGravitacionais3D)
+* [Depp-Cars](https://github.com/JVictorDias/DeepCars)
 
 * [Dinossauro-Google](https://github.com/JVictorDias/Dinossauro-Google)
 
 * [FlappIA-Bird](https://github.com/JVictorDias/FlappIA-Bird)
 
-* [Depp-Cars](https://github.com/JVictorDias/DeepCars)
+* [HardestGame](https://github.com/JVictorDias/HardestGame)
 
-* [Algoritmo-Tecelao](https://github.com/JVictorDias/AlgoritmoTecelao)
+* [HardestGameEditor](https://github.com/JVictorDias/HardestGameEditor)
+
+* [ParticulasGravitacionais3D](https://github.com/JVictorDias/ParticulasGravitacionais3D)
+
+* [Spirograph](https://github.com/JVictorDias/Spirograph)
