@@ -6,10 +6,8 @@ else
 	CC=g++
 endif
 
-CXXFLAGS := -I./pig -I/usr/include/SDL2 -I./include
-CXXFLAGS += `sdl2-config --cflags --libs`
-CXXFLAGS += -lSDL2 -lSDL2_ttf -lSDL2_image -lpthread -lwebp
-CXXFLAGS += `gsl-config --cflags --libs`
+CXXFLAGS := -I./pig -I./include `sdl2-config --cflags` `gsl-config --cflags`
+CXXFLAGS += -lSDL2_ttf -lSDL2_image -lpthread -lwebp `sdl2-config --libs` `gsl-config --libs`
 
 all:
 	$(CC) src/main.cpp -g $(CXXFLAGS) -o main
