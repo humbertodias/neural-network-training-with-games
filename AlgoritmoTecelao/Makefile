@@ -7,9 +7,9 @@ else
 endif
 
 CXXFLAGS := -I./pig `sdl2-config --cflags`
-LDFLAGS  := -lSDL2_ttf -lSDL2_image -lpthread -lwebp `sdl2-config --libs`
+LDFLAGS  := -lSDL2_ttf -lSDL2_image -lpthread -lwebp `sdl2-config --static-libs`
 
-all:	ln
+build:	ln
 	$(CC) main.cpp -g $(CXXFLAGS) $(LDFLAGS) -o main
 
 run:
@@ -22,7 +22,7 @@ run-valgrind:
 	valgrind --leak-check=full --track-origins=yes ./main < input.txt
 
 clean:
-	rm -rf main main.dSYM build
+	rm -rf main main.dSYM build ${ZIP_FOLDER} ${ZIP_FOLDER}-${SYSTEM}.zip
 	
 ln:
 	ln -sTf ../common/fontes fontes
@@ -32,7 +32,7 @@ ln:
 unlink:
 	rm -rf fontes pig cmakes
 
-build:
+cmake:
 	mkdir build
 	cd build 
 	cmake ..
@@ -46,6 +46,12 @@ web:
 	--use-preload-plugins \
 	-sALLOW_MEMORY_GROWTH
 
-
+ZIP_FOLDER:=tecelao
+SYSTEM:=$(shell uname -s)
+zip:	build
+	mkdir -p ${ZIP_FOLDER}  && \
+	cp -rl imagens fontes *.bmp input.txt main ${ZIP_FOLDER} && \
+	zip -r ${ZIP_FOLDER}-${SYSTEM}.zip ${ZIP_FOLDER} && \
+	rm -rf ${ZIP_FOLDER}
 
 

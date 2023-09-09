@@ -58,6 +58,17 @@ clean:
 	cd ParticulasGravitacionais3D && $(MAKE) clean
 	cd Spirograph && $(MAKE) clean
 
+zip:
+	cd AlgoritmoTecelao && $(MAKE) zip
+	cd CanhaoDeNewton && $(MAKE) zip
+	cd DeepCars && $(MAKE) zip
+	cd Dinossauro-Google && $(MAKE) zip
+	cd FlappIA-Bird && $(MAKE) zip
+	cd HardestGame && $(MAKE) zip
+	cd HardestGameEditor && $(MAKE) zip
+	cd ParticulasGravitacionais3D && $(MAKE) zip
+	cd Spirograph && $(MAKE) zip
+
 docker-image:
 	docker build . -t pig-compiler
 

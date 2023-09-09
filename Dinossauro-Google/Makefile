@@ -7,9 +7,9 @@ else
 endif
 
 CXXFLAGS := -I./pig `sdl2-config --cflags`
-LDFLAGS  := -lSDL2_ttf -lSDL2_image -lpthread -lwebp `sdl2-config --libs`
+LDFLAGS  := -lSDL2_ttf -lSDL2_image -lpthread -lwebp `sdl2-config --static-libs`
 
-all:
+build:
 	$(CC) main.cpp -g $(CXXFLAGS) $(LDFLAGS) -o main
 
 gerador:
@@ -25,7 +25,7 @@ valgrind:
 	valgrind --track-origins=yes --leak-check=yes -v --leak-check=full --show-reachable=yes ./main
 
 clean:
-	rm -rf main gerador *.dSYM build
+	rm -rf main gerador *.dSYM build ${ZIP_FOLDER} ${ZIP_FOLDER}-linux.zip
 
 ln:
 	ln -sTf ../common/fontes fontes
@@ -35,7 +35,7 @@ ln:
 unlink:
 	rm -rf fontes pig cmakes
 
-build:
+cmake:
 	mkdir build
 	cd build 
 	cmake ..
@@ -50,3 +50,12 @@ web:
 	--use-preload-plugins \
 	-sALLOW_MEMORY_GROWTH
 
+format:
+	find . -regextype posix-extended -regex '.*\.(c|cpp|h)' -exec clang-format -style=Google -i "{}" +;
+
+ZIP_FOLDER:=dino
+zip:	build
+	mkdir -p ${ZIP_FOLDER}  && \
+	cp -rl imagens fontes obstaculos.* main ${ZIP_FOLDER} && \
+	zip -r ${ZIP_FOLDER}-linux.zip ${ZIP_FOLDER} && \
+	rm -rf ${ZIP_FOLDER}
