@@ -25,7 +25,7 @@ jobs:
       # Build
       - name: zip
         run: |
-            make zip
+            make docker-compile-zip
       - uses: actions/upload-artifact@v3
         with:
             name: linux
