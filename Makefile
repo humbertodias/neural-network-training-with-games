@@ -79,7 +79,7 @@ docker-compile-it:	docker-image
 	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir -ti pig-compiler bash
 
 docker-compile-zip:	docker-image
-	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir -ti pig-compiler make zip
+	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir pig-compiler make zip
 
 args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
 docker-run:
