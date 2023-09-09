@@ -35,7 +35,7 @@ unlink:
 build:
 	mkdir build
 	cd build 
-	cmake
+	cmake ..
 	make -j2
 
 web:

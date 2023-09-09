@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SDL - PWA</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+<center>
+    <canvas id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+    <script type='text/javascript'>
+        var Module = {
+            canvas: (function() { return document.getElementById('canvas'); })()
+        };
+    </script>
+    <script src="web.js"></script>
+</center>
+
+
+<script type="text/javascript">
+    if ('serviceWorker' in navigator) {
+        console.log('CLIENT: service worker registration in progress.');
+        navigator.serviceWorker.register('sw.js')
+        .then(() => {
+            console.log('CLIENT: service worker registration complete.');
+        }, () =>{
+            console.log('CLIENT: service worker registration failure.');
+        });
+        } else {
+            console.log('CLIENT: service worker is not supported.');
+    }
+              
+</script>
+</body>
+
+</html>

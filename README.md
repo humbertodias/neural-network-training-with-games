@@ -17,7 +17,7 @@ Credits [JVictorDias](https://github.com/JVictorDias)
 
 Linux
 ```sh
-sudo apt install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libwebp-dev libgsl-dev mingw-w64 mingw-w64-tools
+sudo apt install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libwebp-dev libgsl-dev libgtest-dev mingw-w64 mingw-w64-tools
 ```
 
 or
@@ -28,7 +28,7 @@ make docker-compile-all
 
 Mac
 ```sh
-sudo brew install sdl2 sdl2_ttf sdl2_image gsl
+sudo brew install sdl2 sdl2_ttf sdl2_image gsl googletest
 ```
 
 # How to test

@@ -62,19 +62,24 @@ docker-image:
 	docker build . -t pig-compiler
 
 docker-compile-all:	docker-image
-	docker run -v $(shell pwd):/home/docker -ti pig-compiler make all
+	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir -ti pig-compiler make all
+
+docker-compile-it:	docker-image
+	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir -ti pig-compiler bash
 
 args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
 docker-run:
 	docker run --net host \
 	-e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
-	-v "$(shell pwd):/home/docker" \
+	-v "$(shell pwd):/tmp/workdir" \
+	-w /tmp/workdir \
 	pig-compiler \
 	$(args)
 
 docker-mac-run:
 	docker run --net host -e DISPLAY=docker.for.mac.host.internal:0 \
-	-v "$(shell pwd):/home/docker" \
+	-v "$(shell pwd):/tmp/workdir" \
+	-w /tmp/workdir \
 	pig-compiler \
 	$(args)
 
@@ -82,5 +87,24 @@ docker-clean:
 	docker ps -f name=pig-compiler -qa | xargs docker rm -f
 	docker image ls --filter 'reference=pig-compiler' -qa | xargs docker rmi -f
 
-install-dep:
-	sudo apt install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libwebp-dev libgsl-dev mingw-w64 mingw-w64-tools
+dep-install:
+	sudo apt install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libwebp-dev libgsl-dev libgtest-dev mingw-w64 mingw-w64-tools
+
+emcc-install:
+	# Get the emsdk repo
+	git clone https://github.com/emscripten-core/emsdk.git
+
+	# Enter that directory
+	cd emsdk
+
+	# Fetch the latest version of the emsdk (not needed the first time you clone)
+	git pull
+
+	# Download and install the latest SDK tools.
+	./emsdk install latest
+
+	# Make the "latest" SDK "active" for the current user. (writes .emscripten file)
+	./emsdk activate latest
+
+	# Activate PATH and other environment variables in the current terminal
+	source ./emsdk_env.sh

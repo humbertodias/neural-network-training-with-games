@@ -35,6 +35,8 @@
 #include <thread>
 #include <chrono>
 
+#include <emscripten.h>
+
 ///////////////////////////////////////////////////
 
 void DesenharThread()               /// Função chamada pela Thread responsavel por desenhar na tela
@@ -403,14 +405,8 @@ void VerificarFimDePartida()
 }
 
 
-
-int main(int argc, char* args[])
-{
-    ConfiguracoesIniciais();
-
-    std::thread Desenho(DesenharThread);
-
-    while(PIG_JogoRodando == 1)
+void mainLoop(){
+        while(PIG_JogoRodando == 1)
     {
         AtualizarJanela();
         VerificarTeclas();
@@ -447,6 +443,18 @@ int main(int argc, char* args[])
             ReiniciarTimer(TimerGeral);
         }
     }
+}
+
+int main(int argc, char* args[])
+{
+    ConfiguracoesIniciais();
+
+    std::thread Desenho(DesenharThread);
+
+    mainLoop();
+
+    emscripten_set_main_loop_arg(mainloop, &ctx, -1, 1);
+
     FinalizarJanela();
 
     return 0;
