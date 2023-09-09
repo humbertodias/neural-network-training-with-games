@@ -22,22 +22,30 @@ run-valgrind:
 	valgrind --leak-check=full --track-origins=yes ./main < input.txt
 
 clean:
-	rm -rf main main.dSYM fontes pig
+	rm -rf main main.dSYM build
 	
 ln:
 	ln -sF ../common/fontes fontes
 	ln -sF ../common/pig-0.5.1 pig
 	ln -sF ../common/cmakes cmakes
 
+unlink:
+	rm -rf fontes pig cmakes
+
 build:
 	mkdir build
 	cd build 
-	cmake ..
+	cmake
 	make -j2
 
 web:
 	emcc main.cpp -I./pig `sdl2-config --cflags` \
-	-s WASM=1 -s USE_SDL=2 -s USE_SDL_IMAGE=2 -s SDL2_IMAGE_FORMATS='["png"]' -s USE_SDL_TTF=2 -s USE_SDL_MIXER=2 -s SDL2_MIXER_FORMATS='["ogg"]' -s USE_OGG=1 -o web.js
+	-s WASM=1 -s USE_SDL=2 -s USE_SDL_IMAGE=2 -s SDL2_IMAGE_FORMATS='["png"]' -s USE_SDL_TTF=2 -s USE_SDL_MIXER=2 -s SDL2_MIXER_FORMATS='["ogg"]' -s USE_OGG=1 \
+	-o web.js \
+	--preload-file iron.bmp \
+	--use-preload-plugins \
+	-sALLOW_MEMORY_GROWTH
+
 
 
 
