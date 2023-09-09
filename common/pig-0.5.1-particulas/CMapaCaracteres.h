@@ -35,11 +35,13 @@ public:
 
         for (Uint16 j=PRIMEIRO_CAR;j<ULTIMO_CAR;j++){
             surfaceTemp[j-PRIMEIRO_CAR] = TTF_RenderGlyph_Solid(font,(Uint16)j,corFonte);
-            alturaLetra[j-PRIMEIRO_CAR] = surfaceTemp[j-PRIMEIRO_CAR]->h;
-            if (surfaceTemp[j-PRIMEIRO_CAR]->h>altRend)
-                altRend = surfaceTemp[j-PRIMEIRO_CAR]->h;
-            larguraLetra[j-PRIMEIRO_CAR] = surfaceTemp[j-PRIMEIRO_CAR]->w;
-            largRend+=surfaceTemp[j-PRIMEIRO_CAR]->w;
+            SDL_Surface * letra = surfaceTemp[j-PRIMEIRO_CAR];
+            if(letra == NULL) continue;
+            alturaLetra[j-PRIMEIRO_CAR] = letra->h;
+            if (letra->h>altRend)
+                altRend = letra->h;
+            larguraLetra[j-PRIMEIRO_CAR] = letra->w;
+            largRend+=letra->w;
         }
 
         SDL_Rect rect;
