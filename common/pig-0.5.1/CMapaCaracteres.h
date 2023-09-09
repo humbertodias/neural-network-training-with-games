@@ -27,7 +27,7 @@ public:
 
         TTF_Font *font = TTF_OpenFont( nome, tamanhoFonte );
         if (font==NULL)
-            printf("Erro: arquivo de fonte (%s) nao localizado\n");
+            printf("Erro: arquivo de fonte (%s) nao localizado\n", nomeFonte);
         TTF_SetFontStyle(font,estilo);
 
         SDL_Surface *surfaceTemp[ULTIMO_CAR-PRIMEIRO_CAR];

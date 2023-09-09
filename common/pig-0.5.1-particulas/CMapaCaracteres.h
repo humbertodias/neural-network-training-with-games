@@ -27,7 +27,7 @@ public:
 
         TTF_Font *font = TTF_OpenFont( nome, tamanhoFonte );
         if (font==NULL)
-            printf("Erro: arquivo de fonte (%s) nao localizado\n");
+            printf("Erro: arquivo de fonte (%s) nao localizado\n", nomeFonte);
         TTF_SetFontStyle(font,estilo);
 
         SDL_Surface *surfaceTemp[ULTIMO_CAR-PRIMEIRO_CAR];
@@ -234,7 +234,7 @@ public:
                 rectDestino.y = rectDestino.y - tamFonte;
                 continue;
             }
-            aux = aux % 256;//UTF16 string, retirando só o byte que interessa
+            aux = aux % 256;//UTF16 string, retirando sï¿½ o byte que interessa
 
             rectDestino.w = larguraLetra[aux-PRIMEIRO_CAR];
             rectDestino.h = alturaLetra[aux-PRIMEIRO_CAR];
