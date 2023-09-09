@@ -1,0 +1,32 @@
+name: Build/Release
+
+on:
+ push:
+   tags:
+     - '*'
+ workflow_dispatch:
+   branches:
+     - main
+  
+  
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+      # Checkout
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+          path: .
+    
+      # Build
+      - name: zip
+        run: |
+            make zip
+      - uses: actions/upload-artifact@v3
+        with:
+            name: linux
+            path: *.zip
