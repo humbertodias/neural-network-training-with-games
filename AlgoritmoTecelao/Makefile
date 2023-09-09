@@ -27,6 +27,13 @@ clean:
 ln:
 	ln -sF ../common/fontes fontes
 	ln -sF ../common/pig-0.5.1 pig
+	ln -sF ../common/cmakes cmakes
+
+build:
+	mkdir build
+	cd build 
+	cmake ..
+	make -j2
 
 web:
 	emcc main.cpp -I./pig `sdl2-config --cflags` \
