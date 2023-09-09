@@ -9,7 +9,7 @@ endif
 CXXFLAGS := -I./pig -I./include `sdl2-config --cflags` `gsl-config --cflags`
 LDFLAGS  := -lSDL2_ttf -lSDL2_image -lpthread -lwebp `sdl2-config --static-libs` `gsl-config --libs`
 
-all:
+build:
 	$(CC) src/main.cpp -g $(CXXFLAGS) $(LDFLAGS) -o main
 
 png-fix:
@@ -32,7 +32,7 @@ ln:
 unlink:
 	rm -rf fontes pig cmakes
 
-build:
+cmake:
 	mkdir build
 	cd build 
 	cmake ..
@@ -46,3 +46,9 @@ web:
 	--preload-file imagens \
 	--use-preload-plugins \
 	-sALLOW_MEMORY_GROWTH
+
+format:
+	find . -regextype posix-extended -regex '.*\.(c|cpp|h)' -exec clang-format -style=Google -i "{}" +;
+
+zip:	build
+	zip -r linux.zip imagens fontes main 
