@@ -7,10 +7,10 @@ else
 endif
 
 CXXFLAGS := -I./pig `sdl2-config --cflags` 
-CXXFLAGS += -lSDL2_ttf -lSDL2_image -lpthread -lwebp `sdl2-config --libs`
+LDFLAGS  := -lSDL2_ttf -lSDL2_image -lpthread -lwebp `sdl2-config --libs`
 
 all:
-	$(CC) main.cpp -g $(CXXFLAGS) -o main
+	$(CC) main.cpp -g $(CXXFLAGS) $(LDFLAGS) -o main
 
 run:
 	./main

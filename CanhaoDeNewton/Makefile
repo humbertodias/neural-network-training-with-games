@@ -7,10 +7,10 @@ else
 endif
 
 CXXFLAGS := -I./pig -I./include `sdl2-config --cflags` `gsl-config --cflags`
-CXXFLAGS += -lSDL2_ttf -lSDL2_image -lpthread -lwebp `sdl2-config --libs` `gsl-config --libs`
+LDFLAGS  := -lSDL2_ttf -lSDL2_image -lpthread -lwebp `sdl2-config --libs` `gsl-config --libs`
 
 all:
-	$(CC) src/main.cpp -g $(CXXFLAGS) -o main
+	$(CC) src/main.cpp -g $(CXXFLAGS) $(LDFLAGS) -o main
 
 png-fix:
 	find imagens -type f -iname '*.png' -exec pngcrush -ow -rem allb -reduce {} \;
