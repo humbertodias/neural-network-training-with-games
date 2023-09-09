@@ -232,3 +232,9 @@ make run-hardestgame-editor
 * [ParticulasGravitacionais3D](https://github.com/JVictorDias/ParticulasGravitacionais3D)
 
 * [Spirograph](https://github.com/JVictorDias/Spirograph)
+
+# References
+
+* [PIG](https://github.com/PIGDevUff/PigDev)
+
+* [Emcscripten](https://emscripten.org/docs/porting/files/packaging_files.html)
