@@ -219,7 +219,7 @@ make run-hardestgame-editor
 
 * [CanhaoDeNewton](https://github.com/JVictorDias/CanhaoDeNewton)
 
-* [Depp-Cars](https://github.com/JVictorDias/DeepCars)
+* [Deep-Cars](https://github.com/JVictorDias/DeepCars)
 
 * [Dinossauro-Google](https://github.com/JVictorDias/Dinossauro-Google)
 
