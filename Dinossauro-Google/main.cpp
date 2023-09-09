@@ -412,7 +412,7 @@ int main(int argc, char* args[])
 
     while(PIG_JogoRodando == 1)
     {
-        //AtualizarJanela();
+        AtualizarJanela();
         VerificarTeclas();
 
         if(TempoDecorrido(TimerGeral) >= Periodo)
