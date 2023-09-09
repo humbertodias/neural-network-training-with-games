@@ -58,9 +58,11 @@ clean:
 	cd ParticulasGravitacionais3D && $(MAKE) clean
 	cd Spirograph && $(MAKE) clean
 
-# DOCKER_DEFAULT_PLATFORM=linux/amd64
 docker-image:
-	docker build . -t pig-compiler
+	docker build . \
+	--build-arg UID=$(shell id -u) \
+	--build-arg GID=$(shell id -g) \
+	-t pig-compiler
 
 docker-compile-all:	docker-image
 	docker run -v $(shell pwd):/home/docker -ti pig-compiler make all
