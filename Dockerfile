@@ -5,8 +5,8 @@ RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y make xterm sudo 
 libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libwebp-dev libgsl-dev valgrind
 
 ARG USER=docker
-ARG UID=1001
-ARG GID=1001
+ARG UID=9999
+ARG GID=9999
 # default password for user
 ARG PW=docker
 

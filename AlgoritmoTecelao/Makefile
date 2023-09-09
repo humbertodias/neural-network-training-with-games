@@ -25,9 +25,9 @@ clean:
 	rm -rf main main.dSYM build
 	
 ln:
-	ln -sF ../common/fontes fontes
-	ln -sF ../common/pig-0.5.1 pig
-	ln -sF ../common/cmakes cmakes
+	ln -sTf ../common/fontes fontes
+	ln -sTf ../common/pig-0.5.1 pig
+	ln -sTf ../common/cmakes cmakes
 
 unlink:
 	rm -rf fontes pig cmakes

@@ -28,6 +28,6 @@ clean:
 	rm -rf main gerador *.dSYM
 
 ln:
-	ln -sF ../common/fontes fontes
-	ln -sF ../common/pig-0.5.1 pig
+	ln -sTf ../common/fontes fontes
+	ln -sTf ../common/pig-0.5.1 pig
 

@@ -59,10 +59,7 @@ clean:
 	cd Spirograph && $(MAKE) clean
 
 docker-image:
-	docker build . \
-	--build-arg UID=$(shell id -u) \
-	--build-arg GID=$(shell id -g) \
-	-t pig-compiler
+	docker build . -t pig-compiler
 
 docker-compile-all:	docker-image
 	docker run -v $(shell pwd):/home/docker -ti pig-compiler make all
