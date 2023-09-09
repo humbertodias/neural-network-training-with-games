@@ -82,9 +82,10 @@ public:
                 SDL_BlitSurface(out,NULL,surfaceTemp[j-PRIMEIRO_CAR],&dest);
                 SDL_FreeSurface(out);
             }
+            if(surfaceTemp[j-PRIMEIRO_CAR] == NULL) continue;
             if (CORESIGUAIS(corFonte,BRANCO)){
                 SDL_SetColorKey(surfaceTemp[j-PRIMEIRO_CAR],SDL_TRUE,SDL_MapRGBA(surfaceTemp[j-PRIMEIRO_CAR]->format, 0,0,0,255));//ROXO
-            }else SDL_SetColorKey(surfaceTemp[j-PRIMEIRO_CAR],SDL_TRUE,SDL_MapRGBA(surfaceTemp[j-PRIMEIRO_CAR]->format, 255,255,255,255));//ROXO
+            } else SDL_SetColorKey(surfaceTemp[j-PRIMEIRO_CAR],SDL_TRUE,SDL_MapRGBA(surfaceTemp[j-PRIMEIRO_CAR]->format, 255,255,255,255));//ROXO
 
             glyphsT[j-PRIMEIRO_CAR] = SDL_CreateTextureFromSurface(renderer,surfaceTemp[j-PRIMEIRO_CAR]);
             SDL_FreeSurface(surfaceTemp[j-PRIMEIRO_CAR]);
