@@ -8,7 +8,17 @@ Credits [JVictorDias](https://github.com/JVictorDias)
 
 Download the [release](https://github.com/humbertodias/neural-network-training-with-games/releases) zip file, unzip it and then run the main file.
 
-or using a dev environment with make+sdl installed.
+or using a dev environment with all required dependencies installed as follow.
+
+Linux
+```shell
+make linux-dep-install
+```
+Mac
+```shell
+make mac-dep-install
+```
+
 
 ## Flappy-Bird
 

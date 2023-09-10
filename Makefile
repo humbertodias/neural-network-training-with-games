@@ -59,7 +59,7 @@ release:
 	cd ParticulasGravitacionais3D && $(MAKE) release
 	cd Spirograph && $(MAKE) release
 
-SDL_VERSION=2.28.2
+SDL_VERSION=2.28.3
 SDL_COMPILER_TAG=hldtux/sdl2-compiler:${SDL_VERSION} 
 docker-compile-all:
 	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir -ti sdl2-compiler make build
@@ -99,8 +99,11 @@ docker-mac-run:
 	${SDL_COMPILER_TAG} \
 	$(args)
 
-dep-install:
+linux-dep-install:
 	sudo apt install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libwebp-dev libgsl-dev libgtest-dev mingw-w64 mingw-w64-tools
+
+mac-dep-install:
+	sudo brew install sdl2 sdl2_ttf sdl2_image gsl googletest
 
 emcc-install:
 	# Get the emsdk repo
