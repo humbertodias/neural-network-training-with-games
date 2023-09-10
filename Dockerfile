@@ -54,7 +54,6 @@ RUN curl -skL https://github.com/libsdl-org/SDL_mixer/releases/download/release-
   && cd /SDL2_mixer-${SDL_MIXER_VERSION} && ./configure && make && make install \
   && cd / && rm -rf /SDL2_mixer-${SDL_MIXER_VERSION} SDL2_mixer-${SDL_MIXER_VERSION}.tar.gz
 
-
 ARG USER=docker
 ARG UID=9999
 ARG GID=9999
@@ -64,15 +63,6 @@ ARG PW=docker
 # Option1: Using unencrypted password/ specifying password
 RUN useradd -m ${USER} --uid=${UID} && echo "${USER}:${PW}" | chpasswd && adduser docker sudo
 RUN echo "${USER} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-
-ARG USER=docker
-ARG UID=9999
-ARG GID=9999
-# default password for user
-ARG PW=docker
-
-# Option1: Using unencrypted password/ specifying password
-RUN useradd -m ${USER} --uid=${UID} && echo "${USER}:${PW}" | chpasswd && adduser docker sudo
 
 # emcc
 RUN \
