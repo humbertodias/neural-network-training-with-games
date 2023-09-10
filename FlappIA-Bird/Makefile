@@ -6,7 +6,7 @@ else
 	CC=g++
 endif
 
-CXXFLAGS := -I./pig `sdl2-config --cflags` `gsl-config --cflags`
+CXXFLAGS := -I../common/pig `sdl2-config --cflags` `gsl-config --cflags`
 LDFLAGS := -lSDL2_ttf -lSDL2_image -lpthread -lwebp `sdl2-config --libs` `gsl-config --libs`
 
 build:
@@ -19,12 +19,9 @@ run:
 	./main
 
 clean:
-	rm -rf main main.dSYM release.zip
+	rm -rf main main.dSYM release*
 
-ln:
-	ln -sTf ../common/fontes fontes
-	ln -sTf ../common/pig-0.5.1 pig
-	ln -sTf ../common/cmakes cmakes
-
-release:	
-	zip -r release.zip imagens fontes main
+SYSTEM:=$(shell uname -s)
+release:	build
+	mkdir -p release-$(SYSTEM)
+	cp -r imagens fontes main release-$(SYSTEM)

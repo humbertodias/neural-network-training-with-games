@@ -20,6 +20,17 @@ ln:
 	cd Spirograph && $(MAKE) ln
 	cd ParticulasGravitacionais3D && $(MAKE) ln
 
+unlink:
+	cd AlgoritmoTecelao && $(MAKE) unlink
+	cd CanhaoDeNewton && $(MAKE) unlink
+	cd DeepCars && $(MAKE) unlink
+	cd Dinossauro-Google && $(MAKE) unlink
+	cd FlappIA-Bird && $(MAKE) unlink
+	cd HardestGame && $(MAKE) unlink
+	cd HardestGameEditor && $(MAKE) unlink
+	cd Spirograph && $(MAKE) unlink
+	cd ParticulasGravitacionais3D && $(MAKE) unlink
+
 run-hardestgameeditor:
 	cd HardestGameEditor && make && ./main < input.txt
 
@@ -57,7 +68,7 @@ clean:
 	cd HardestGameEditor && $(MAKE) clean
 	cd ParticulasGravitacionais3D && $(MAKE) clean
 	cd Spirograph && $(MAKE) clean
-	rm *.zip
+	rm -rf *.zip
 
 release:
 	cd AlgoritmoTecelao && $(MAKE) release
@@ -86,7 +97,11 @@ docker-compile-all:	docker-image
 	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir -ti sdl2-compiler make build
 
 docker-run-it:	docker-image
-	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir -ti sdl2-compiler bash
+	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir \
+	-ti sdl2-compiler \
+	--build-arg UID=$(shell id -u) \
+	--build-arg GID=$(shell id -g) \
+	bash
 
 docker-release-linux:
 	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir hldtux/sdl2-compiler make release
@@ -95,8 +110,8 @@ docker-release-windows:
 	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir hldtux/sdl2-compiler make -e CC=x86_64-w64-mingw32-g++ release
 
 zip-all:
-	$(MAKE) docker-release-linux && zip Linux.zip `find . -name "*.zip" -print` && $(MAKE) clean
-#	$(MAKE) docker-release-windows && zip Windows.zip `find . -name "*.zip" -print` && $(MAKE) clean
+	$(MAKE) docker-release-linux && zip Linux.zip `find . -name "release-Linux" -print`
+	# $(MAKE) docker-release-windows && zip Windows.zip `find . -name "release-Windows" -print`
 
 args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
 docker-run:

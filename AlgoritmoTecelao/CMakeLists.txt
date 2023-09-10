@@ -1,24 +1,23 @@
 cmake_minimum_required(VERSION 3.7)
+set(CMAKE_VERBOSE_MAKEFILE ON)
 
 project(main)
 
 # project(TestDeepCars)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmakes/")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../common/cmakes/")
 
 include(FindPkgConfig)
 
+file(GLOB_RECURSE PIG "../common/pig/*.cpp" "../common/pig/*.h" )
 
-file(GLOB_RECURSE PIG "pig/*.cpp" "pig/*.h" )
-
-#macro(print_all_variables)
-#    message(STATUS "print_all_variables------------------------------------------{")
-#    foreach (file ${PIG})
-#        message(STATUS "${file}\n")
-#    endforeach()
-#    message(STATUS "print_all_variables------------------------------------------}")
-#endmacro()
-
+macro(print_all_variables)
+   message(STATUS "print_all_variables------------------------------------------{")
+   foreach (file ${PIG})
+       message(STATUS "${file}\n")
+   endforeach()
+   message(STATUS "print_all_variables------------------------------------------}")
+endmacro()
 
 #print_all_variables()
 
@@ -32,7 +31,7 @@ file(GLOB_RECURSE UNITARY_TEST pig/*.teste.cpp )
 # list(REMOVE_ITEM PIG ${UNITARY_TEST} )
 
 
-include_directories("pig/*")
+include_directories("../common/pig")
 #include_directories("codigoFonte/*")
 
 add_executable(main
@@ -49,11 +48,9 @@ add_executable(main
 
 
 PKG_SEARCH_MODULE(SDL2 REQUIRED sdl2)
-
 find_package(SDL2 REQUIRED)
-include_directories("./pig")
 include_directories(${SDL2_INCLUDE_DIRS})
-target_link_libraries(main ${SDL2_LIBRARIES})
+target_link_libraries(main ${SDL2_LIBRARY})
 # target_link_libraries(TestDeepCars ${SDL2_LIBRARIES})
 
 find_package(SDL2_image REQUIRED)

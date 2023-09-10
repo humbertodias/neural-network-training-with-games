@@ -6,7 +6,7 @@ else
 	CC=g++
 endif
 
-CXXFLAGS := -I./pig `sdl2-config --cflags` `gsl-config --cflags`
+CXXFLAGS := -I../common/pig `sdl2-config --cflags` `gsl-config --cflags`
 LDFLAGS  := -lSDL2_ttf -lSDL2_image -lpthread -lwebp `sdl2-config --static-libs` `gsl-config --libs`
 
 build:
@@ -22,11 +22,9 @@ dep:
 	sudo apt install libgsl-dev
 
 clean:
-	rm -rf main main.dSYM build release.zip
+	rm -rf main main.dSYM build release*
 
-ln:
-	ln -sTf ../common/fontes fontes
-	ln -sTf ../common/pig-0.5.1 pig
-
+SYSTEM:=$(shell uname -s)
 release:	build
-	zip -r release imagens fontes matrizDistancias rede redes main
+	mkdir -p redes release-$(SYSTEM)
+	cp -r imagens fontes matrizDistancias rede redes main release-$(SYSTEM)

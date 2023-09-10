@@ -4,12 +4,12 @@ project(main)
 
 # project(TestDeepCars)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmakes/")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../common/cmakes/")
 
 include(FindPkgConfig)
 
 
-file(GLOB_RECURSE PIG "pig/*.cpp" "pig/*.h" )
+file(GLOB_RECURSE PIG "../common/pig/*.cpp" "../common/pig/*.h" )
 file(GLOB_RECURSE PIG_EXTRAS "include/*.h")
 file(GLOB_RECURSE SOURCE_CODE "src/*.cpp")
 
@@ -34,7 +34,7 @@ file(GLOB_RECURSE UNITARY_TEST pig/*.teste.cpp )
 # list(REMOVE_ITEM PIG ${UNITARY_TEST} )
 
 
-include_directories("pig")
+include_directories("../common/pig")
 include_directories("include")
 #include_directories("codigoFonte/*")
 
@@ -53,7 +53,7 @@ add_executable(main
 
 
 
-include_directories("./pig")
+#include_directories("./pig")
 
 find_package(GSL REQUIRED)
 include_directories(${GSL_INCLUDE_DIRS})
