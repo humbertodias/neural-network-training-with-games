@@ -27,29 +27,58 @@ RUN apt update && apt install -y \
 RUN apt install -y make xterm sudo build-essential git zip curl valgrind clang-format
 
 # https://github.com/libsdl-org/SDL/releases/download/release-2.28.3/SDL2-2.28.3.tar.gz
+# https://github.com/libsdl-org/SDL/releases/download/release-2.28.3/SDL2-devel-2.28.3-mingw.tar.gz
 ARG SDL_VERSION=2.28.3
-RUN curl -skL https://github.com/libsdl-org/SDL/releases/download/release-${SDL_VERSION}/SDL2-${SDL_VERSION}.tar.gz -o SDL2-${SDL_VERSION}.tar.gz \
+ENV SDL_URL="https://github.com/libsdl-org/SDL/releases/download/release-${SDL_VERSION}/SDL2-${SDL_VERSION}.tar.gz"
+ENV SDL_CMD="./configure && make && make install"
+# MinGW
+# ENV SDL_URL="https://github.com/libsdl-org/SDL/releases/download/release-${SDL_VERSION}/SDL2-devel-${SDL_VERSION}-mingw.tar.gz"
+# ENV SDL_CMD="make native"
+RUN curl -skL ${SDL_URL} -o SDL2-${SDL_VERSION}.tar.gz \
   && tar xf SDL2-${SDL_VERSION}.tar.gz \
   && cd /SDL2-${SDL_VERSION} && ./configure && make && make install \
   && cd / && rm -rf /SDL2-${SDL_VERSION} SDL2-${SDL_VERSION}.tar.gz
 
+
 # https://github.com/libsdl-org/SDL_ttf/releases/download/release-2.20.2/SDL2_ttf-2.20.2.tar.gz
+# https://github.com/libsdl-org/SDL_ttf/releases/download/release-2.20.2/SDL2_ttf-devel-2.20.2-mingw.tar.gz
 ARG SDL_TTF_VERSION=2.20.2
-RUN curl -skL https://github.com/libsdl-org/SDL_ttf/releases/download/release-${SDL_TTF_VERSION}/SDL2_ttf-${SDL_TTF_VERSION}.tar.gz -o SDL2_ttf-${SDL_TTF_VERSION}.tar.gz \
+ENV SDL_TTF_URL="https://github.com/libsdl-org/SDL_ttf/releases/download/release-${SDL_TTF_VERSION}/SDL2_ttf-${SDL_TTF_VERSION}.tar.gz"
+ENV SDL_TTF_CMD="./configure && make && make install"
+# MinGW
+# ENV SDL_TTF_URL="https://github.com/libsdl-org/SDL_ttf/releases/download/release-${SDL_TTF_VERSION}/SDL2_ttf-devel-${SDL_TTF_VERSION}-mingw.tar.gz"
+# ENV SDL_TTF_CMD="make native"
+
+RUN curl -skL ${SDL_TTF_URL} -o SDL2_ttf-${SDL_TTF_VERSION}.tar.gz \
   && tar xf SDL2_ttf-${SDL_TTF_VERSION}.tar.gz \
   && cd /SDL2_ttf-${SDL_TTF_VERSION} && ./configure && make && make install \
   && cd / && rm -rf /SDL2_ttf-${SDL_TTF_VERSION} SDL2_ttf-${SDL_TTF_VERSION}.tar.gz
 
 # https://github.com/libsdl-org/SDL_image/releases/download/release-2.6.3/SDL2_image-2.6.3.tar.gz
+# https://github.com/libsdl-org/SDL_image/releases/download/release-2.6.3/SDL2_image-devel-2.6.3-mingw.tar.gz
 ARG SDL_IMAGE_VERSION=2.6.3
-RUN curl -skL https://github.com/libsdl-org/SDL_image/releases/download/release-${SDL_IMAGE_VERSION}/SDL2_image-${SDL_IMAGE_VERSION}.tar.gz -o SDL2_image-${SDL_IMAGE_VERSION}.tar.gz \
+ENV SDL_IMAGE_URL="https://github.com/libsdl-org/SDL_image/releases/download/release-${SDL_IMAGE_VERSION}/SDL2_image-${SDL_IMAGE_VERSION}.tar.gz"
+ENV SDL_IMAGE_CMD="./configure && make && make install"
+# MinGW
+# ENV SDL_IMAGE_URL="https://github.com/libsdl-org/SDL_image/releases/download/release-${SDL_IMAGE_VERSION}/SDL2_image-devel-${SDL_IMAGE_VERSION}-mingw.tar.gz"
+# ENV SDL_IMAGE_CMD="make native"
+
+RUN curl -skL ${SDL_IMAGE_URL} -o SDL2_image-${SDL_IMAGE_VERSION}.tar.gz \
   && tar xf SDL2_image-${SDL_IMAGE_VERSION}.tar.gz \
   && cd /SDL2_image-${SDL_IMAGE_VERSION} && ./configure && make && make install \
   && cd / && rm -rf /SDL2_image-${SDL_IMAGE_VERSION} SDL2_image-${SDL_IMAGE_VERSION}.tar.gz
 
+
 # https://github.com/libsdl-org/SDL_mixer/releases/download/release-2.6.3/SDL2_mixer-2.6.3.tar.gz
+# https://github.com/libsdl-org/SDL_mixer/releases/download/release-2.6.3/SDL2_mixer-devel-2.6.3-mingw.tar.gz
 ARG SDL_MIXER_VERSION=2.6.3
-RUN curl -skL https://github.com/libsdl-org/SDL_mixer/releases/download/release-${SDL_MIXER_VERSION}/SDL2_mixer-${SDL_MIXER_VERSION}.tar.gz -o SDL2_mixer-${SDL_MIXER_VERSION}.tar.gz \
+ENV SDL_MIXER_URL:="https://github.com/libsdl-org/SDL_mixer/releases/download/release-${SDL_MIXER_VERSION}/SDL2_mixer-${SDL_MIXER_VERSION}.tar.gz"
+ENV SDL_MIXER_CMD:="./configure && make && make install"
+# MinGW
+# ENV SDL_MIXER_URL:="https://github.com/libsdl-org/SDL_mixer/releases/download/release-${SDL_MIXER_VERSION}/SDL2_mixer-devel-${SDL_MIXER_VERSION}-mingw.tar.gz"
+# ENV SDL_MIXER_CMD:="make native"
+
+RUN curl -skL ${SDL_MIXER_URL} -o SDL2_mixer-${SDL_MIXER_VERSION}.tar.gz \
   && tar xf SDL2_mixer-${SDL_MIXER_VERSION}.tar.gz \
   && cd /SDL2_mixer-${SDL_MIXER_VERSION} && ./configure && make && make install \
   && cd / && rm -rf /SDL2_mixer-${SDL_MIXER_VERSION} SDL2_mixer-${SDL_MIXER_VERSION}.tar.gz
