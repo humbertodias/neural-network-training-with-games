@@ -21,51 +21,13 @@ Mac
 make mac-dep-install
 ```
 
-
-## Flappy-Bird
-
-```
-make run-flappy
-```
-
-![](doc/flappy.gif)
-
-|key|Action|
-|---|------|
-|esc | Pause |
-|space | info |
-
-
-[Youtube](https://www.youtube.com/watch?v=vavXvu_SMeM)
-
-## Deep-Cars
-
-```
-make run-cars
-```
-
-![](doc/cars.gif)
-
-[Youtube](https://www.youtube.com/watch?v=gnfkfUQvKDw)
-
-
-## Dinossauro
-
-```
-make run-dino
-```
-
-![](doc/dino.gif)
-
-
-[Youtube](https://www.youtube.com/watch?v=NZlIYr1slAk)
-
-
 ## Tecelao
 
 ```
 make run-tecelao
 ```
+
+![](doc/tecelao.gif)
 
 Parameters (input.txt)
 
@@ -92,15 +54,109 @@ Commands
 |ENTER|Start|
 
 
-![](doc/tecelao.gif)
+[Youtube](https://www.youtube.com/watch?v=YZtx4jNNbx8) | [Source](https://github.com/JVictorDias/AlgoritmoTecelao)
 
-[Youtube](https://www.youtube.com/watch?v=YZtx4jNNbx8)
+## Canhao de Newton
+
+```shell
+make run-canhao
+```
+
+![](doc/canhao.png)
+
+|key|Action|
+|---|------|
+|ENTER  |Atirar |
+|a/s/d/w  |esq/dir/cima/baixo |
+
+
+[Youtube](https://www.youtube.com/watch?v=evcnQajrR6E) | [Source](https://github.com/JVictorDias/CanhaoDeNewton)
+
+## Deep-Cars
+
+```shell
+make run-cars
+```
+
+![](doc/cars.gif)
+
+[Youtube](https://www.youtube.com/watch?v=gnfkfUQvKDw) | [Source](https://github.com/JVictorDias/DeepCars)
+
+## Dinossauro
+
+```shell
+make run-dino
+```
+
+![](doc/dino.gif)
+
+
+[Youtube](https://www.youtube.com/watch?v=NZlIYr1slAk) | [Source](https://github.com/JVictorDias/Dinossauro-Google)
+
+
+## Flappy-Bird
+
+```shell
+make run-flappy
+```
+
+![](doc/flappy.gif)
+
+|key|Action|
+|---|------|
+|esc | Pause |
+|space | info |
+
+
+[Youtube](https://www.youtube.com/watch?v=vavXvu_SMeM) | [Source](https://github.com/JVictorDias/FlappIA-Bird)
+
+
+## HardestGame
+
+```shell
+make run-hardestgame
+```
+
+![](doc/hardestgame.png)
+
+|key|Action|
+|---|------|
+|F2  |Load next map |
+|ENTER  |Start map  |
+
+[Youtube](https://www.youtube.com/watch?v=QD-gHp81G4M) | [Source](https://github.com/JVictorDias/HardestGame)
+
+
+## HardestGameEditor
+
+```shell
+make run-hardestgame-editor
+```
+
+![](doc/hardestgame-editor.png)
+
+|key|Action|
+|---|------|
+|d/f  |Angulo de troca |
+|cima/baixo  |Tamanho grade  |
+|j/k  |Tempo parado |
+|g/h  |Angulo parada |
+|i  |Salvar posicao mouse |
+|u  |Carregar posicao salva  |
+|F1 |Salvar mapa  |
+|F2  |Carregar mapa  |
+
+[Source](https://github.com/JVictorDias/HardestGameEditor)
+
 
 ## ParticulasGravitacionais3D
 
-```
+```shell
 make run-particulas
 ```
+
+![](doc/particulas.png)
+
 
 |key|Action|
 |---|------|
@@ -117,98 +173,27 @@ make run-particulas
 |ENTER|Join particles|
 |Mouse Left|Expand particles|
 
-![](doc/particulas.png)
 
 
-[Youtube](https://www.youtube.com/watch?v=rTZJtiCAmTI)
+[Youtube](https://www.youtube.com/watch?v=rTZJtiCAmTI) | [Source](https://github.com/JVictorDias/ParticulasGravitacionais3D)
 
 
 ## Spirograph
 
-```
+```shell
 make run-spirograph
 ```
+
+![](doc/spirograph.png)
 
 |key|Action|
 |---|------|
 |ENTER  |Next  |
 
-![](doc/spirograph.png)
+
+[Youtube](https://www.youtube.com/watch?v=o7MOaXh4zFU) | [Source](https://github.com/JVictorDias/Spirograph)
 
 
-[Youtube](https://www.youtube.com/watch?v=o7MOaXh4zFU)
-
-
-## HardestGame
-
-```
-make run-hardestgame
-```
-
-|key|Action|
-|---|------|
-|F2  |Load next map |
-|ENTER  |Start map  |
-
-![](doc/hardestgame.png)
-
-[Youtube](https://www.youtube.com/watch?v=QD-gHp81G4M)
-
-## Canhao de Newton
-
-```
-make run-canhao
-```
-
-![](doc/canhao.png)
-
-|key|Action|
-|---|------|
-|ENTER  |Atirar |
-|a/s/d/w  |esq/dir/cima/baixo |
-
-
-[Youtube](https://www.youtube.com/watch?v=evcnQajrR6E)
-
-## HardestGameEditor
-
-```
-make run-hardestgame-editor
-```
-
-|key|Action|
-|---|------|
-|d/f  |Angulo de troca |
-|cima/baixo  |Tamanho grade  |
-|j/k  |Tempo parado |
-|g/h  |Angulo parada |
-|i  |Salvar posicao mouse |
-|u  |Carregar posicao salva  |
-|F1 |Salvar mapa  |
-|F2  |Carregar mapa  |
-
-![](doc/hardestgame-editor.png)
-
-
-# Source
-
-* [Algoritmo-Tecelao](https://github.com/JVictorDias/AlgoritmoTecelao)
-
-* [CanhaoDeNewton](https://github.com/JVictorDias/CanhaoDeNewton)
-
-* [Deep-Cars](https://github.com/JVictorDias/DeepCars)
-
-* [Dinossauro-Google](https://github.com/JVictorDias/Dinossauro-Google)
-
-* [FlappIA-Bird](https://github.com/JVictorDias/FlappIA-Bird)
-
-* [HardestGame](https://github.com/JVictorDias/HardestGame)
-
-* [HardestGameEditor](https://github.com/JVictorDias/HardestGameEditor)
-
-* [ParticulasGravitacionais3D](https://github.com/JVictorDias/ParticulasGravitacionais3D)
-
-* [Spirograph](https://github.com/JVictorDias/Spirograph)
 
 # References
 
