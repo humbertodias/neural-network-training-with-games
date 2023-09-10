@@ -62,12 +62,10 @@ release:
 SDL_VERSION=2.28.3
 SDL_COMPILER_TAG=hldtux/sdl2-compiler:${SDL_VERSION} 
 docker-compile-all:
-	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir -ti sdl2-compiler make build
+	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir -ti ${SDL_COMPILER_TAG} make build
 
 docker-run-it:
-	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir \
-	-ti ${SDL_COMPILER_TAG} \
-	bash
+	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir -ti ${SDL_COMPILER_TAG} bash
 
 docker-release-linux:
 	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir ${SDL_COMPILER_TAG} make release
