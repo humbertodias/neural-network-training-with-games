@@ -59,31 +59,21 @@ release:
 	cd ParticulasGravitacionais3D && $(MAKE) release
 	cd Spirograph && $(MAKE) release
 
-docker-image:
-	docker build . \
-	--build-arg UID=$(shell id -u) \
-	--build-arg GID=$(shell id -g) \
-	-t sdl2-compiler
-
-docker-tag:
-	docker tag sdl2-compiler hldtux/sdl2-compiler
-
-docker-push: 	docker-tag
-	docker push hldtux/sdl2-compiler
-
-docker-compile-all:	docker-image
+SDL_VERSION=2.28.2
+SDL_COMPILER_TAG=hldtux/sdl2-compiler:${SDL_VERSION} 
+docker-compile-all:
 	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir -ti sdl2-compiler make build
 
-docker-run-it:	docker-image
+docker-run-it:
 	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir \
-	-ti sdl2-compiler \
+	-ti ${SDL_COMPILER_TAG} \
 	bash
 
 docker-release-linux:
-	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir hldtux/sdl2-compiler make release
+	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir ${SDL_COMPILER_TAG} make release
 
 docker-release-windows:
-	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir hldtux/sdl2-compiler make -e CC=x86_64-w64-mingw32-gcc -e CXX=x86_64-w64-mingw32-g++ release
+	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir ${SDL_COMPILER_TAG} make -e CC=x86_64-w64-mingw32-gcc -e CXX=x86_64-w64-mingw32-g++ release
 
 docker-release-darwin:
 	make release
@@ -99,19 +89,15 @@ docker-run:
 	-e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
 	-v "$(shell pwd):/tmp/workdir" \
 	-w /tmp/workdir \
-	sdl2-compiler \
+	${SDL_COMPILER_TAG} \
 	$(args)
 
 docker-mac-run:
 	docker run --net host -e DISPLAY=docker.for.mac.host.internal:0 \
 	-v "$(shell pwd):/tmp/workdir" \
 	-w /tmp/workdir \
-	sdl2-compiler \
+	${SDL_COMPILER_TAG} \
 	$(args)
-
-docker-clean:
-	docker ps -f name=sdl2-compiler -qa | xargs docker rm -f
-	docker image ls --filter 'reference=sdl2-compiler' -qa | xargs docker rmi -f
 
 dep-install:
 	sudo apt install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libwebp-dev libgsl-dev libgtest-dev mingw-w64 mingw-w64-tools
