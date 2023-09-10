@@ -74,9 +74,9 @@ docker-push: 	docker-tag
 docker-compile-all:	docker-image
 	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir -ti sdl2-compiler make build
 
-docker-run-it:	docker-image
+docker-run-it:
 	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir \
-	-ti sdl2-compiler \
+	-ti hldtux/sdl2-compiler \
 	bash
 
 docker-release-linux:

@@ -49,6 +49,6 @@
 main.dSYM
 
 .idea
-build
+build*
 *.zip
 release*
