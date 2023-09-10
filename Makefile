@@ -75,14 +75,21 @@ docker-image:
 	--build-arg GID=$(shell id -g) \
 	-t sdl2-compiler
 
+docker-tag:
+	docker tag sdl2-compiler hldtux/sdl2-compiler
+
+docker-push: 	docker-tag
+	docker push hldtux/sdl2-compiler
+
 docker-compile-all:	docker-image
 	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir -ti sdl2-compiler make build
 
 docker-compile-it:	docker-image
 	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir -ti sdl2-compiler bash
 
-docker-compile-zip:	docker-image
-	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir sdl2-compiler make zip
+#docker-compile-zip:	docker-image
+docker-compile-zip:
+	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir hldtux/sdl2-compiler make zip
 
 args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
 docker-run:
