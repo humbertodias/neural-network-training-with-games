@@ -6,9 +6,10 @@ else
 	CC=g++
 endif
 
-CXXFLAGS := -I../common/pig `sdl2-config --cflags` `gsl-config --cflags`
-LDFLAGS := -lSDL2_ttf -lSDL2_image -lpthread -lwebp `sdl2-config --libs` `gsl-config --libs`
+CXXFLAGS := -I../../common/pig `sdl2-config --cflags` `gsl-config --cflags`
+LDFLAGS  := -lSDL2_ttf -lSDL2_image -lpthread -lwebp `sdl2-config --static-libs` `gsl-config --libs`
 
+.PHONY: build
 build:
 	$(CC) main.cpp -g $(CXXFLAGS) $(LDFLAGS) -o main
 
@@ -21,10 +22,13 @@ png-fix:
 run:
 	./main
 
+dep:
+	sudo apt install libgsl-dev libwebp-dev
+
 clean:
 	rm -rf main main.dSYM build* release*
 
 SYSTEM:=$(shell uname -s)
 release:	build
 	mkdir -p release-$(SYSTEM)
-	cp -r imagens fontes main release-$(SYSTEM)
+	cp -r imagens fontes mapas main release-$(SYSTEM)

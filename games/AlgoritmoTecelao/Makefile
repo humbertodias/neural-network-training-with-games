@@ -6,9 +6,10 @@ else
 	CC=g++
 endif
 
-CXXFLAGS := -I../common/pig `sdl2-config --cflags`
+CXXFLAGS := -I../../common/pig `sdl2-config --cflags`
 LDFLAGS  := -lSDL2_ttf -lSDL2_image -lpthread -lwebp `sdl2-config --static-libs`
 
+.PHONY: build
 build:
 	$(CC) main.cpp -g $(CXXFLAGS) $(LDFLAGS) -o main
 
@@ -28,7 +29,7 @@ cmake:
 	mkdir -p build && cd build && cmake .. && make -j2
 
 web:
-	emcc main.cpp -I../common/pig `sdl2-config --cflags` \
+	emcc main.cpp -I../../common/pig `sdl2-config --cflags` \
 	-s WASM=1 -s USE_SDL=2 -s USE_SDL_IMAGE=2 -s SDL2_IMAGE_FORMATS='["png"]' -s USE_SDL_TTF=2 -s USE_SDL_MIXER=2 -s SDL2_MIXER_FORMATS='["ogg"]' -s USE_OGG=1 \
 	-o web.js \
 	--preload-file iron.bmp \

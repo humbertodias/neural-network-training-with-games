@@ -3,15 +3,15 @@ project(main)
 add_executable(main main.cpp)
 
 # cmake modules
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../common/cmakes/")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../../common/cmakes")
 
 # pig
-include_directories("../common/pig-0.5.1-particulas")
+include_directories("../../common/pig-0.5.1-particulas")
 include_directories("include")
 
 # sdl2
 find_package(SDL2 REQUIRED)
-include_directories(${SDL2_INCLUDE_DIRS})
+include_directories(${SDL2_INCLUDE_DIR})
 target_link_libraries(main ${SDL2_LIBRARY})
 
 # sdl2_image

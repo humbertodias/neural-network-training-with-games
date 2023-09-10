@@ -1,63 +1,74 @@
 build:
-	cd AlgoritmoTecelao && $(MAKE)
-	cd CanhaoDeNewton && $(MAKE)
-	cd DeepCars && $(MAKE)
-	cd Dinossauro-Google && $(MAKE)
-	cd FlappIA-Bird && $(MAKE)
-	cd HardestGame && $(MAKE)
-	cd HardestGameEditor && $(MAKE)
-	cd ParticulasGravitacionais3D && $(MAKE)
-	cd Spirograph && $(MAKE)
+	cd games/AlgoritmoTecelao && $(MAKE)
+	cd games/CanhaoDeNewton && $(MAKE)
+	cd games/DeepCars && $(MAKE)
+	cd games/Dinossauro-Google && $(MAKE)
+	cd games/FlappIA-Bird && $(MAKE)
+	cd games/HardestGame && $(MAKE)
+	cd games/HardestGameEditor && $(MAKE)
+	cd games/ParticulasGravitacionais3D && $(MAKE)
+	cd games/Spirograph && $(MAKE)
+
+cmake:
+	cd games/AlgoritmoTecelao && $(MAKE) cmake
+	cd games/CanhaoDeNewton && $(MAKE) cmake
+	cd games/DeepCars && $(MAKE) cmake
+	cd games/Dinossauro-Google && $(MAKE) cmake
+	cd games/FlappIA-Bird && $(MAKE) cmake
+	cd games/HardestGame && $(MAKE) cmake
+	cd games/HardestGameEditor && $(MAKE) cmake
+	cd games/ParticulasGravitacionais3D && $(MAKE) cmake
+	cd games/Spirograph && $(MAKE) cmake
 
 run-hardestgameeditor:
-	cd HardestGameEditor && make && ./main < input.txt
+	cd games/HardestGameEditor && make && ./main < input.txt
 
 run-hardestgame:
-	cd HardestGame && make && ./main
+	cd games/HardestGame && make && ./main
 
 run-spirograph:
-	cd Spirograph && make && ./main
+	cd games/Spirograph && make && ./main
 
 run-particulas:
-	cd ParticulasGravitacionais3D && make && ./main
+	cd games/ParticulasGravitacionais3D && make && ./main
 
 run-dino:
-	cd Dinossauro-Google && make && ./main
+	cd games/Dinossauro-Google && make && ./main
 
 run-flappy:
-	cd FlappIA-Bird && make && ./main
+	cd games/FlappIA-Bird && make && ./main
 
 run-cars:
-	cd DeepCars && make && ./main
+	cd games/DeepCars && make && ./main
 
 run-tecelao:
-	cd AlgoritmoTecelao && make && ./main < input.txt
+	cd games/AlgoritmoTecelao && make && ./main < input.txt
 
 run-canhao:
-	cd CanhaoDeNewton && make && ./main
+	cd games/CanhaoDeNewton && make && ./main
 
 clean:
-	cd AlgoritmoTecelao && $(MAKE) clean
-	cd CanhaoDeNewton && $(MAKE) clean
-	cd DeepCars && $(MAKE) clean 
-	cd Dinossauro-Google && $(MAKE) clean
-	cd FlappIA-Bird && $(MAKE) clean
-	cd HardestGame && $(MAKE) clean
-	cd HardestGameEditor && $(MAKE) clean
-	cd ParticulasGravitacionais3D && $(MAKE) clean
-	cd Spirograph && $(MAKE) clean
+	cd games/AlgoritmoTecelao && $(MAKE) clean
+	cd games/CanhaoDeNewton && $(MAKE) clean
+	cd games/DeepCars && $(MAKE) clean 
+	cd games/Dinossauro-Google && $(MAKE) clean
+	cd games/FlappIA-Bird && $(MAKE) clean
+	cd games/HardestGame && $(MAKE) clean
+	cd games/HardestGameEditor && $(MAKE) clean
+	cd games/ParticulasGravitacionais3D && $(MAKE) clean
+	cd games/Spirograph && $(MAKE) clean
 	rm -rf *.zip
 
 release:
-	cd AlgoritmoTecelao && $(MAKE) release
-	cd CanhaoDeNewton && $(MAKE) release
-	cd DeepCars && $(MAKE) release
-	cd Dinossauro-Google && $(MAKE) release
-	cd FlappIA-Bird && $(MAKE) release
-	cd HardestGame && $(MAKE) release
-	cd HardestGameEditor && $(MAKE) release
-	cd ParticulasGravitacionais3D && $(MAKE) release
-	cd Spirograph && $(MAKE) release
+	cd games/AlgoritmoTecelao && $(MAKE) release
+	cd games/CanhaoDeNewton && $(MAKE) release
+	cd games/DeepCars && $(MAKE) release
+	cd games/Dinossauro-Google && $(MAKE) release
+	cd games/FlappIA-Bird && $(MAKE) release
+	cd games/HardestGame && $(MAKE) release
+	cd games/HardestGameEditor && $(MAKE) release
+	cd games/ParticulasGravitacionais3D && $(MAKE) release
+	cd games/Spirograph && $(MAKE) release
 
 SDL_VERSION=2.28.3
 SDL_COMPILER_TAG=hldtux/sdl2-compiler:${SDL_VERSION} 
@@ -80,22 +91,6 @@ zip-all:
 	$(MAKE) docker-release-linux && zip -r Linux.zip `find . -name "release-Linux" -print`
 	$(MAKE) docker-release-windows && zip -r Windows.zip `find . -name "release-Windows" -print`
 	$(MAKE) docker-release-darwin && zip -r Darwin.zip `find . -name "release-Darwin" -print`
-
-args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
-docker-run:
-	docker run --net host \
-	-e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
-	-v "$(shell pwd):/tmp/workdir" \
-	-w /tmp/workdir \
-	${SDL_COMPILER_TAG} \
-	$(args)
-
-docker-mac-run:
-	docker run --net host -e DISPLAY=docker.for.mac.host.internal:0 \
-	-v "$(shell pwd):/tmp/workdir" \
-	-w /tmp/workdir \
-	${SDL_COMPILER_TAG} \
-	$(args)
 
 linux-dep-install:
 	sudo apt install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libwebp-dev libgsl-dev libgtest-dev mingw-w64 mingw-w64-tools
