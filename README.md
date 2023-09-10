@@ -28,7 +28,7 @@ make mac-dep-install
 make run-flappy
 ```
 
-![](doc/flappy.png)
+![](doc/flappy.gif)
 
 |key|Action|
 |---|------|
@@ -44,7 +44,7 @@ make run-flappy
 make run-cars
 ```
 
-![](doc/cars.png)
+![](doc/cars.gif)
 
 [Youtube](https://www.youtube.com/watch?v=gnfkfUQvKDw)
 
@@ -55,7 +55,7 @@ make run-cars
 make run-dino
 ```
 
-![](doc/dino.png)
+![](doc/dino.gif)
 
 
 [Youtube](https://www.youtube.com/watch?v=NZlIYr1slAk)
@@ -92,7 +92,7 @@ Commands
 |ENTER|Start|
 
 
-![](doc/tecelao.png)
+![](doc/tecelao.gif)
 
 [Youtube](https://www.youtube.com/watch?v=YZtx4jNNbx8)
 
