@@ -32,7 +32,7 @@ ZIP_FOLDER:=cars
 SYSTEM:=$(shell uname -s)
 zip:	build
 	mkdir -p ${ZIP_FOLDER} && \
-	mkdir -p ${ZIP_FOLDER}/redes && \
+	mkdir -p redes && \
 	cp -rl imagens fontes matrizDistancias rede redes main ${ZIP_FOLDER} && \
 	zip -r ${ZIP_FOLDER}-${SYSTEM}.zip ${ZIP_FOLDER} && \
 	rm -rf ${ZIP_FOLDER}
