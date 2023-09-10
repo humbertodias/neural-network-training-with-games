@@ -1,3 +1,5 @@
+[![Build/Release](https://github.com/humbertodias/neural-network-training-with-games/actions/workflows/release.yml/badge.svg)](https://github.com/humbertodias/neural-network-training-with-games/actions/workflows/release.yml)
+
 # Neural Network Training with Games
 
 Adapted for Linux/Mac
