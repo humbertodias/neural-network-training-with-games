@@ -110,8 +110,8 @@ docker-release-windows:
 	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir hldtux/sdl2-compiler make -e CC=x86_64-w64-mingw32-g++ release
 
 zip-all:
-	$(MAKE) docker-release-linux && zip Linux.zip `find . -name "release-Linux" -print`
-	# $(MAKE) docker-release-windows && zip Windows.zip `find . -name "release-Windows" -print`
+	$(MAKE) docker-release-linux && zip -r Linux.zip `find . -name "release-Linux" -print`
+	# $(MAKE) docker-release-windows && zip -r Windows.zip `find . -name "release-Windows" -print`
 
 args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
 docker-run:
