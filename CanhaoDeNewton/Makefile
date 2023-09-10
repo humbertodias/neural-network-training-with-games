@@ -30,7 +30,7 @@ ln:
 	ln -sTf ../common/cmakes cmakes
 
 unlink:
-	rm -rf fontes pig cmakes
+	rm -rf fontes pig cmakes release
 
 cmake:
 	mkdir build
@@ -51,4 +51,5 @@ format:
 	find . -regextype posix-extended -regex '.*\.(c|cpp|h)' -exec clang-format -style=Google -i "{}" +;
 
 release:	build
-	zip -r release.zip imagens fontes main
+	mkdir -p release
+	cp -rl imagens fontes main release

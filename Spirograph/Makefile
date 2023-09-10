@@ -16,7 +16,7 @@ run:
 	./main
 
 clean:
-	rm -rf main main.dSYM release.zip
+	rm -rf main main.dSYM release
 
 ln:
 	ln -sTf ../common/fontes fontes
@@ -24,5 +24,5 @@ ln:
 	ln -sTf ../common/cmakes cmakes
 
 release:	build
-	zip -r release.zip imagens fontes main
-
+	mkdir -p release
+	cp -rl imagens fontes main release

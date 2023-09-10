@@ -29,4 +29,5 @@ ln:
 	ln -sTf ../common/pig-0.5.1 pig
 
 release:	build
-	zip -r release imagens fontes matrizDistancias rede redes main
+	mkdir -p release
+	cp -rl imagens fontes matrizDistancias rede redes main release

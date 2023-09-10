@@ -19,12 +19,13 @@ run:
 	./main
 
 clean:
-	rm -rf main main.dSYM release.zip
+	rm -rf main main.dSYM release
 
 ln:
 	ln -sTf ../common/fontes fontes
 	ln -sTf ../common/pig-0.5.1 pig
 	ln -sTf ../common/cmakes cmakes
 
-release:	
-	zip -r release.zip imagens fontes main
+release:	build
+	mkdir -p release	
+	cp -rl imagens fontes main release

@@ -5,8 +5,8 @@ ENV TZ=America/Sao_Paulo
 RUN apt update && apt install -y \
     gcc \
     g++ \
-    gcc-multilib \
-    g++-multilib \
+#    gcc-multilib \
+#    g++-multilib \
     build-essential \
     xutils-dev \
     libreadline6-dev \
@@ -39,7 +39,6 @@ RUN curl -skL ${SDL_URL} -o SDL2-${SDL_VERSION}.tar.gz \
   && cd /SDL2-${SDL_VERSION} && ./configure && make && make install \
   && cd / && rm -rf /SDL2-${SDL_VERSION} SDL2-${SDL_VERSION}.tar.gz
 
-
 # https://github.com/libsdl-org/SDL_ttf/releases/download/release-2.20.2/SDL2_ttf-2.20.2.tar.gz
 # https://github.com/libsdl-org/SDL_ttf/releases/download/release-2.20.2/SDL2_ttf-devel-2.20.2-mingw.tar.gz
 ARG SDL_TTF_VERSION=2.20.2
@@ -68,12 +67,11 @@ RUN curl -skL ${SDL_IMAGE_URL} -o SDL2_image-${SDL_IMAGE_VERSION}.tar.gz \
   && cd /SDL2_image-${SDL_IMAGE_VERSION} && ./configure && make && make install \
   && cd / && rm -rf /SDL2_image-${SDL_IMAGE_VERSION} SDL2_image-${SDL_IMAGE_VERSION}.tar.gz
 
-
 # https://github.com/libsdl-org/SDL_mixer/releases/download/release-2.6.3/SDL2_mixer-2.6.3.tar.gz
 # https://github.com/libsdl-org/SDL_mixer/releases/download/release-2.6.3/SDL2_mixer-devel-2.6.3-mingw.tar.gz
 ARG SDL_MIXER_VERSION=2.6.3
-ENV SDL_MIXER_URL:="https://github.com/libsdl-org/SDL_mixer/releases/download/release-${SDL_MIXER_VERSION}/SDL2_mixer-${SDL_MIXER_VERSION}.tar.gz"
-ENV SDL_MIXER_CMD:="./configure && make && make install"
+ENV SDL_MIXER_URL="https://github.com/libsdl-org/SDL_mixer/releases/download/release-${SDL_MIXER_VERSION}/SDL2_mixer-${SDL_MIXER_VERSION}.tar.gz"
+ENV SDL_MIXER_CMD="./configure && make && make install"
 # MinGW
 # ENV SDL_MIXER_URL:="https://github.com/libsdl-org/SDL_mixer/releases/download/release-${SDL_MIXER_VERSION}/SDL2_mixer-devel-${SDL_MIXER_VERSION}-mingw.tar.gz"
 # ENV SDL_MIXER_CMD:="make native"
