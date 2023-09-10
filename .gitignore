@@ -49,3 +49,5 @@
 main.dSYM
 
 .idea
+build
+release.zip

@@ -22,18 +22,11 @@ dep:
 	sudo apt install libgsl-dev
 
 clean:
-	rm -rf main main.dSYM build ${ZIP_FOLDER}-${SYSTEM}.zip ${ZIP_FOLDER}
+	rm -rf main main.dSYM build release.zip
 
 ln:
 	ln -sTf ../common/fontes fontes
 	ln -sTf ../common/pig-0.5.1 pig
 
-ZIP_FOLDER:=cars
-SYSTEM:=$(shell uname -s)
-zip:	build
-	mkdir -p ${ZIP_FOLDER} && \
-	mkdir -p redes && \
-	cp -rl imagens fontes matrizDistancias rede redes main ${ZIP_FOLDER} && \
-	zip -r ${ZIP_FOLDER}-${SYSTEM}.zip ${ZIP_FOLDER} && \
-	rm -rf ${ZIP_FOLDER}
-
+release:	build
+	zip -r release imagens fontes matrizDistancias rede redes main

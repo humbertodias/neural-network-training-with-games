@@ -22,7 +22,7 @@ run-valgrind:
 	valgrind --leak-check=full --track-origins=yes ./main < input.txt
 
 clean:
-	rm -rf main main.dSYM build ${ZIP_FOLDER} ${ZIP_FOLDER}-${SYSTEM}.zip
+	rm -rf main main.dSYM build release.zip
 	
 ln:
 	ln -sTf ../common/fontes fontes
@@ -46,12 +46,6 @@ web:
 	--use-preload-plugins \
 	-sALLOW_MEMORY_GROWTH
 
-ZIP_FOLDER:=tecelao
-SYSTEM:=$(shell uname -s)
-zip:	build
-	mkdir -p ${ZIP_FOLDER}  && \
-	cp -rl imagens fontes *.bmp input.txt main ${ZIP_FOLDER} && \
-	zip -r ${ZIP_FOLDER}-${SYSTEM}.zip ${ZIP_FOLDER} && \
-	rm -rf ${ZIP_FOLDER}
-
+release:	build
+	zip -r release.zip imagens fontes *.bmp input.txt main
 

@@ -22,7 +22,7 @@ run:
 	./main
 
 clean:
-	rm -rf main main.dSYM build ${ZIP_FOLDER}-${SYSTEM}.zip ${ZIP_FOLDER}
+	rm -rf main main.dSYM build release.zip
 
 ln:
 	ln -sTf ../common/fontes fontes
@@ -50,10 +50,5 @@ web:
 format:
 	find . -regextype posix-extended -regex '.*\.(c|cpp|h)' -exec clang-format -style=Google -i "{}" +;
 
-ZIP_FOLDER:=canhao
-SYSTEM:=$(shell uname -s)
-zip:	build
-	mkdir -p ${ZIP_FOLDER}  && \
-	cp -rl imagens fontes main ${ZIP_FOLDER} && \
-	zip -r ${ZIP_FOLDER}-${SYSTEM}.zip ${ZIP_FOLDER} && \
-	rm -rf ${ZIP_FOLDER}
+release:	build
+	zip -r release.zip imagens fontes main

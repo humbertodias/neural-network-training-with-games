@@ -11,7 +11,7 @@ on:
   
 jobs:
   build:
-    name: Build
+    name: Build/Release
     runs-on: ubuntu-latest
     steps:
 
@@ -25,23 +25,13 @@ jobs:
       # Build
       - name: Build and Zip
         run: |
-            make docker-compile-zip
-      - uses: actions/upload-artifact@v3
-        with:
-            name: linux
-            path: "**/*.zip"
+            make zip-all
     
       # Release    
-      - name: Download Artifacts
-        uses: actions/download-artifact@v3
-        with:
-          name: linux
-
       - name: Zip Files
         run: |
           ls -lha
           find . -name "*.zip"
-          zip linux.zip `find . -name "*.zip" -print`
 
       - name: Release
         uses: softprops/action-gh-release@v1
@@ -49,6 +39,6 @@ jobs:
         with:
           # Identify if this is a pre release by checking if the tag name contains -rc, -b, -a
           # prerelease: ${{ contains(github.ref, '-rc') || contains(github.ref, '-b') || contains(github.ref, '-a') }}
-          files: linux.zip
+          files: Linux.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

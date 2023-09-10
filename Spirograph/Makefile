@@ -16,18 +16,13 @@ run:
 	./main
 
 clean:
-	rm -rf main main.dSYM ${ZIP_FOLDER}-${SYSTEM}.zip
+	rm -rf main main.dSYM release.zip
 
 ln:
 	ln -sTf ../common/fontes fontes
 	ln -sTf ../common/pig-0.5.1 pig
 	ln -sTf ../common/cmakes cmakes
 
-ZIP_FOLDER:=spirograph
-SYSTEM:=$(shell uname -s)
-zip:	build
-	mkdir -p ${ZIP_FOLDER} && \
-	cp -rl imagens fontes main ${ZIP_FOLDER} && \
-	zip -r ${ZIP_FOLDER}-${SYSTEM}.zip ${ZIP_FOLDER} && \
-	rm -rf ${ZIP_FOLDER}
+release:	build
+	zip -r release.zip imagens fontes main
 

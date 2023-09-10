@@ -22,17 +22,12 @@ dep:
 	sudo apt install libgsl-dev libwebp-dev
 
 clean:
-	rm -rf main main.dSYM ${ZIP_FOLDER}-${SYSTEM}.zip
+	rm -rf main main.dSYM release.zip
 
 ln:
 	ln -sTf ../common/fontes fontes
 	ln -sTf ../common/pig-0.5.1 pig
 	ln -sTf ../common/cmakes cmakes
 
-ZIP_FOLDER:=hardestgame
-SYSTEM:=$(shell uname -s)
-zip:	build
-	mkdir -p ${ZIP_FOLDER} && \
-	cp -rl imagens fontes mapas main ${ZIP_FOLDER} && \
-	zip -r ${ZIP_FOLDER}-${SYSTEM}.zip ${ZIP_FOLDER} && \
-	rm -rf ${ZIP_FOLDER}
+release:	build
+	zip -r release.zip imagens fontes mapas main

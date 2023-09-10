@@ -58,16 +58,16 @@ clean:
 	cd ParticulasGravitacionais3D && $(MAKE) clean
 	cd Spirograph && $(MAKE) clean
 
-zip:
-	cd AlgoritmoTecelao && $(MAKE) zip
-	cd CanhaoDeNewton && $(MAKE) zip
-	cd DeepCars && $(MAKE) zip
-	cd Dinossauro-Google && $(MAKE) zip
-	cd FlappIA-Bird && $(MAKE) zip
-	cd HardestGame && $(MAKE) zip
-	cd HardestGameEditor && $(MAKE) zip
-	cd ParticulasGravitacionais3D && $(MAKE) zip
-	cd Spirograph && $(MAKE) zip
+release:
+	cd AlgoritmoTecelao && $(MAKE) release
+	cd CanhaoDeNewton && $(MAKE) release
+	cd DeepCars && $(MAKE) release
+	cd Dinossauro-Google && $(MAKE) release
+	cd FlappIA-Bird && $(MAKE) release
+	cd HardestGame && $(MAKE) release
+	cd HardestGameEditor && $(MAKE) release
+	cd ParticulasGravitacionais3D && $(MAKE) release
+	cd Spirograph && $(MAKE) release
 
 docker-image:
 	docker build . \
@@ -87,9 +87,13 @@ docker-compile-all:	docker-image
 docker-compile-it:	docker-image
 	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir -ti sdl2-compiler bash
 
-#docker-compile-zip:	docker-image
-docker-compile-zip:
-	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir hldtux/sdl2-compiler make zip
+#docker-compile-release:	docker-image
+docker-compile-release:
+	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir hldtux/sdl2-compiler make release
+
+SYSTEM:=$(shell uname -s)
+zip-all:	docker-compile-release
+	zip ${SYSTEM}.zip `find . -name "*.zip" -print`
 
 args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
 docker-run:

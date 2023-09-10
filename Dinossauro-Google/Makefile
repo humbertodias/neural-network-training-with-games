@@ -25,7 +25,7 @@ valgrind:
 	valgrind --track-origins=yes --leak-check=yes -v --leak-check=full --show-reachable=yes ./main
 
 clean:
-	rm -rf main gerador *.dSYM build ${ZIP_FOLDER} ${ZIP_FOLDER}-linux.zip
+	rm -rf main gerador *.dSYM build release.zip
 
 ln:
 	ln -sTf ../common/fontes fontes
@@ -53,9 +53,5 @@ web:
 format:
 	find . -regextype posix-extended -regex '.*\.(c|cpp|h)' -exec clang-format -style=Google -i "{}" +;
 
-ZIP_FOLDER:=dino
-zip:	build
-	mkdir -p ${ZIP_FOLDER}  && \
-	cp -rl imagens fontes obstaculos.* main ${ZIP_FOLDER} && \
-	zip -r ${ZIP_FOLDER}-linux.zip ${ZIP_FOLDER} && \
-	rm -rf ${ZIP_FOLDER}
+release:	build
+	zip -r release.zip imagens fontes obstaculos.* main
