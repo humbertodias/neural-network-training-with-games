@@ -1,4 +1,4 @@
-all:
+build:
 	cd AlgoritmoTecelao && $(MAKE)
 	cd CanhaoDeNewton && $(MAKE)
 	cd DeepCars && $(MAKE)
