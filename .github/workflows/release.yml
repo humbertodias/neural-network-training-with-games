@@ -34,7 +34,7 @@ jobs:
       # Release    
       - name: Create Release Folder
         run: |
-          mkdir -p ${{ matrix.targetPlatform }}
+          mkdir -p release
 
       - name: Download Artifacts
         uses: actions/download-artifact@v3
