@@ -4,7 +4,7 @@
 
 Adapted for Linux/Mac
 
-Credits [JVictorDias](https://github.com/JVictorDias)
+Credits to [JVictorDias](https://github.com/JVictorDias) developer and [PIG](https://github.com/PIGDevUff/PigDev) library.
 
 # How to run
 
@@ -195,11 +195,3 @@ make run-spirograph
 
 
 [Youtube](https://www.youtube.com/watch?v=o7MOaXh4zFU) | [Source](https://github.com/JVictorDias/Spirograph)
-
-
-
-# References
-
-* [PIG](https://github.com/PIGDevUff/PigDev)
-
-* [Emcscripten](https://emscripten.org/docs/porting/files/packaging_files.html)
