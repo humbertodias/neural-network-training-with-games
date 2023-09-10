@@ -73,16 +73,16 @@ docker-image:
 	docker build . \
 	--build-arg UID=$(shell id -u) \
 	--build-arg GID=$(shell id -g) \
-	-t pig-compiler
+	-t sdl2-compiler
 
 docker-compile-all:	docker-image
-	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir -ti pig-compiler make all
+	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir -ti sdl2-compiler make build
 
 docker-compile-it:	docker-image
-	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir -ti pig-compiler bash
+	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir -ti sdl2-compiler bash
 
 docker-compile-zip:	docker-image
-	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir pig-compiler make zip
+	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir sdl2-compiler make zip
 
 args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
 docker-run:
@@ -90,19 +90,19 @@ docker-run:
 	-e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
 	-v "$(shell pwd):/tmp/workdir" \
 	-w /tmp/workdir \
-	pig-compiler \
+	sdl2-compiler \
 	$(args)
 
 docker-mac-run:
 	docker run --net host -e DISPLAY=docker.for.mac.host.internal:0 \
 	-v "$(shell pwd):/tmp/workdir" \
 	-w /tmp/workdir \
-	pig-compiler \
+	sdl2-compiler \
 	$(args)
 
 docker-clean:
-	docker ps -f name=pig-compiler -qa | xargs docker rm -f
-	docker image ls --filter 'reference=pig-compiler' -qa | xargs docker rmi -f
+	docker ps -f name=sdl2-compiler -qa | xargs docker rm -f
+	docker image ls --filter 'reference=sdl2-compiler' -qa | xargs docker rmi -f
 
 dep-install:
 	sudo apt install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libwebp-dev libgsl-dev libgtest-dev mingw-w64 mingw-w64-tools
