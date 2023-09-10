@@ -20,6 +20,7 @@ Mac
 ```shell
 make mac-dep-install
 ```
+# Games
 
 ## Tecelao
 
