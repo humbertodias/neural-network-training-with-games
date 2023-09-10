@@ -23,7 +23,7 @@ jobs:
           path: .
     
       # Build
-      - name: zip
+      - name: Build and Zip
         run: |
             make docker-compile-zip
       - uses: actions/upload-artifact@v3
