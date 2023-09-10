@@ -76,7 +76,7 @@ docker-compile-all:	docker-image
 
 docker-run-it:	docker-image
 	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir \
-	-ti sdl2-compiler-mingw \
+	-ti sdl2-compiler \
 	bash
 
 docker-release-linux:
