@@ -70,7 +70,10 @@ zip:
 	cd Spirograph && $(MAKE) zip
 
 docker-image:
-	docker build . -t pig-compiler
+	docker build . \
+	--build-arg UID=$(shell id -u) \
+	--build-arg GID=$(shell id -g) \
+	-t pig-compiler
 
 docker-compile-all:	docker-image
 	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir -ti pig-compiler make all
