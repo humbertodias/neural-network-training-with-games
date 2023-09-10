@@ -78,14 +78,12 @@ git pull && \
 # Make the "latest" SDK "active" for the current user. (writes .emscripten file)
 ./emsdk activate latest
 
+# Activate PATH and other environment variables in the current terminal
+#source ./emsdk_env.sh
+RUN echo "source /opt/emsdk/emsdk_env.sh" >> /home/${USER}/.bashrc
 
 # Setup default user, when enter docker container
 USER ${UID}:${GID}
 WORKDIR /home/${USER}
-
-
-# Activate PATH and other environment variables in the current terminal
-#source ./emsdk_env.sh
-RUN echo "source /opt/emsdk/emsdk_env.sh" >> /home/${USER}/.bashrc
 
 EXPOSE 8080
