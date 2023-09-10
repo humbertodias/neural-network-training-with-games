@@ -9,28 +9,6 @@ build:
 	cd ParticulasGravitacionais3D && $(MAKE)
 	cd Spirograph && $(MAKE)
 
-ln:
-	cd AlgoritmoTecelao && $(MAKE) ln
-	cd CanhaoDeNewton && $(MAKE) ln
-	cd DeepCars && $(MAKE) ln
-	cd Dinossauro-Google && $(MAKE) ln
-	cd FlappIA-Bird && $(MAKE) ln
-	cd HardestGame && $(MAKE) ln
-	cd HardestGameEditor && $(MAKE) ln
-	cd Spirograph && $(MAKE) ln
-	cd ParticulasGravitacionais3D && $(MAKE) ln
-
-unlink:
-	cd AlgoritmoTecelao && $(MAKE) unlink
-	cd CanhaoDeNewton && $(MAKE) unlink
-	cd DeepCars && $(MAKE) unlink
-	cd Dinossauro-Google && $(MAKE) unlink
-	cd FlappIA-Bird && $(MAKE) unlink
-	cd HardestGame && $(MAKE) unlink
-	cd HardestGameEditor && $(MAKE) unlink
-	cd Spirograph && $(MAKE) unlink
-	cd ParticulasGravitacionais3D && $(MAKE) unlink
-
 run-hardestgameeditor:
 	cd HardestGameEditor && make && ./main < input.txt
 
