@@ -65,6 +65,15 @@ ARG PW=docker
 RUN useradd -m ${USER} --uid=${UID} && echo "${USER}:${PW}" | chpasswd && adduser docker sudo
 RUN echo "${USER} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
+ARG USER=docker
+ARG UID=9999
+ARG GID=9999
+# default password for user
+ARG PW=docker
+
+# Option1: Using unencrypted password/ specifying password
+RUN useradd -m ${USER} --uid=${UID} && echo "${USER}:${PW}" | chpasswd && adduser docker sudo
+
 # emcc
 RUN \
 cd /opt && \
