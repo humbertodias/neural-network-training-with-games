@@ -19,7 +19,7 @@ run:
 	./main
 
 clean:
-	rm -rf main main.dSYM release*
+	rm -rf main main.dSYM build* release*
 
 SYSTEM:=$(shell uname -s)	
 release:	build
