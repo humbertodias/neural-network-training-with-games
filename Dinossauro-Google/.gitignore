@@ -31,6 +31,6 @@
 *.out
 *.app
 
-#redes/*
+redes/*
 build
 release.zip
