@@ -12,6 +12,9 @@ LDFLAGS := -lSDL2_ttf -lSDL2_image -lpthread -lwebp `sdl2-config --libs` `gsl-co
 build:
 	$(CC) main.cpp -g $(CXXFLAGS) $(LDFLAGS) -o main
 
+cmake:
+	mkdir -p build && cd build && cmake .. && make -j2
+
 png-fix:
 	find imagens -type f -iname '*.png' -exec pngcrush -ow -rem allb -reduce {} \; 
 
