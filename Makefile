@@ -86,7 +86,11 @@ docker-compile-all:	docker-image
 	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir -ti sdl2-compiler make build
 
 docker-run-it:	docker-image
-	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir -ti sdl2-compiler bash
+	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir \
+	-ti sdl2-compiler \
+	--build-arg UID=$(shell id -u) \
+	--build-arg GID=$(shell id -g) \
+	bash
 
 docker-release-linux:
 	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir hldtux/sdl2-compiler make release
@@ -95,8 +99,8 @@ docker-release-windows:
 	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir hldtux/sdl2-compiler make -e CC=x86_64-w64-mingw32-g++ release
 
 zip-all:
-	$(MAKE) docker-release-linux && zip Linux.zip `find . -name "release" -print` && $(MAKE) clean
-#	$(MAKE) docker-release-windows && zip Windows.zip `find . -name "*.zip" -print` && $(MAKE) clean
+	$(MAKE) docker-release-linux && zip Linux.zip `find . -name "release" -print`
+#	$(MAKE) docker-release-windows && zip Windows.zip `find . -name "*.zip" -print`
 
 args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
 docker-run:

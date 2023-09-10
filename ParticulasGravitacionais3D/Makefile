@@ -16,13 +16,17 @@ run:
 	./main
 
 clean:
-	rm -rf main main.dSYM release
+	rm -rf main main.dSYM release-$(SYSTEM)
 
 ln:
 	ln -sTf ../common/fontes fontes
 	ln -sTf ../common/pig-0.5.1-particulas pig
 	ln -sTf ../common/cmakes cmakes
 
+unlink:
+	rm -rf fontes pig cmakes
+
+SYSTEM:=$(shell uname -s)	
 release:	build
-	mkdir -p release
-	cp -rl imagens fontes main release
+	mkdir -p release-$(SYSTEM)
+	cp -rl imagens fontes main release-$(SYSTEM)

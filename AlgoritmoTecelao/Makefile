@@ -22,7 +22,7 @@ run-valgrind:
 	valgrind --leak-check=full --track-origins=yes ./main < input.txt
 
 clean:
-	rm -rf main main.dSYM build release
+	rm -rf main main.dSYM build release-$(SYSTEM)
 	
 ln:
 	ln -sTf ../common/fontes fontes
@@ -46,6 +46,7 @@ web:
 	--use-preload-plugins \
 	-sALLOW_MEMORY_GROWTH
 
+SYSTEM:=$(shell uname -s)
 release:	build
-	mkdir -p release
-	cp -rl imagens fontes *.bmp input.txt main release
+	mkdir -p release-$(SYSTEM)
+	cp -rl imagens fontes *.bmp input.txt main release-$(SYSTEM)

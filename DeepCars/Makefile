@@ -22,12 +22,17 @@ dep:
 	sudo apt install libgsl-dev
 
 clean:
-	rm -rf main main.dSYM build release.zip
+	rm -rf main main.dSYM build release-$(SYSTEM)
 
 ln:
 	ln -sTf ../common/fontes fontes
 	ln -sTf ../common/pig-0.5.1 pig
+	ln -sTf ../common/cmakes cmakes
 
+unlink:
+	rm -rf fontes pig cmakes
+
+SYSTEM:=$(shell uname -s)
 release:	build
-	mkdir -p release redes
-	cp -rl imagens fontes matrizDistancias rede redes main release
+	mkdir -p redes release-$(SYSTEM)
+	cp -rl imagens fontes matrizDistancias rede redes main release-$(SYSTEM)

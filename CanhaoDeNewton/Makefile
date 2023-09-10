@@ -22,7 +22,7 @@ run:
 	./main
 
 clean:
-	rm -rf main main.dSYM build release.zip
+	rm -rf main main.dSYM build release-$(SYSTEM)
 
 ln:
 	ln -sTf ../common/fontes fontes
@@ -30,7 +30,7 @@ ln:
 	ln -sTf ../common/cmakes cmakes
 
 unlink:
-	rm -rf fontes pig cmakes release
+	rm -rf fontes pig cmakes
 
 cmake:
 	mkdir build
@@ -50,6 +50,7 @@ web:
 format:
 	find . -regextype posix-extended -regex '.*\.(c|cpp|h)' -exec clang-format -style=Google -i "{}" +;
 
+SYSTEM:=$(shell uname -s)
 release:	build
-	mkdir -p release
-	cp -rl imagens fontes main release
+	mkdir -p release-$(SYSTEM)
+	cp -rl imagens fontes main release-$(SYSTEM)
