@@ -24,7 +24,7 @@ RUN apt update && apt install -y \
     # libsdl2-dev \
 
 # Install other dependencies
-RUN apt install -y make xterm sudo build-essential git curl valgrind clang-format
+RUN apt install -y make xterm sudo build-essential git zip curl valgrind clang-format
 
 # https://github.com/libsdl-org/SDL/releases/download/release-2.28.3/SDL2-2.28.3.tar.gz
 ARG SDL_VERSION=2.28.3
