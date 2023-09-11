@@ -8,7 +8,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../../common/cma
 
 # pig
 include_directories("include")
-include_directories("../../common/pig")
+include_directories("../../common/pig-0.5.1")
 
 # sdl2
 find_package(SDL2 REQUIRED)

@@ -6,7 +6,7 @@ else
 	CC=g++
 endif
 
-CXXFLAGS := -I../../common/pig `sdl2-config --cflags` `gsl-config --cflags`
+CXXFLAGS := -I../../common/pig-0.5.1 `sdl2-config --cflags` `gsl-config --cflags`
 LDFLAGS  := -lSDL2_ttf -lSDL2_image -lpthread -lwebp `sdl2-config --static-libs` `gsl-config --libs`
 
 .PHONY: build

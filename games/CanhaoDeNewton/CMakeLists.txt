@@ -6,7 +6,7 @@ add_executable(main src/main.cpp)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../../common/cmakes")
 
 # pig
-include_directories("../../common/pig")
+include_directories("../../common/pig-0.5.1")
 include_directories("include")
 
 # sdl2
