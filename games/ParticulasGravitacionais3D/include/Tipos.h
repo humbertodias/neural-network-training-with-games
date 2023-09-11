@@ -1,4 +1,4 @@
-/*typedef struct atomo
+typedef struct atomo
 {
     int ControleDeColisao;
     float Raio;
@@ -20,8 +20,8 @@
     float ForcaY;
     float ForcaZ;
 
-}   Atomo;*/
-/*
+}   Atomo;
+
 typedef struct ponto
 {
     float X;
@@ -40,4 +40,3 @@ typedef struct vetor
     float Carga;
 
 }   Vetor;
-*/

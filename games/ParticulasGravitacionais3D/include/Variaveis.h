@@ -1,6 +1,3 @@
-#ifndef VARIAVEIS0_H
-#define VARIAVEIS0_H
-
     Atomo               Atomos[100000];
     SDL_Point           AtomosSDL[100000];
     int                 QuantidadeDeAtomos = 0;
@@ -21,4 +18,4 @@
 
     int                 Giro = -1;
 
-#endif
+    int                 DesenharGrade = 0;

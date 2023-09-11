@@ -3,25 +3,16 @@
 #define ConstanteUniversal 100
 #define RAIO_PARTICULA 3
 #define MASSA_PARTICULA 5
-#define CARGA_PARTICULA 5
-
-#define MAX_EXPLOSOES 1000
-#define TAMANHO_PARTICULA 5
 
 #define RAIO_GIRO           700
 #define VELOCIDADE_GIRO     (0.1)
 #define DISTRIBUICAO        37
 #define FORCA_GIRO          100
 
-#define TrajetoriaMax 10
-
 #include "Tipos.h"
 #include "Variaveis.h"
 #include "Desenhar.h"
 #include "AjustesEAtualizacoes.h"
-#include "TexturasEAvisos.h"
-
-
 
 void InserirParticula(float Massa, float Px, float Py, float Pz, float Vx, float Vy, float Vz)
 {
@@ -86,7 +77,6 @@ void AplicarForca(int Tipo)
     }
 }
 
-#include "ManipularEsferas.h"
 #include "MouseETeclado.h"
 
 void CalcularGravidade()
@@ -160,7 +150,6 @@ void MoverAtomos()
 void ConfiguracoesIniciais()
 {
     CriarJanela("Particulas Gravitaçao 3D",0);
-    //CriarJogo("Particulas Gravitaçao 3D",0);
     MouseX = 600;
     MouseY = 300;
 
@@ -334,7 +323,6 @@ int main(int argc, char* args[])
 
     while(PIG_JogoRodando == 1)
     {
-        //AtualizarEstadoJogo();
         AtualizarJanela();
 
         X = MouseX;
@@ -366,7 +354,6 @@ int main(int argc, char* args[])
     }
 
     FinalizarJanela();
-    //FinalizarJogo();
 
     return 0;
 }
