@@ -4,7 +4,7 @@
 
 Adapted for Linux/Mac
 
-Credits to [JVictorDias](https://github.com/JVictorDias) developer and [PIG](https://github.com/PIGDevUff/PigDev) library.
+Credits to [JVictorDias](https://github.com/JVictorDias) developer and [PIG](https://github.com/PIGDevUff/PigDev) library aka "Programming Interface for Games".
 
 # How to run
 
