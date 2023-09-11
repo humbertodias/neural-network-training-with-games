@@ -11,7 +11,7 @@ LDFLAGS  := -lSDL2_ttf -lSDL2_image -lpthread -lwebp `sdl2-config --static-libs`
 
 .PHONY: build
 build:
-	$(CC) main.cpp -g $(CXXFLAGS) $(LDFLAGS) -o main
+	$(CC) src/main.cpp -g $(CXXFLAGS) $(LDFLAGS) -o main
 
 run:
 	./main
@@ -23,7 +23,7 @@ run-valgrind:
 	valgrind --leak-check=full --track-origins=yes ./main < input.txt
 
 clean:
-	rm -rf main main.dSYM build release*
+	rm -rf main main.dSYM build* release* cmake*
 
 cmake:
 	mkdir -p build && cd build && cmake .. && make -j2

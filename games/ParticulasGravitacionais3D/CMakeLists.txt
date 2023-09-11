@@ -1,13 +1,13 @@
 cmake_minimum_required(VERSION 3.7)
 project(main)
-add_executable(main main.cpp)
+add_executable(main src/main.cpp)
 
 # cmake modules
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../../common/cmakes")
 
 # pig
-include_directories("../../common/pig-0.5.1-particulas")
 include_directories("include")
+include_directories("../../common/pig-0.5.1-particulas")
 
 # sdl2
 find_package(SDL2 REQUIRED)

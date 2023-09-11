@@ -1,5 +1,5 @@
 #include "PIG.h"
-#include "redeNeural.c"
+#include "redeNeural.h"
 
 #define DESLOCAMENTO_NEURONIOS  85
 

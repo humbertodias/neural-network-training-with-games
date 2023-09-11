@@ -11,7 +11,7 @@ LDFLAGS  := -lSDL2_ttf -lSDL2_image -lpthread -lwebp `sdl2-config --static-libs`
 
 .PHONY: build
 build:
-	$(CC) main.cpp -g $(CXXFLAGS) $(LDFLAGS) -o main
+	$(CC) src/main.cpp -g $(CXXFLAGS) $(LDFLAGS) -o main
 
 cmake:
 	mkdir -p build && cd build && cmake .. && make -j2

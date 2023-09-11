@@ -47,6 +47,7 @@
 .DS_store
 
 main.dSYM
+gerador.dSYM
 
 .idea
 build*
