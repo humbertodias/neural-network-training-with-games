@@ -1,24 +1,13 @@
+PROJECTS = `ls games`
 build:
-	cd games/AlgoritmoTecelao && $(MAKE)
-	cd games/CanhaoDeNewton && $(MAKE)
-	cd games/DeepCars && $(MAKE)
-	cd games/Dinossauro-Google && $(MAKE)
-	cd games/FlappIA-Bird && $(MAKE)
-	cd games/HardestGame && $(MAKE)
-	cd games/HardestGameEditor && $(MAKE)
-	cd games/ParticulasGravitacionais3D && $(MAKE)
-	cd games/Spirograph && $(MAKE)
+	for PROJECT in ${PROJECTS} ; do \
+		$(MAKE) -C games/$$PROJECT build ; \
+	done
 
 cmake:
-	cd games/AlgoritmoTecelao && $(MAKE) cmake
-	cd games/CanhaoDeNewton && $(MAKE) cmake
-	cd games/DeepCars && $(MAKE) cmake
-	cd games/Dinossauro-Google && $(MAKE) cmake
-	cd games/FlappIA-Bird && $(MAKE) cmake
-	cd games/HardestGame && $(MAKE) cmake
-	cd games/HardestGameEditor && $(MAKE) cmake
-	cd games/ParticulasGravitacionais3D && $(MAKE) cmake
-	cd games/Spirograph && $(MAKE) cmake
+	for PROJECT in ${PROJECTS} ; do \
+		$(MAKE) -C games/$$PROJECT cmake ; \
+	done
 
 run-hardestgameeditor:
 	cd games/HardestGameEditor && make && ./main < input.txt
@@ -48,15 +37,9 @@ run-canhao:
 	cd games/CanhaoDeNewton && make && ./main
 
 clean:
-	cd games/AlgoritmoTecelao && $(MAKE) clean
-	cd games/CanhaoDeNewton && $(MAKE) clean
-	cd games/DeepCars && $(MAKE) clean 
-	cd games/Dinossauro-Google && $(MAKE) clean
-	cd games/FlappIA-Bird && $(MAKE) clean
-	cd games/HardestGame && $(MAKE) clean
-	cd games/HardestGameEditor && $(MAKE) clean
-	cd games/ParticulasGravitacionais3D && $(MAKE) clean
-	cd games/Spirograph && $(MAKE) clean
+	for PROJECT in ${PROJECTS} ; do \
+		$(MAKE) -C games/$$PROJECT clean ; \
+	done
 	rm -rf *.zip
 
 release:
@@ -97,22 +80,3 @@ linux-dep-install:
 
 mac-dep-install:
 	sudo brew install sdl2 sdl2_ttf sdl2_image gsl googletest
-
-emcc-install:
-	# Get the emsdk repo
-	git clone https://github.com/emscripten-core/emsdk.git
-
-	# Enter that directory
-	cd emsdk
-
-	# Fetch the latest version of the emsdk (not needed the first time you clone)
-	git pull
-
-	# Download and install the latest SDK tools.
-	./emsdk install latest
-
-	# Make the "latest" SDK "active" for the current user. (writes .emscripten file)
-	./emsdk activate latest
-
-	# Activate PATH and other environment variables in the current terminal
-	source ./emsdk_env.sh
