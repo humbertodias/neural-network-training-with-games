@@ -11,8 +11,6 @@ LDFLAGS  := -lSDL2_ttf -lSDL2_image `pkg-config --libs --static sdl2`
 
 .PHONY: build
 build:
-	echo $(CXXFLAGS)
-	echo $(LDFLAGS)
 	$(CC) src/main.cpp -g $(CXXFLAGS) $(LDFLAGS) -o main
 
 run:
