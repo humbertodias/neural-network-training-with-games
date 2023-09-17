@@ -30,7 +30,7 @@ public:
         delete numObjetos;
     }
 
-    static int CriaObjeto(int posx,int posy,char* nomeArquivoBMP,int retiraFundo=1,int opacidade=255){
+    static int CriaObjeto(int posx,int posy,const char* nomeArquivoBMP,int retiraFundo=1,int opacidade=255){
         int resp = numObjetos->RetiraLivre();
         objetos[resp] = new CObjeto(posx,posy,renderer,nomeArquivoBMP,retiraFundo,opacidade);
         totalObjetos++;

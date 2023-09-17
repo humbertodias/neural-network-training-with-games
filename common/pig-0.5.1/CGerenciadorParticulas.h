@@ -56,7 +56,7 @@ public:
     }
 
     inline static int GetQtdAtivas(int id_gerador){
-        geradores[id_gerador]->GetQtdAtivas();
+        return geradores[id_gerador]->GetQtdAtivas();
     }
 
     inline static void Desenha(int id_gerador){

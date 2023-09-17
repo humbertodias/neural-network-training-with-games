@@ -99,6 +99,7 @@ PIG_Flip PegarFlip(int id_objeto)
     {
         return CGerenciadorObjetos::GetFlip(id_objeto);
     }
+    return FLIP_NENHUM;
 }
 
 /********************************
@@ -325,6 +326,7 @@ int TestarColisaoObjetos(int id_objeto1,int id_objeto2)
     {
         return CGerenciadorObjetos::TestaColisao(id_objeto1,id_objeto2);
     }
+    return 0;
 }
 
 void GirarColisao(int IDUnit1, int XUnit1[4], int YUnit1[4])
@@ -450,6 +452,7 @@ int VerificarColisao(int IDUnit1, int IDUnit2)
             return 0;
         }
     }
+    return 0;
 }
 
 
@@ -526,7 +529,7 @@ opacidade (entrada,passagem por valor): nível de opacidade do objeto na faixa 0
 Retorno:
 inteiro que representa o identificador único do objeto. Todas as operações subsequentes com este objeto deverão receber este identificador como parâmetro.
 ********************************/
-int criarObjeto(char* nomeArquivo, int X, int Y, int Altura, int Largura, int retiraFundo)
+int criarObjeto(const char* nomeArquivo, int X, int Y, int Altura, int Largura, int retiraFundo)
 {
     int Objt;
 
@@ -556,7 +559,7 @@ int criarObjetoTamanhoOriginal(char* nomeArquivo, int X, int Y, int retiraFundo)
 }
 
 
-int CriarSprite(char* nomeArquivo, int retiraFundo)
+int CriarSprite(const char* nomeArquivo, int retiraFundo)
 {
     int Objt;
 
@@ -566,8 +569,7 @@ int CriarSprite(char* nomeArquivo, int retiraFundo)
     return Objt;
 }
 
-// FIX
-int CriarSprite(char* nomeArquivo){
+int CriarSprite(const char* nomeArquivo){
     return CriarSprite(nomeArquivo, 1);
 }
 

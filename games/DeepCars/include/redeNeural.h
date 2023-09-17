@@ -65,6 +65,7 @@ double func(double X)
     {
         return 1;
     }
+    return 0;
 }
 
 double relu(double X)
@@ -476,6 +477,7 @@ RedeNeural* RNA_CarregarRede(char* String)
         fclose(f);
         return Temp;
     }
+    return NULL;
 }
 
 void RNA_SalvarRede(RedeNeural* Temp, char* String)

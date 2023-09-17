@@ -1,10 +1,10 @@
 /********************************
-Seção dos temporizadores
+Seï¿½ï¿½o dos temporizadores
 ********************************/
 
 /********************************
-A função CriaTimer() é responsável por criar um timer (temporizador). Após a criação o tempo decorrido
-poderá ser obtido a partir da função Tempo_Decorrido(), informando o identificador que é passado na resposta.
+A funï¿½ï¿½o CriaTimer() ï¿½ responsï¿½vel por criar um timer (temporizador). Apï¿½s a criaï¿½ï¿½o o tempo decorrido
+poderï¿½ ser obtido a partir da funï¿½ï¿½o Tempo_Decorrido(), informando o identificador que ï¿½ passado na resposta.
 Retorno:
 inteiro que identifica o timer criado.
 ********************************/
@@ -18,12 +18,12 @@ int CriarTimer()
 }
 
 /********************************
-A função TempoDecorrido() é responsável por informar o tempo decorrido desde a criação do timer
-até a hora em que a função for chamada.
-Parâmetros:
+A funï¿½ï¿½o TempoDecorrido() ï¿½ responsï¿½vel por informar o tempo decorrido desde a criaï¿½ï¿½o do timer
+atï¿½ a hora em que a funï¿½ï¿½o for chamada.
+Parï¿½metros:
 id_timer (entrada, passagem por valor): identificador do timer.
 Retorno:
-número real indicando o tempo (em segundos) desde a criação do timer.
+nï¿½mero real indicando o tempo (em segundos) desde a criaï¿½ï¿½o do timer.
 ********************************/
 float TempoDecorrido(int id_timer)
 {
@@ -31,6 +31,7 @@ float TempoDecorrido(int id_timer)
     {
         return CGerenciadorTimers::GetTempoDecorrido(id_timer);
     }
+    return 0;
 }
 
 int TimerCriado(int id_timer)
@@ -46,9 +47,9 @@ int TimerCriado(int id_timer)
 }
 
 /********************************
-A função PausaTimer() é responsável por realizar uma pausa na contagem do tempo de um timer. Após a despausa,
-o timer continuará a contar o tempo normalmente.
-Parâmetros:
+A funï¿½ï¿½o PausaTimer() ï¿½ responsï¿½vel por realizar uma pausa na contagem do tempo de um timer. Apï¿½s a despausa,
+o timer continuarï¿½ a contar o tempo normalmente.
+Parï¿½metros:
 id_timer (entrada, passagem por valor): identificador do timer.
 ********************************/
 void PausarTimer(int id_timer)
@@ -60,8 +61,8 @@ void PausarTimer(int id_timer)
 }
 
 /********************************
-A função PausaTudo() é responsável por realizar uma pausa na contagem do tempo de todos os timers
-criados pela função CriaTimer();
+A funï¿½ï¿½o PausaTudo() ï¿½ responsï¿½vel por realizar uma pausa na contagem do tempo de todos os timers
+criados pela funï¿½ï¿½o CriaTimer();
 ********************************/
 void PausarTudo()
 {
@@ -69,8 +70,8 @@ void PausarTudo()
 }
 
 /********************************
-A função DespausaTimer() é responsável por retomar a contagem do tempo de um timer após uma pausa.
-Parâmetros:
+A funï¿½ï¿½o DespausaTimer() ï¿½ responsï¿½vel por retomar a contagem do tempo de um timer apï¿½s uma pausa.
+Parï¿½metros:
 id_timer (entrada, passagem por valor): identificador do timer.
 ********************************/
 void DespausarTimer(int id_timer)
@@ -82,8 +83,8 @@ void DespausarTimer(int id_timer)
 }
 
 /********************************
-A função DespausaTudo() é responsável por retomar a contagem do tempo de todos os timers
-criados pela função CriaTimer();
+A funï¿½ï¿½o DespausaTudo() ï¿½ responsï¿½vel por retomar a contagem do tempo de todos os timers
+criados pela funï¿½ï¿½o CriaTimer();
 ********************************/
 void DespausarTudo()
 {
@@ -91,9 +92,9 @@ void DespausarTudo()
 }
 
 /********************************
-A função ReiniciaTimer() é responsável por zerar a contagem do tempo de um timer, idependente do tempo já decorrido.
-Na prática, é equivalente a encerrer um temporizador e recriá-lo em seguida.
-Parâmetros:
+A funï¿½ï¿½o ReiniciaTimer() ï¿½ responsï¿½vel por zerar a contagem do tempo de um timer, idependente do tempo jï¿½ decorrido.
+Na prï¿½tica, ï¿½ equivalente a encerrer um temporizador e recriï¿½-lo em seguida.
+Parï¿½metros:
 id_timer (entrada, passagem por valor): identificador do timer.
 ********************************/
 void ReiniciarTimer(int id_timer)
@@ -105,9 +106,9 @@ void ReiniciarTimer(int id_timer)
 }
 
 /********************************
-A função DestroiTimer() é responsável por encerrar a utilização de timer.
-Seu identificador não poderá ser utilizado após a função ser executada.
-Parâmetros:
+A funï¿½ï¿½o DestroiTimer() ï¿½ responsï¿½vel por encerrar a utilizaï¿½ï¿½o de timer.
+Seu identificador nï¿½o poderï¿½ ser utilizado apï¿½s a funï¿½ï¿½o ser executada.
+Parï¿½metros:
 id_timer (entrada, passagem por valor): identificador do timer.
 ********************************/
 void DestruirTimer(int id_timer)

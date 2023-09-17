@@ -41,7 +41,7 @@ void CriarPonto(float X, float Y, float Angulo, float Velocidade, int Tamanho, i
 
     Pontos[QuantidadePontos].IndiceTrajetoria = 0;
     Pontos[QuantidadePontos].TotalTrajetoria = 0;
-    Pontos[QuantidadePontos].Cor = ((PIG_Cor){rand()%255,rand()%255,rand()%255,255});
+    Pontos[QuantidadePontos].Cor = ((PIG_Cor){(uint8_t)(rand()%255),(uint8_t)(rand()%255),(uint8_t)(rand()%255),255});
 
     QuantidadePontos = QuantidadePontos + 1;
 }

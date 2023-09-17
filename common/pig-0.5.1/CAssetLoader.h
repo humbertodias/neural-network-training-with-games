@@ -12,7 +12,7 @@ private:
     static PoolNumeros numBitmaps;
     static HashNode *slots[MAX_SLOTS_AL];
 
-    static int BuscaNome(char *str){
+    static int BuscaNome(const char *str){
         for (int i=0;i<MAX_SLOTS_AL;i++){
             if (slots[i]){
                 if (strcmp(slots[i]->str,str)==0)
@@ -41,7 +41,7 @@ public:
         delete numBitmaps;
     }
 
-    static SDL_Surface *LoadImage(char *nomeArq){
+    static SDL_Surface *LoadImage(const char *nomeArq){
         int indice = BuscaNome(nomeArq);
         if (indice==MAX_SLOTS_AL){
             printf("Asset loader sobrecarregado\n");

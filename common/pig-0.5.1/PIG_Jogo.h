@@ -31,7 +31,7 @@ nome_Janela (entrada, passagem por referência*): indica o nome que a janela do 
 É utilizado o operador * apenas por se tratar de um parâmetro string. O valor do parâmetro não é alterado dentro da função.
 cursor_Proprio (entrada, passagem por valor): indica se o jogo utilizará cursores (ponteiros) próprios para o mouse ou utilizará o cursor padrão.
 ********************************/
-void CriarJanela(char *nome_Janela,int cursor_Proprio=0)
+void CriarJanela(const char *nome_Janela,int cursor_Proprio=0)
 {
     if (jogo==NULL){
         jogo = new CJogo(nome_Janela,cursor_Proprio);
@@ -184,6 +184,7 @@ int AtualizarJanela()
     }
     PIG_Tecla = PegarTecla();
     PIG_Botao = PegarBotao();
+    return PIG_JogoRodando;
 }
 
 /********************************

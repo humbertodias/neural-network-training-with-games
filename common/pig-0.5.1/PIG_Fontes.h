@@ -15,7 +15,7 @@ ESTILO_CORTADO, para uma linha horizontal à meia-altura. Caso nenhum estilo sej
 retono:
 inteiro que representa a ideintificação única da fonte. Futuras referência a esta fonte devem idenitificá-las pelo número.
 ********************************/
-int CriarFonteNormal(char *nome,int tamanho,PIG_Cor corLetra,int contorno,PIG_Cor corContorno,PIG_Estilo estilo=ESTILO_NORMAL)
+int CriarFonteNormal(const char *nome,int tamanho,PIG_Cor corLetra,int contorno,PIG_Cor corContorno,PIG_Estilo estilo=ESTILO_NORMAL)
 {
     return jogo->CriaFonteNormal(nome,tamanho,estilo,corLetra,contorno,corContorno);
 }
@@ -72,7 +72,7 @@ posicaoX (entrada, passagem por valor): Valor da coordenada X da tela onde o usu
 posicaoY (entrada, passagem por valor): Valor da coordenada Y da tela onde o usuário deseja começar a escrever a string.
 numFonte (entrada, passagem por valor): número da fonte a ser utilizada. Caso o usuário não deseje uma fonte especial, será utilizada a fonte padrão (numeroFonte=0, tipo=Arial, tamanho=36, cor = Branco).
 ********************************/
-void EscreverEsquerda(char *str,int posicaoX,int posicaoY,int numFonte=0)
+void EscreverEsquerda(const char *str,int posicaoX,int posicaoY,int numFonte=0)
 {
     jogo->EscreverEsquerda(str,posicaoX,posicaoY,numFonte);
 }

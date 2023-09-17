@@ -31,7 +31,7 @@ nome_Janela (entrada, passagem por refer�ncia*): indica o nome que a janela do
 � utilizado o operador * apenas por se tratar de um par�metro string. O valor do par�metro n�o � alterado dentro da fun��o.
 cursor_Proprio (entrada, passagem por valor): indica se o jogo utilizar� cursores (ponteiros) pr�prios para o mouse ou utilizar� o cursor padr�o.
 ********************************/
-void CriarJogo(char *nome_Janela,int cursor_Proprio=0)
+void CriarJogo(const char *nome_Janela,int cursor_Proprio=0)
 {
     if (jogo==NULL){
         jogo = new CJogo(nome_Janela,cursor_Proprio);
@@ -48,7 +48,7 @@ void CriarJogo(char *nome_Janela,int cursor_Proprio=0)
     }
 }
 
-void CriarJanela(char *nome_Janela,int cursor_Proprio=0){
+void CriarJanela(const char *nome_Janela,int cursor_Proprio=0){
     CriarJogo(nome_Janela,cursor_Proprio);
 }
 
@@ -100,6 +100,7 @@ int AtualizarEstadoJogo()
     {
         PIG_JogoRodando = jogo->GetRodando();
     }
+    return PIG_JogoRodando;
 }
 
 void AtualizarJanela(){

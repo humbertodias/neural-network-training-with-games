@@ -15,7 +15,7 @@ public:
     char nome[100];
     int tamFonte;
 
-    CMapaCaracteres(char *nomeFonte,SDL_Renderer* renderer,int tamanhoFonte,int estilo, PIG_Cor corFonte,int outline,PIG_Cor corOutline){
+    CMapaCaracteres(const char *nomeFonte,SDL_Renderer* renderer,int tamanhoFonte,int estilo, PIG_Cor corFonte,int outline,PIG_Cor corOutline){
         strcpy(nome,nomeFonte);
         tamFonte = tamanhoFonte;
         render = renderer;
@@ -205,7 +205,7 @@ public:
         free(alturaLetra);
     }
 
-    int GetLarguraPixelsString(char *str){
+    int GetLarguraPixelsString(const char *str){
         int resp=0;
         Uint16 aux;
 
@@ -218,12 +218,12 @@ public:
         return resp;
     }
 
-    void EscreveStringCentralizado(char *str,int x,int y){
+    void EscreveStringCentralizado(const char *str,int x,int y){
         int larguraPixels = GetLarguraPixelsString(str);
         EscreveStringEsquerda(str,x-larguraPixels/2,y);
     }
 
-    void EscreveStringEsquerda(char *str,int x,int y){
+    void EscreveStringEsquerda(const char *str,int x,int y){
         SDL_Rect rectDestino;
         rectDestino.x = x;
         rectDestino.y = ALT_TELA-y-tamFonte;
@@ -247,7 +247,7 @@ public:
         }
     }
 
-    void EscreveStringDireita(char *str,int x,int y){
+    void EscreveStringDireita(const char *str,int x,int y){
         int larguraPixels = GetLarguraPixelsString(str);
         EscreveStringEsquerda(str,x-larguraPixels,y);
     }

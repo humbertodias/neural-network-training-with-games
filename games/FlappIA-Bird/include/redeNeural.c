@@ -327,6 +327,7 @@ RedeNeural* RNA_CarregarRede(char* String)
         fclose(f);
         return Temp;
     }
+    return NULL;
 }
 
 void RNA_SalvarRede(RedeNeural* Temp, char* String)

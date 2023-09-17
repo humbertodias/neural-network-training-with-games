@@ -3,7 +3,7 @@ void DefinirImagemDeFundo(int i)
 {
     char Temp[100];
 
-    sprintf(Temp,"imagens\\fundo%d.bmp",i);
+    sprintf(Temp,"imagens/fundo%d.bmp",i);
     DefinirFundo(Temp);
 }
 

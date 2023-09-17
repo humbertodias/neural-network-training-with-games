@@ -118,7 +118,7 @@ public:
     int valoresInt[MAX_ATRIBUTOS_OBJETO];
     float valoresFloat[MAX_ATRIBUTOS_OBJETO];
 
-    CObjeto(int posx,int posy, SDL_Renderer* renderizador,char* nomeArquivo,int retiraFundo=1,int opacidade=255){
+    CObjeto(int posx,int posy, SDL_Renderer* renderizador,const char* nomeArquivo,int retiraFundo=1,int opacidade=255){
         strcpy(nomeImagem,nomeArquivo);
         renderer = renderizador;
 

@@ -1,6 +1,4 @@
 
-#define CINZA_CLARO CINZA
-
 PIG_Cor calcularCor(double Intensidade, PIG_Cor CorBase)
 {
     CorBase.r = CorBase.r*Intensidade;

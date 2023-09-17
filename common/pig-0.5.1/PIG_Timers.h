@@ -31,6 +31,7 @@ float TempoDecorrido(int id_timer)
     {
         return CGerenciadorTimers::GetTempoDecorrido(id_timer);
     }
+    return 0;
 }
 
 int TimerCriado(int id_timer)

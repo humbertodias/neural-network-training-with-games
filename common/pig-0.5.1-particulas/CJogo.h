@@ -20,7 +20,7 @@ public:
     OffscreenRenderer offRenderer;
     int cursorPadrao;
 
-    CJogo(char *nome,int cursor=0){
+    CJogo(const char *nome,int cursor=0){
         rodando = true;
         teclado = SDL_GetKeyboardState(NULL);
         estado = 0;
@@ -257,33 +257,33 @@ public:
         }
     }
 
-    int CriaFonteFundo(char *nome,int tamanho,int estilo,char *arquivoFundo,int contorno,PIG_Cor corContorno){
+    int CriaFonteFundo(const char *nome,int tamanho,int estilo,char *arquivoFundo,int contorno,PIG_Cor corContorno){
         int aux = fontesUsadas;
         fontes[fontesUsadas] = new CMapaCaracteres(nome,renderer,tamanho,estilo,arquivoFundo,contorno,corContorno);
         fontesUsadas++;
         return aux;
     }
 
-    int CriaFonteNormal(char *nome,int tamanho,int estilo,PIG_Cor corLetra,int contorno,PIG_Cor corContorno){
+    int CriaFonteNormal(const char *nome,int tamanho,int estilo,PIG_Cor corLetra,int contorno,PIG_Cor corContorno){
         int aux = fontesUsadas;
         fontes[fontesUsadas] = new CMapaCaracteres(nome,renderer,tamanho,estilo,corLetra,contorno,corContorno);
         fontesUsadas++;
         return aux;
     }
 
-    inline int GetLarguraPixels(char *str,int numFonte=0){
-        fontes[numFonte]->GetLarguraPixelsString(str);
+    inline int GetLarguraPixels(const char *str,int numFonte=0){
+        return fontes[numFonte]->GetLarguraPixelsString(str);
     }
 
-    inline void EscreverCentralizada(char *str,int x,int y,int numFonte=0){
+    inline void EscreverCentralizada(const char *str,int x,int y,int numFonte=0){
         fontes[numFonte]->EscreveStringCentralizado(str,x,y);
     }
 
-    inline void EscreverDireita(char *str,int x,int y,int numFonte=0){
+    inline void EscreverDireita(const char *str,int x,int y,int numFonte=0){
         fontes[numFonte]->EscreveStringDireita(str,x,y);
     }
 
-    inline void EscreverEsquerda(char *str,int x,int y,int numFonte=0){
+    inline void EscreverEsquerda(const char *str,int x,int y,int numFonte=0){
         fontes[numFonte]->EscreveStringEsquerda(str,x,y);
     }
 
