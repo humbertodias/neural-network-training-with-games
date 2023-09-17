@@ -1,12 +1,12 @@
 PROJECTS = `ls games`
 build:
 	for PROJECT in ${PROJECTS} ; do \
-		$(MAKE) -C games/$$PROJECT build ; \
+		$(MAKE) -C games/$$PROJECT build && echo OK || break; \
 	done
 
 cmake:
 	for PROJECT in ${PROJECTS} ; do \
-		$(MAKE) -C games/$$PROJECT cmake ; \
+		$(MAKE) -C games/$$PROJECT cmake && echo OK || break; \
 	done
 
 run-hardestgameeditor:
@@ -43,18 +43,12 @@ clean:
 	rm -rf *.zip
 
 release:
-	cd games/AlgoritmoTecelao && $(MAKE) release
-	cd games/CanhaoDeNewton && $(MAKE) release
-	cd games/DeepCars && $(MAKE) release
-	cd games/Dinossauro-Google && $(MAKE) release
-	cd games/FlappIA-Bird && $(MAKE) release
-	cd games/HardestGame && $(MAKE) release
-	cd games/HardestGameEditor && $(MAKE) release
-	cd games/ParticulasGravitacionais3D && $(MAKE) release
-	cd games/Spirograph && $(MAKE) release
+	for PROJECT in ${PROJECTS} ; do \
+		$(MAKE) -C games/$$PROJECT release ; \
+	done
 
 SDL_VERSION=2.28.3
-SDL_COMPILER_TAG=hldtux/sdl2-compiler:${SDL_VERSION} 
+SDL_COMPILER_TAG=hldtux/sdl-compiler:${SDL_VERSION} 
 docker-compile-all:
 	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir -ti ${SDL_COMPILER_TAG} make build
 
@@ -65,7 +59,7 @@ docker-release-linux:
 	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir ${SDL_COMPILER_TAG} make release
 
 docker-release-windows:
-	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir ${SDL_COMPILER_TAG} make -e CC=x86_64-w64-mingw32-gcc -e CXX=x86_64-w64-mingw32-g++ release
+	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir ${SDL_COMPILER_TAG} make -e CC=i686-w64-mingw32-gcc -e CXX=i686-w64-mingw32-g++ release
 
 docker-release-darwin:
 	make release
