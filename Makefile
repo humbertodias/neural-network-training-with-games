@@ -47,7 +47,7 @@ release:
 		$(MAKE) -C games/$$PROJECT release ; \
 	done
 
-SDL_VERSION=2.28.3
+SDL_VERSION=2.32.4
 SDL_COMPILER_TAG=hldtux/sdl-compiler:${SDL_VERSION} 
 docker-compile-all:
 	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir -ti ${SDL_COMPILER_TAG} make build
