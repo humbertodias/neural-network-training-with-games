@@ -47,7 +47,7 @@ release:
 		$(MAKE) -C games/$$PROJECT release ; \
 	done
 
-SDL_VERSION=2.32.4
+SDL_VERSION=2.32.8
 SDL_COMPILER_TAG=hldtux/sdl-compiler:${SDL_VERSION} 
 docker-compile-all:
 	docker run -v $(shell pwd):/tmp/workdir -w /tmp/workdir -ti ${SDL_COMPILER_TAG} make build
@@ -73,4 +73,4 @@ linux-dep-install:
 	sudo apt install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libwebp-dev libgsl-dev libgtest-dev mingw-w64 mingw-w64-tools
 
 mac-dep-install:
-	sudo brew install sdl2 sdl2_ttf sdl2_image gsl googletest
+	brew install sdl2 sdl2_ttf sdl2_image gsl googletest
